@@ -1,4 +1,4 @@
-import { SITE, GALLERY_ITEMS, COLLECTIONS, REGIONS, GUIDES, REVIEWS } from "./data.js";
+import { SITE, GALLERY_ITEMS, COLLECTIONS, REGIONS, GUIDES, REVIEWS, SEO_KEYWORDS } from "./data.js";
 
 function escapeHtml(str = "") {
   return String(str)
@@ -221,10 +221,11 @@ function calculatorWidgetHtml() {
   </script>`;
 }
 
-function renderLayout({ title, description, canonicalPath = "/", extraSchema = null, bodyContent }) {
+function renderLayout({ title, description, keywords = "", canonicalPath = "/", extraSchema = null, bodyContent }) {
   const canonicalUrl = `${SITE.domain}${canonicalPath}`;
   const schemas = [baseSchema()];
   if (extraSchema) schemas.push(extraSchema);
+  const kwContent = keywords ? `${keywords}, ${SEO_KEYWORDS.slice(0, 15).join(", ")}` : SEO_KEYWORDS.join(", ");
 
   return `<!DOCTYPE html>
 <html lang="tr">
@@ -234,6 +235,7 @@ function renderLayout({ title, description, canonicalPath = "/", extraSchema = n
   <title>${escapeHtml(title)}</title>
   <meta name="google-site-verification" content="h4lWn2OfmVRUE4BinkQwjrJp5_1pJxxvj3hKGKcxzQk" />
   <meta name="description" content="${escapeHtml(description)}" />
+  <meta name="keywords" content="${escapeHtml(kwContent)}" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="${canonicalUrl}" />
   <link rel="alternate" hreflang="tr-TR" href="${canonicalUrl}" />
@@ -1009,8 +1011,8 @@ function renderLayout({ title, description, canonicalPath = "/", extraSchema = n
         <a href="/#koleksiyonlar">Perde Modelleri</a>
         <a href="/uygulamalarimiz">Gerçek Uygulamalarımız</a>
         <a href="/perde-olcu-ve-fiyat-hesaplama">Ölçü &amp; Metraj Hesapla</a>
+        <a href="/rehber">Perde Blog &amp; Rehber</a>
         <a href="/bolge/kahramankazan-perdeci">Hizmet Bölgeleri</a>
-        <a href="/hakkimizda">Hakkımızda</a>
         <a href="/iletisim">İletişim</a>
       </nav>
       <div class="header-cta">
@@ -1280,16 +1282,50 @@ function renderHomePage() {
       </div>
     </section>
 
+    <section id="rehberler" style="background:var(--white);border-top:1px solid var(--line)">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">📖 GÜNLÜK PERDE BLOGU &amp; DEKORASYON REHBERİ</span>
+          <h2>Perde Seçimi, Ölçü Alma, Yıkama ve 2026 Modelleri Rehberi</h2>
+          <p>Usta terzilerimiz ve Dilek Hanım'ın tecrübesiyle hazırlanan; tül, fon, plise cam balkon, ahşap jaluzi ve zebra perde rehberlerimiz.</p>
+        </div>
+        <div class="collections-grid">
+          ${GUIDES.slice(0, 6).map((g) => `
+            <article class="col-card">
+              <a href="/rehber/${g.slug}" class="col-img">
+                <img src="${g.heroImage}" alt="${escapeHtml(g.title)}" loading="lazy" />
+                <span class="col-badge">${escapeHtml(g.readTime)}</span>
+              </a>
+              <div class="col-body">
+                <h3><a href="/rehber/${g.slug}">${escapeHtml(g.title)}</a></h3>
+                <p>${escapeHtml(g.excerpt)}</p>
+                <div class="col-foot">
+                  <span>📅 ${escapeHtml(g.date)}</span>
+                  <a href="/rehber/${g.slug}">Rehberi Oku →</a>
+                </div>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+        <div style="text-align:center;margin-top:28px">
+          <a href="/rehber" class="btn btn-claret">Tüm Perde Blog Yazılarını &amp; Rehberleri Gör (${GUIDES.length} Makale) →</a>
+        </div>
+      </div>
+    </section>
+
     <section style="background:var(--sand);border-top:1px solid var(--line)">
       <div class="container">
         <div class="sec-head">
           <span class="eyebrow">KAHRAMANKAZAN • ANKARA • TÜRKİYE &amp; AVRUPA</span>
-          <h2>Hizmet Bölgelerimiz ve Uzman Perde Rehberlerimiz</h2>
+          <h2>Hizmet Bölgelerimiz ve Popüler Perde Aramaları</h2>
           <p>Kahramankazan ve Ankara içi ücretsiz yerinde ölçü ve montaj; Türkiye'nin 81 ili ile Almanya ve Fransa'ya kornişe takmaya hazır özel dikim kargo gönderimi.</p>
         </div>
-        <div class="region-pills">
+        <div class="region-pills" style="margin-bottom:20px">
           ${REGIONS.map((r) => `<a href="/bolge/${r.slug}" class="region-pill">📍 ${escapeHtml(r.name)} Perde Tasarım</a>`).join("")}
-          ${GUIDES.map((g) => `<a href="/rehber/${g.slug}" class="region-pill">📖 ${escapeHtml(g.title.split("?")[0])}</a>`).join("")}
+          ${GUIDES.map((g) => `<a href="/rehber/${g.slug}" class="region-pill">📖 ${escapeHtml(g.title.split("?")[0].split(":")[0])}</a>`).join("")}
+        </div>
+        <div class="region-pills" style="opacity:0.85">
+          ${SEO_KEYWORDS.map((kw) => `<span class="region-pill" style="font-size:12px;padding:6px 12px">#${escapeHtml(kw)}</span>`).join("")}
         </div>
       </div>
     </section>
@@ -1440,9 +1476,10 @@ function renderRegionPage(reg) {
 function renderGuidePage(guide) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: guide.title,
     description: guide.metaDesc,
+    keywords: guide.keywords || SEO_KEYWORDS.join(", "),
     image: `${SITE.domain}${guide.heroImage}`,
     datePublished: guide.date,
     dateModified: guide.date,
@@ -1450,18 +1487,21 @@ function renderGuidePage(guide) {
     publisher: { "@id": `${SITE.domain}/#organization` }
   };
 
+  const otherGuides = GUIDES.filter((g) => g.slug !== guide.slug).slice(0, 4);
+
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Perde Rehberi / ${escapeHtml(guide.title)}</div>
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / <a href="/rehber">Perde Blog &amp; Rehber</a> / ${escapeHtml(guide.title)}</div>
         <span class="eyebrow">📖 DİLEK PERDE HOME UZMAN REHBERİ • ${escapeHtml(guide.readTime)}</span>
         <h1 style="font-family:var(--serif);font-size:clamp(30px,4vw,46px);margin-bottom:12px">${escapeHtml(guide.title)}</h1>
         <p style="font-size:17px;color:var(--muted);max-width:760px">${escapeHtml(guide.excerpt)}</p>
       </div>
     </div>
     <section>
-      <div class="container" style="max-width:900px">
+      <div class="container" style="max-width:920px">
         <div class="prose">
+          <img src="${guide.heroImage}" alt="${escapeHtml(guide.title)}" style="width:100%;max-height:440px;object-fit:cover;border-radius:18px;margin-bottom:24px" />
           ${guide.contentHtml}
           <div style="margin-top:28px;padding:22px;background:var(--sand);border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
             <div>
@@ -1470,6 +1510,10 @@ function renderGuidePage(guide) {
             </div>
             <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa">💬 Dilek Hanım'a Sor (${escapeHtml(SITE.phoneDisplay)})</a>
           </div>
+          <h3 style="margin-top:32px">Diğer Uzman Perde Rehberlerimiz</h3>
+          <ul>
+            ${otherGuides.map((og) => `<li><a href="/rehber/${og.slug}" style="color:var(--claret);font-weight:600">${escapeHtml(og.title)}</a></li>`).join("")}
+          </ul>
         </div>
       </div>
     </section>
@@ -1479,8 +1523,52 @@ function renderGuidePage(guide) {
   return renderLayout({
     title: guide.metaTitle,
     description: guide.metaDesc,
+    keywords: guide.keywords || "",
     canonicalPath: `/rehber/${guide.slug}`,
     extraSchema: schema,
+    bodyContent
+  });
+}
+
+function renderGuidesIndexPage() {
+  const bodyContent = `
+    <div class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Perde Blog &amp; Dekorasyon Rehberi</div>
+        <span class="eyebrow">📖 GÜNLÜK GÜNCELLENEN PERDE ANSİKLOPEDİSİ (${GUIDES.length} MAKALE)</span>
+        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">Perde Modelleri, Ölçü Alma, Yıkama ve 2026 Dekorasyon Blogu</h1>
+        <p style="font-size:17px;color:var(--muted);max-width:780px">Kahramankazan ve Ankara'daki perde atölyemizin 20 yıllık tecrübesiyle hazırlanan; tül, fon, cam balkon plise, ahşap jaluzi ve zebra perde rehberleri.</p>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="collections-grid">
+          ${GUIDES.map((g) => `
+            <article class="col-card">
+              <a href="/rehber/${g.slug}" class="col-img">
+                <img src="${g.heroImage}" alt="${escapeHtml(g.title)}" loading="lazy" />
+                <span class="col-badge">${escapeHtml(g.readTime)}</span>
+              </a>
+              <div class="col-body">
+                <h3><a href="/rehber/${g.slug}">${escapeHtml(g.title)}</a></h3>
+                <p>${escapeHtml(g.excerpt)}</p>
+                <div class="col-foot">
+                  <span>📅 ${escapeHtml(g.date)}</span>
+                  <a href="/rehber/${g.slug}">Makaleyi Oku →</a>
+                </div>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+    ${calculatorWidgetHtml()}
+  `;
+
+  return renderLayout({
+    title: "Perde Blogu & 2026 Perde Modelleri Rehberi | Dilek Perde Home",
+    description: "Tül perde, fon perde, cam balkon plise perde, 50mm ahşap jaluzi, perde ölçüsü alma ve yıkama rehberleri. Dilek Perde Home uzman blogu.",
+    canonicalPath: "/rehber",
     bodyContent
   });
 }
@@ -1662,6 +1750,7 @@ function renderCalculatorPage() {
 function renderSitemap() {
   const urls = [
     ["/", "1.0", "daily"],
+    ["/rehber", "0.9", "daily"],
     ["/uygulamalarimiz", "0.9", "weekly"],
     ["/perde-olcu-ve-fiyat-hesaplama", "0.9", "weekly"],
     ["/hakkimizda", "0.8", "monthly"],
@@ -1670,7 +1759,7 @@ function renderSitemap() {
     ...REGIONS.map((r) => [`/bolge/${r.slug}`, "0.9", "weekly"]),
     ...GUIDES.map((g) => [`/rehber/${g.slug}`, "0.8", "weekly"])
   ];
-  const today = "2026-11-06";
+  const today = new Date().toISOString().slice(0, 10);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([p, prio, freq]) => `  <url>
@@ -1737,6 +1826,8 @@ export default {
       html = renderContactPage();
     } else if (path === "/perde-olcu-ve-fiyat-hesaplama") {
       html = renderCalculatorPage();
+    } else if (path === "/rehber" || path === "/blog") {
+      html = renderGuidesIndexPage();
     } else if (path.startsWith("/koleksiyon/")) {
       const slug = path.replace("/koleksiyon/", "");
       const col = COLLECTIONS.find((c) => c.slug === slug);
