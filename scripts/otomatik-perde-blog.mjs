@@ -527,6 +527,19 @@ const DAILY_TOPICS = [
 async function generateTopicWithClaude(existingSlugs) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return null;
+  let gscHints = "";
+  try {
+    const gscJson = JSON.parse(readFileSync(join(rootDir, "raporlar/search-console.json"), "utf8"));
+    const queries = [
+      ...(gscJson.uzun || []).map((x) => x.query),
+      ...(gscJson.neredeyse || []).map((x) => x.query)
+    ].slice(0, 10);
+    if (queries.length) {
+      gscHints = `\nGoogle Search Console fırsat sorguları (öncelikle bunlardan birini hedefle): ${queries.join(" | ")}`;
+    }
+  } catch {
+    // raporlar/search-console.json henüz yoksa standart devam et
+  }
   try {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -543,7 +556,7 @@ async function generateTopicWithClaude(existingSlugs) {
             role: "user",
             content: `Sen Ankara Kahramankazan merkezli kurumsal "Dilek Perde Home" (dilekperdehome.com) özel dikim perde ve ev tekstili tasarım atölyesinin baş içerik editörüsün.
 Daha önce yazılmamış, Google'da yüksek aranma hacmine sahip yeni ve kapsamlı bir perde/ev tekstili teknik rehber makalesi üret.
-Mevcut slug listesi (bunları kesinlikle tekrarlama): ${existingSlugs.slice(0, 35).join(", ")}
+Mevcut slug listesi (bunları kesinlikle tekrarlama): ${existingSlugs.slice(0, 35).join(", ")}${gscHints}
 Kurallar:
 - İçerik zayıf veya tek paragraf OLMAMALI; en az 3 adet <h2> alt başlık, detaylı bir HTML karşılaştırma/ölçü tablosu (<table><thead>...</thead><tbody>...</tbody></table>) ve maddeli listeler (<ul>/<ol>) içermelidir.
 - Kesinlikle emoji kullanma, kurumsal ve teknik terzilik dili kullan.

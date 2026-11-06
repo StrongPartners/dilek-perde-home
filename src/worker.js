@@ -243,8 +243,18 @@ function calculatorWidgetHtml() {
   </script>`;
 }
 
-function renderLayout({ title, description, keywords = "", canonicalPath = "/", extraSchema = null, bodyContent }) {
+function renderLayout({
+  title,
+  description,
+  keywords = "",
+  canonicalPath = "/",
+  ogImage = "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
+  ogType = "website",
+  extraSchema = null,
+  bodyContent
+}) {
   const canonicalUrl = `${SITE.domain}${canonicalPath}`;
+  const fullOgImage = ogImage.startsWith("http") ? ogImage : `${SITE.domain}${ogImage}`;
   const schemas = [baseSchema()];
   if (extraSchema) schemas.push(extraSchema);
   const kwContent = keywords ? `${keywords}, ${SEO_KEYWORDS.slice(0, 15).join(", ")}` : SEO_KEYWORDS.join(", ");
@@ -262,6 +272,7 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
   <link rel="canonical" href="${canonicalUrl}" />
   <link rel="alternate" hreflang="tr-TR" href="${canonicalUrl}" />
   <link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />
+  <link rel="alternate" type="application/rss+xml" title="${escapeHtml(SITE.name)} — Perde &amp; Ev Tekstili Rehberi (RSS)" href="${SITE.domain}/rss.xml" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="theme-color" content="#181513" />
   <meta name="geo.region" content="TR-06" />
@@ -270,19 +281,21 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
   <meta name="ICBM" content="${SITE.geo.lat}, ${SITE.geo.lng}" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="${escapeHtml(ogType)}" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:site_name" content="${escapeHtml(SITE.name)}" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta property="og:image" content="${SITE.domain}/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg" />
+  <meta property="og:image" content="${fullOgImage}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
-  <meta name="twitter:image" content="${SITE.domain}/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg" />
+  <meta name="twitter:image" content="${fullOgImage}" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1139,6 +1152,94 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
       color: var(--claret);
       margin-bottom: 6px;
     }
+    .toc {
+      background: var(--alabaster);
+      border-left: 3px solid var(--bronze);
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 24px;
+      margin: 22px 0 30px;
+    }
+    .toc-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li {
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--charcoal);
+    }
+    .toc a {
+      color: var(--ink);
+      font-weight: 600;
+      border-bottom: 1px dotted var(--bronze);
+    }
+    .toc a:hover { color: var(--claret); }
+    .prose h2 { scroll-margin-top: 110px; }
+    .pfaq details {
+      border: 1px solid var(--line);
+      background: var(--alabaster);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .pfaq summary {
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--ink);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pfaq summary::-webkit-details-marker { display: none; }
+    .pfaq summary::after {
+      content: "+";
+      font-family: var(--sans);
+      font-size: 18px;
+      color: var(--bronze);
+      font-weight: 600;
+    }
+    .pfaq details[open] summary::after { content: "−"; }
+    .pfaq details p {
+      margin: 12px 0 0;
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .author-box {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-top: 38px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--linen);
+    }
+    .author-monogram {
+      flex: none;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--bronze-light);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      border: 1px solid var(--bronze);
+    }
 
     /* Corporate Footer */
     .site-footer {
@@ -1637,6 +1738,20 @@ function renderHomePage() {
   });
 }
 
+function slugifyHeading(str) {
+  return String(str)
+    .toLowerCase()
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .replace(/<[^>]+>/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function renderCollectionPage(col) {
   const schema = {
     "@context": "https://schema.org",
@@ -1656,6 +1771,14 @@ function renderCollectionPage(col) {
           availability: "https://schema.org/InStock",
           seller: { "@type": "Organization", name: SITE.name }
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Koleksiyonlar", item: `${SITE.domain}/#koleksiyonlar` },
+          { "@type": "ListItem", position: 3, name: col.title, item: `${SITE.domain}/koleksiyon/${col.slug}` }
+        ]
       },
       ...(col.faqs?.length ? [{
         "@type": "FAQPage",
@@ -1772,23 +1895,35 @@ function renderCollectionPage(col) {
 function renderRegionPage(reg) {
   const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
+    "@graph": [
       {
-        "@type": "Question",
-        name: `${reg.name} bölgesinde eve gelip ücretsiz perde ölçüsü alıyor musunuz?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Evet. Dilek Perde Home olarak ${reg.name} (${reg.neighborhoods.slice(0, 5).join(", ")}) genelinde kendi servis aracımızla adresinize geliyor, zengin kumaş kartelalarımızı evinizin doğal ışığında sunarak ücretsiz lazerli ölçü alıyoruz.`
-        }
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Hizmet Bölgeleri", item: `${SITE.domain}/#bolgeler` },
+          { "@type": "ListItem", position: 3, name: reg.title, item: `${SITE.domain}/bolge/${reg.slug}` }
+        ]
       },
       {
-        "@type": "Question",
-        name: `${reg.name} perde siparişlerinde dikim ve montaj süresi kaç gündür?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Ölçü ve kumaş seçiminin ardından tül ve fon perdeler Kahramankazan'daki kendi atölyemizde ortalama 4 ila 7 iş günü içinde etek kurşunlu olarak dikilir, buhar kazanlı ütüden geçirilir ve kendi ustalarımız tarafından korniş/mekanizma montajıyla teslim edilir.`
-        }
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `${reg.name} bölgesinde eve gelip ücretsiz perde ölçüsü alıyor musunuz?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Evet. Dilek Perde Home olarak ${reg.name} (${reg.neighborhoods.slice(0, 5).join(", ")}) genelinde kendi servis aracımızla adresinize geliyor, zengin kumaş kartelalarımızı evinizin doğal ışığında sunarak ücretsiz lazerli ölçü alıyoruz.`
+            }
+          },
+          {
+            "@type": "Question",
+            name: `${reg.name} perde siparişlerinde dikim ve montaj süresi kaç gündür?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Ölçü ve kumaş seçiminin ardından tül ve fon perdeler Kahramankazan'daki kendi atölyemizde ortalama 4 ila 7 iş günü içinde etek kurşunlu olarak dikilir, buhar kazanlı ütüden geçirilir ve kendi ustalarımız tarafından korniş/mekanizma montajıyla teslim edilir.`
+            }
+          }
+        ]
       }
     ]
   };
@@ -1918,6 +2053,9 @@ function renderGuidePage(guide) {
     }
   ];
 
+  const guideUrl = `${SITE.domain}/rehber/${guide.slug}`;
+  const imageUrl = `${SITE.domain}${guide.heroImage}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -1925,12 +2063,24 @@ function renderGuidePage(guide) {
         "@type": "BlogPosting",
         headline: guide.title,
         description: guide.metaDesc,
+        url: guideUrl,
+        mainEntityOfPage: guideUrl,
+        inLanguage: "tr-TR",
+        articleSection: "Perde & Ev Tekstili Rehberi",
         keywords: guide.keywords || SEO_KEYWORDS.join(", "),
-        image: `${SITE.domain}${guide.heroImage}`,
+        image: { "@type": "ImageObject", url: imageUrl, width: 1200, height: 630 },
         datePublished: guide.date,
         dateModified: guide.date,
-        author: { "@type": "Person", name: SITE.owner },
+        author: { "@type": "Organization", name: SITE.legalName },
         publisher: { "@id": `${SITE.domain}/#organization` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: `${SITE.domain}/` },
+          { "@type": "ListItem", position: 2, name: "Atölye Notları & Rehber", item: `${SITE.domain}/rehber` },
+          { "@type": "ListItem", position: 3, name: guide.title, item: guideUrl }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -1943,25 +2093,47 @@ function renderGuidePage(guide) {
     ]
   };
 
+  // Extract <h2> headings for Table of Contents (İçindekiler) and inject anchor IDs
+  const tocItems = [];
+  const enrichedHtml = guide.contentHtml.replace(/<h2>([\s\S]*?)<\/h2>/gi, (_, inner) => {
+    const cleanText = inner.replace(/<[^>]+>/g, "").trim();
+    const id = slugifyHeading(cleanText);
+    if (cleanText && id) {
+      tocItems.push({ id, text: cleanText });
+    }
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+
   const otherGuides = GUIDES.filter((g) => g.slug !== guide.slug).slice(0, 5);
 
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="/">Ana Sayfa</a> / <a href="/rehber">Atölye Notları &amp; Rehber</a> / ${escapeHtml(guide.title)}</div>
-        <div class="kicker">ATÖLYE REHBERİ • ${escapeHtml(guide.readTime)}</div>
+        <div class="kicker">ATÖLYE REHBERİ • ${escapeHtml(guide.date)} • ${escapeHtml(guide.readTime)}</div>
         <h1 style="font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:600;margin-bottom:12px">${escapeHtml(guide.title)}</h1>
         <p style="font-size:16px;color:var(--muted);max-width:760px">${escapeHtml(guide.excerpt)}</p>
       </div>
     </div>
     <section>
       <div class="container" style="max-width:960px">
-        <div class="prose">
-          <img src="${guide.heroImage}" alt="${escapeHtml(guide.title)}" style="width:100%;max-height:460px;object-fit:cover;object-position:center top;margin-bottom:28px;border:1px solid var(--line)" />
-          ${guide.contentHtml}
+        <article class="prose">
+          <img src="${guide.heroImage}" alt="${escapeHtml(guide.title)}" width="1200" height="630" fetchpriority="high" decoding="async" style="width:100%;max-height:460px;object-fit:cover;object-position:center top;margin-bottom:24px;border:1px solid var(--line)" />
+
+          ${tocItems.length >= 2 ? `
+            <nav class="toc" aria-label="İçindekiler">
+              <span class="toc-title">İÇİNDEKİLER (HIZLI GEÇİŞ)</span>
+              <ol>
+                ${tocItems.map((h) => `<li><a href="#${h.id}">${escapeHtml(h.text)}</a></li>`).join("")}
+                <li><a href="#sikca-sorulan-sorular">Konuyla İlgili Sıkça Sorulan Sorular</a></li>
+              </ol>
+            </nav>
+          ` : ""}
+
+          ${enrichedHtml}
 
           ${!guide.contentHtml.includes("<table") ? `
-          <h2>Atölye Teknik Metraj, Pile ve Kumaş Karşılaştırma Cetveli</h2>
+          <h2 id="teknik-metraj-cetveli">Atölye Teknik Metraj, Pile ve Kumaş Karşılaştırma Cetveli</h2>
           <p>Pencereniz için perde planlaması yaparken kumaş dokusu kadar <strong>pile sıklığı</strong>, <strong>etek kurşunu gramajı</strong> ve <strong>yıkama dayanımı</strong> da uzun ömürlü kullanım için belirleyicidir. Aşağıdaki teknik tablomuzda atölyemizin standart üretim değerlerini inceleyebilirsiniz:</p>
           <table>
             <thead>
@@ -2009,29 +2181,32 @@ function renderGuidePage(guide) {
 
           <div class="atelier-callout">
             <strong>DİLEK PERDE HOME • ATÖLYE KALİTE GÜVENCESİ</strong>
-            Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A–B adresindeki mağazamızda ve dikiş atölyemizde hazırlanan tüm tül ve fon perdelerde her 7–8 cm'de bir kırılmaz birinci sınıf rulet kullanılır; kenar dikişleri büzüşme yapmayan özel makinelerde tamamlanıp buhar kazanlı ütüden geçirilerek teslim edilir.
+            Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A–B adresindeki mağazamızda ve dikiş atölyemizde hazırlanan tüm tül ve fon perdelerde her 7–8 cm'de bir kırılmaz birinci sınıf rulet kullanılır; kenar dikişleri büzüşme yapmayan özel makinelerde tamamlanıp buhar kazanlı ütüden geçirilerek teslim edilir. İlgili koleksiyonlarımızı incelemek için <a href="/koleksiyon/tul-perde-modelleri" style="color:var(--claret);font-weight:700;text-decoration:underline">Tül Perde Modelleri</a>, <a href="/koleksiyon/fon-perde-modelleri" style="color:var(--claret);font-weight:700;text-decoration:underline">Kadife &amp; Keten Fon Perdeler</a> ve <a href="/perde-olcu-ve-fiyat-hesaplama" style="color:var(--claret);font-weight:700;text-decoration:underline">Metraj Hesaplama Aracı</a> sayfalarımızı ziyaret edebilirsiniz.
           </div>
 
-          <h2>Konuyla İlgili Sıkça Sorulan Sorular</h2>
-          ${defaultFaqs.map((f) => `
-            <div style="margin-bottom:16px;padding:20px;background:var(--alabaster);border:1px solid var(--line)">
-              <strong style="display:block;color:var(--ink);margin-bottom:6px;font-size:15.5px">${escapeHtml(f.q)}</strong>
-              <p style="margin:0;font-size:14.5px;color:var(--muted)">${escapeHtml(f.a)}</p>
-            </div>
-          `).join("")}
+          <section class="pfaq">
+            <h2 id="sikca-sorulan-sorular">Konuyla İlgili Sıkça Sorulan Sorular</h2>
+            ${defaultFaqs.map((f, i) => `
+              <details ${i === 0 ? "open" : ""}>
+                <summary>${escapeHtml(f.q)}</summary>
+                <p>${escapeHtml(f.a)}</p>
+              </details>
+            `).join("")}
+          </section>
 
-          <div style="margin-top:32px;padding:26px;background:var(--linen);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+          <div class="author-box">
+            <span class="author-monogram">DP</span>
             <div>
-              <strong style="display:block;font-family:var(--serif);font-size:22px;color:var(--ink)">Pencereniz için doğru kumaş ve ölçüyü birlikte belirleyelim</strong>
-              <span style="font-size:14px;color:var(--muted)">Kahramankazan showroomumuza bekleriz veya WhatsApp'tan pencere fotoğrafınızı iletebilirsiniz.</span>
+              <strong style="display:block;color:var(--ink);font-size:15px">${escapeHtml(SITE.legalName)} — Teknik Yayın Kurulu</strong>
+              <p style="margin:4px 0 0;font-size:13.5px;color:var(--muted)">Bu teknik rehber, Kahramankazan ve Ankara genelinde gerçekleştirdiğimiz 700'ü aşkın konut ve villa perde uygulaması deneyimiyle hazırlanmıştır. Ücretsiz yerinde keşif için <a href="tel:${SITE.phoneRaw}" style="color:var(--claret);font-weight:600">${escapeHtml(SITE.phoneDisplay)}</a> hattımızdan ulaşabilirsiniz.</p>
             </div>
-            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary">${ICONS.whatsapp} <span>Danışma Hattı (${escapeHtml(SITE.phoneDisplay)})</span></a>
           </div>
+
           <h3 style="margin-top:36px">İlgili Diğer Teknik Rehberler</h3>
           <ul>
             ${otherGuides.map((og) => `<li><a href="/rehber/${og.slug}" style="color:var(--claret);font-weight:600">${escapeHtml(og.title)}</a></li>`).join("")}
           </ul>
-        </div>
+        </article>
       </div>
     </section>
     ${calculatorWidgetHtml()}
@@ -2042,6 +2217,8 @@ function renderGuidePage(guide) {
     description: guide.metaDesc,
     keywords: guide.keywords || "",
     canonicalPath: `/rehber/${guide.slug}`,
+    ogImage: guide.heroImage,
+    ogType: "article",
     extraSchema: schema,
     bodyContent
   });
@@ -2267,29 +2444,65 @@ function renderCalculatorPage() {
 function renderSitemap() {
   const today = new Date().toISOString().slice(0, 10);
   const urls = [
-    ["/", "1.0", "daily", today],
-    ["/rehber", "0.9", "daily", today],
-    ["/uygulamalarimiz", "0.9", "weekly", today],
-    ["/perde-olcu-ve-fiyat-hesaplama", "0.9", "weekly", today],
-    ["/hakkimizda", "0.8", "monthly", today],
-    ["/iletisim", "0.9", "monthly", today],
-    ...COLLECTIONS.map((c) => [`/koleksiyon/${c.slug}`, "0.9", "weekly", today]),
-    ...REGIONS.map((r) => [`/bolge/${r.slug}`, "0.9", "weekly", today]),
-    ...GUIDES.map((g) => [`/rehber/${g.slug}`, "0.8", "weekly", g.date || today])
+    ["/", "1.0", "daily", today, "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg", SITE.name],
+    ["/rehber", "0.9", "daily", today, "/images/gallery/dilek-perde-showroom-danisma-masasi.jpg", "Perde Modelleri & Ölçü Rehberi"],
+    ["/uygulamalarimiz", "0.9", "weekly", today, "/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg", "Referans Perde Uygulamalarımız"],
+    ["/perde-olcu-ve-fiyat-hesaplama", "0.9", "weekly", today, null, null],
+    ["/hakkimizda", "0.8", "monthly", today, "/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg", SITE.legalName],
+    ["/iletisim", "0.9", "monthly", today, null, null],
+    ...COLLECTIONS.map((c) => [`/koleksiyon/${c.slug}`, "0.9", "weekly", today, c.heroImage, c.title]),
+    ...REGIONS.map((r) => [`/bolge/${r.slug}`, "0.9", "weekly", today, r.heroImage, r.title]),
+    ...GUIDES.map((g) => [`/rehber/${g.slug}`, "0.8", "weekly", g.date || today, g.heroImage, g.title])
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(([p, prio, freq, lmod]) => `  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.map(([p, prio, freq, lmod, img, imgTitle]) => `  <url>
     <loc>${SITE.domain}${p}</loc>
     <lastmod>${lmod}</lastmod>
     <changefreq>${freq}</changefreq>
-    <priority>${prio}</priority>
+    <priority>${prio}</priority>${img ? `
+    <image:image>
+      <image:loc>${SITE.domain}${img}</image:loc>
+      <image:title>${escapeHtml(imgTitle || SITE.name)}</image:title>
+    </image:image>` : ""}
   </url>`).join("\n")}
 </urlset>`;
   return new Response(xml, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=1800"
+      "Cache-Control": "public, max-age=300"
+    }
+  });
+}
+
+function renderRss() {
+  const items = GUIDES.map((g) => {
+    const pubDate = new Date(`${g.date || "2026-11-06"}T09:00:00+03:00`).toUTCString();
+    return `    <item>
+      <title>${escapeHtml(g.title)}</title>
+      <link>${SITE.domain}/rehber/${g.slug}</link>
+      <guid isPermaLink="true">${SITE.domain}/rehber/${g.slug}</guid>
+      <description>${escapeHtml(g.metaDesc || g.excerpt)}</description>
+      <pubDate>${pubDate}</pubDate>
+    </item>`;
+  }).join("\n");
+
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeHtml(SITE.name)} — Perde &amp; Ev Tekstili Rehberi</title>
+    <link>${SITE.domain}/rehber</link>
+    <description>Kahramankazan ve Ankara özel dikim tül perde, fon perde, Plisell cam balkon perdesi, 50mm ahşap jaluzi ve ölçü alma rehberleri.</description>
+    <language>tr-TR</language>
+    <atom:link href="${SITE.domain}/rss.xml" rel="self" type="application/rss+xml" />
+${items}
+  </channel>
+</rss>`;
+
+  return new Response(rssXml, {
+    headers: {
+      "Content-Type": "application/rss+xml; charset=utf-8",
+      "Cache-Control": "public, max-age=300"
     }
   });
 }
@@ -2323,6 +2536,10 @@ export default {
 
     if (path === "/sitemap.xml") {
       return renderSitemap();
+    }
+
+    if (path === "/rss.xml" || path === "/feed.xml") {
+      return renderRss();
     }
 
     if (path === "/dilekperdeindexnow2026.txt") {
@@ -2377,7 +2594,7 @@ export default {
       status: 200,
       headers: {
         "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, max-age=300, s-maxage=1800"
+        "Cache-Control": "public, max-age=60, s-maxage=300"
       }
     });
   }

@@ -1,0 +1,31 @@
+name: Search Console Raporu
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rapor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/gsc-rapor.mjs
+        env:
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+      - name: Raporu kaydet
+        run: |
+          git config user.name "search-console-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add raporlar/ 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git commit -m "Search Console raporu [skip ci]"
+          git push
