@@ -543,6 +543,23 @@ export const SEO_KEYWORDS = [
 
 export const GUIDES = [
   {
+    slug: "kornise-perde-nasil-takilir-rulet-ve-stoper-rehberi",
+    title: "Kornişe Perde Nasıl Takılır? Rulet Sıklığı, Korniş Stoperi ve Pratik Asma Teknikleri",
+    metaTitle: "Kornişe Perde Nasıl Takılır? Kolay Perde Asma Rehberi | Dilek Perde Home",
+    metaDesc: "Üçlü ve dörtlü korniş kanallarına tül, güneşlik ve fon perde hangi sırayla takılır? Rulet kancası ve stoper kullanımı.",
+    keywords: "kornişe perde nasıl takılır, üçlü korniş perde sırası, perde ruleti nedir, korniş stoperi nasıl takılır",
+    date: "2026-11-06",
+    readTime: "4 dk okuma",
+    heroImage: "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
+    excerpt: "Üçlü kornişte güneşlik, tül ve fon perdenin birbirine sürtünmeden kayması için doğru kanal sıralaması.",
+    contentHtml: `
+      <h2>Üçlü Kornişte Hangi Kanal Hangi Perde İçindir?</h2>
+      <p>Standart üç kanallı tavan kornişlerinde doğru sıralama; <strong>en arka kanala (cama en yakın) güneşlik veya stor</strong>, <strong>orta kanala tül perde</strong>, <strong>en ön kanala (odaya bakan) ise sağ ve sol fon kanatlar</strong> şeklindedir. Atölyemizde her 7–8 cm'de bir diktiğimiz 1. sınıf kırılmaz ruletler sayesinde perdeniz kornişte takılmadan rahatça hareket eder.</p>
+      <h3>Stoper (Durdurucu) Kullanımının Önemi</h3>
+      <p>Perdenin ilk ve son ruletinden sonra korniş kanalına takılan plastik stoperler, perdeyi çekerken raydan çıkmasını önler ve yan duvar paylarının her zaman simetrik durmasını sağlar.</p>
+    `
+  },
+  {
     slug: "perde-olcusu-nasil-alinir",
     title: "Evde Perde Ölçüsü Nasıl Alınır? (Tül, Fon, Stor ve Cam Balkon Ölçü Rehberi)",
     metaTitle: "Perde Ölçüsü Nasıl Alınır? Tül, Fon ve Stor Ölçü Alma Rehberi | Dilek Perde Home",

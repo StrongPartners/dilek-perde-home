@@ -302,7 +302,7 @@ async function main() {
     excerpt: ${JSON.stringify(nextTopic.excerpt)},
     contentHtml: \`${nextTopic.contentHtml}\`
   },\n`;
-      const updated = dataText.replace("export const GUIDES = [\n", `export const GUIDES = [\n${newEntry}`);
+      const updated = dataText.replace(/export const GUIDES = \[\r?\n/, `export const GUIDES = [\n${newEntry}`);
       writeFileSync(dataPath, updated, "utf8");
       existingSlugs.unshift(nextTopic.slug);
       console.log(`Yeni gunluk perde rehberi eklendi: /rehber/${nextTopic.slug} (${today})`);
