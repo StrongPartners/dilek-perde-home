@@ -8,6 +8,14 @@ function escapeHtml(str = "") {
     .replace(/"/g, "&quot;");
 }
 
+const ICONS = {
+  phone: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+  whatsapp: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`,
+  pin: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  arrowRight: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`,
+  instagram: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>`
+};
+
 function baseSchema() {
   return {
     "@context": "https://schema.org",
@@ -21,14 +29,14 @@ function baseSchema() {
         url: SITE.domain,
         logo: `${SITE.domain}/images/logo.svg`,
         image: [
-          `${SITE.domain}/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg`,
           `${SITE.domain}/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg`,
-          `${SITE.domain}/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg`
+          `${SITE.domain}/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg`,
+          `${SITE.domain}/images/gallery/klasik-salon-antrasit-fon-ve-pileli-tul-perde.jpg`
         ],
         description: "Kahramankazan, Ankara ve Türkiye genelinde özel dikim tül perde, kadife ve keten fon perde, Plisell cam balkon plise perde, 50mm doğal ahşap jaluzi, 3 boyutlu dikey tül ve zebra/stor perde tasarım mağazası.",
         telephone: SITE.phoneRaw,
         priceRange: "₺₺",
-         founder: {
+        founder: {
           "@type": "Person",
           name: SITE.owner
         },
@@ -98,28 +106,41 @@ function calculatorWidgetHtml() {
     <div class="container">
       <div class="calc-grid">
         <div class="calc-info">
-          <span class="eyebrow">PRATİK METRAJ &amp; PİLE REHBERİ</span>
-          <h2>Pencereniz İçin Ne Kadar Kumaş Gider?</h2>
-          <p>Perde dikiminde kumaş miktarı; pencerenizin genişliğine ve seçeceğiniz <strong>pile sıklığına</strong> göre belirlenir. Yan taraftaki hesaplama aracımızla pencerenizin en ve boy ölçüsünü girerek ihtiyacınız olan net kumaş metrajını görebilir, ölçünüzü tek tıkla <strong>Dilek Hanım'a WhatsApp üzerinden</strong> ileterek güncel kumaş alternatifleriyle net fiyat alabilirsiniz.</p>
-          <div class="calc-badges">
-            <div class="c-badge">
-              <strong>1x3 Sık (Kanun) Pile</strong>
-              <span>1 metre cama 3 metre tül kullanılır. Salonlar için en tok ve zengin duruştur.</span>
+          <div class="kicker">TEKNİK METRAJ &amp; PİLE CETVELİ</div>
+          <h2>Pencereniz İçin Gereken Kumaş Metrajını Hesaplayın</h2>
+          <p>Özel dikim perdede kullanılacak net kumaş miktarı; korniş genişliğine ve tercih edilen <strong>pile oranına</strong> göre belirlenir. Pencerenizin en ve boy ölçüsünü girerek teknik metrajı görebilir, ölçünüzü doğrudan atölyemize ileterek seçtiğiniz kumaş serisine göre net fiyat teklifi alabilirsiniz.</p>
+          <div class="calc-specs">
+            <div class="spec-row">
+              <span class="spec-idx">01</span>
+              <div>
+                <strong>1x3 Sık (Kanun) Pile Standardı</strong>
+                <span>1 metre korniş genişliği için 3 metre kumaş kullanılır. Salonlarda en tok ve derinlikli dökümü sağlar.</span>
+              </div>
             </div>
-            <div class="c-badge">
-              <strong>1x2.5 Orta Pile / Boru Pile</strong>
-              <span>1 metre cama 2.5 metre kumaş kullanılır. Oturma odası ve mutfaklar için idealdir.</span>
+            <div class="spec-row">
+              <span class="spec-idx">02</span>
+              <div>
+                <strong>1x2.5 Orta Pile / Boru Pile</strong>
+                <span>1 metre genişlik için 2.5 metre kumaş kullanılır. Oturma odası, mutfak ve kalın dokulu keten tüller için dengelidir.</span>
+              </div>
             </div>
-            <div class="c-badge">
-              <strong>m² Mekanizmalı Sistemler</strong>
-              <span>Plise cam balkon, ahşap jaluzi, zebra ve stor perdeler En x Boy (m²) üzerinden hesaplanır.</span>
+            <div class="spec-row">
+              <span class="spec-idx">03</span>
+              <div>
+                <strong>Mekanizmalı Sistemler (m²)</strong>
+                <span>Plisell cam balkon, 50mm masif ahşap jaluzi, zebra ve stor perdeler En x Boy (m²) üzerinden ölçülendirilir.</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="calc-card">
-          <h3>Ölçü &amp; Kumaş Metrajı Hesaplayıcı</h3>
+          <div class="calc-card-head">
+            <span>ATÖLYE ÖLÇÜ FORMU</span>
+            <small>MİLİMETRİK HESAPLAMA</small>
+          </div>
+          <h3>Metraj &amp; Pile Hesaplayıcı</h3>
           <div class="form-row">
-            <label for="c-type">Perde Türü Seçin</label>
+            <label for="c-type">Ürün Grubu</label>
             <select id="c-type">
               <option value="tul">Tül Perde (Keten / Grek / Kapsül / Kruvaze)</option>
               <option value="fon">Fon Perde (Kadife / Keten / Blackout)</option>
@@ -131,36 +152,37 @@ function calculatorWidgetHtml() {
           </div>
           <div class="form-two">
             <div class="form-row">
-              <label for="c-width">Korniş / Cam Eni (cm)</label>
+              <label for="c-width">Korniş / Cam Genişliği (cm)</label>
               <input type="number" id="c-width" value="300" min="40" max="1200" step="5" />
             </div>
             <div class="form-row">
-              <label for="c-height">Tavan - Zemin Boyu (cm)</label>
+              <label for="c-height">Tavan – Zemin Yüksekliği (cm)</label>
               <input type="number" id="c-height" value="265" min="50" max="600" step="5" />
             </div>
           </div>
           <div class="form-row" id="pile-row">
-            <label for="c-pile">Pile Sıklığı</label>
+            <label for="c-pile">Pile Oranı</label>
             <select id="c-pile">
-              <option value="3" selected>1x3 Sık Pile (Salon Standardı — En Dolgun Duruş)</option>
-              <option value="2.5">1x2.5 Normal Pile (Dengeli Döküm)</option>
-              <option value="2">1x2 Seyrek / Spor Pile (Modern Sade)</option>
+              <option value="3" selected>1x3 Sık Pile (Salon Standardı — Tam Dolgun Duruş)</option>
+              <option value="2.5">1x2.5 Orta Pile (Dengeli Döküm)</option>
+              <option value="2">1x2 Seyrek / Amerikan Pile (Sade Form)</option>
             </select>
           </div>
           <div class="calc-result" id="calc-result">
             <div class="res-top">
               <div>
-                <span class="res-label">Gereken Net Kumaş / Alan</span>
+                <span class="res-label">Hesaplanan Net Metraj / Alan</span>
                 <strong class="res-val" id="res-qty">9,00 Metre Tül</strong>
               </div>
               <div>
-                <span class="res-label">Önerilen Dikiş Tipi</span>
+                <span class="res-label">Atölye Dikim Standardı</span>
                 <strong class="res-sub" id="res-note">Etek Kurşunlu 1x3 Kanun Pile</strong>
               </div>
             </div>
-            <p class="res-disclaimer">Seçeceğiniz kumaş serisine (Brillant, Keten, İtalyan Kadife, Plisell) göre net fiyat teklifi almak için ölçünüzü doğrudan gönderebilirsiniz:</p>
-            <a href="${SITE.whatsappUrl}" id="calc-wa-btn" target="_blank" rel="noopener" class="btn btn-wa-full">
-              <span>📲 Bu Ölçü İçin WhatsApp'tan Fiyat Al (0551 402 27 07)</span>
+            <p class="res-disclaimer">Brillant, keten, İtalyan kadife veya Plisell kartela alternatifleriyle bu ölçünün net maliyetini öğrenmek için doğrudan bilgi alabilirsiniz:</p>
+            <a href="${SITE.whatsappUrl}" id="calc-wa-btn" target="_blank" rel="noopener" class="btn btn-primary btn-full">
+              ${ICONS.whatsapp}
+              <span>Bu Ölçü İçin Fiyat Teklifi İste (${escapeHtml(SITE.phoneDisplay)})</span>
             </a>
           </div>
         </div>
@@ -190,23 +212,23 @@ function calculatorWidgetHtml() {
           pRow.style.display = 'block';
           var mt = ((w / 100) * pile).toFixed(2).replace('.', ',');
           qtyStr = mt + ' Metre Kumaş (+40cm Yan Pay)';
-          noteStr = '1x' + pile + ' Pile • Boy: ' + h + ' cm';
+          noteStr = '1x' + pile + ' Pile • Yükseklik: ' + h + ' cm';
         } else if(type === 'fon'){
           pRow.style.display = 'block';
           var boyM = ((h + 25) / 100);
           var ciftKanat = (boyM * 2 * (pile >= 2.5 ? 1.2 : 1)).toFixed(2).replace('.', ',');
           qtyStr = ciftKanat + ' Metre (Çift Kanat Fon)';
-          noteStr = 'Sağ-Sol 2 Kanat Boru/Kanun Pile';
+          noteStr = 'Sağ-Sol 2 Kanat Boru / Kanun Pile';
         } else {
           pRow.style.display = 'none';
           var m2 = Math.max(1.5, (w / 100) * (h / 100)).toFixed(2).replace('.', ',');
           qtyStr = m2 + ' m² Net Uygulama Alanı';
-          noteStr = w + ' cm x ' + h + ' cm Özel Kasa Üretim';
+          noteStr = w + ' cm x ' + h + ' cm Alüminyum Kasa';
         }
         qEl.textContent = qtyStr;
         nEl.textContent = noteStr;
         var msg = 'Merhaba Dilek Hanım, dilekperdehome.com üzerinden ölçü hesapladım:\\n'
-          + '• Perde Türü: ' + typeText + '\\n'
+          + '• Ürün Grubu: ' + typeText + '\\n'
           + '• Ölçü: En ' + w + ' cm x Boy ' + h + ' cm\\n'
           + '• Hesaplanan: ' + qtyStr + ' (' + noteStr + ')\\n'
           + 'Uygun kumaş ve fiyat alternatiflerini paylaşabilir misiniz?';
@@ -241,7 +263,7 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
   <link rel="alternate" hreflang="tr-TR" href="${canonicalUrl}" />
   <link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="theme-color" content="#6B1220" />
+  <meta name="theme-color" content="#181513" />
   <meta name="geo.region" content="TR-06" />
   <meta name="geo.placename" content="Kahramankazan, Ankara" />
   <meta name="geo.position" content="${SITE.geo.lat};${SITE.geo.lng}" />
@@ -265,55 +287,57 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n  ")}
 
   <style>
     :root {
-      --claret: #6B1220;
-      --claret-dark: #4A0B15;
-      --claret-soft: #8A1C2D;
-      --gold: #C59B52;
-      --gold-light: #E6C98F;
-      --gold-dark: #8C6528;
-      --ivory: #FAF7F2;
-      --sand: #F2ECE1;
-      --ink: #1E1916;
-      --muted: #5C534C;
-      --line: #E4DACB;
+      --claret: #5E131E;
+      --claret-dark: #3F0B13;
+      --bronze: #9C7A44;
+      --bronze-light: #C5A367;
+      --alabaster: #F9F7F3;
+      --linen: #F1ECE3;
+      --stone: #E5DECFE6;
+      --ink: #181513;
+      --charcoal: #2B2623;
+      --muted: #625A52;
+      --line: #DCD4C8;
+      --line-dark: #332D29;
       --white: #FFFFFF;
-      --wa: #1F8E4D;
-      --serif: 'Cormorant Garamond', Georgia, serif;
+      --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--sans);
-      background: var(--ivory);
+      background: var(--alabaster);
       color: var(--ink);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      font-size: 15px;
     }
-    a { color: inherit; text-decoration: none; }
+    a { color: inherit; text-decoration: none; transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease; }
     img, video { max-width: 100%; display: block; }
-    .container { max-width: 1260px; margin: 0 auto; padding: 0 22px; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
 
-    /* Top Atelier Announcement Bar */
+    /* Corporate Institutional Topbar */
     .topbar {
-      background: linear-gradient(90deg, var(--claret-dark), var(--claret), var(--claret-dark));
-      color: #FAF5EC;
-      font-size: 13px;
+      background: var(--ink);
+      color: #D8D0C5;
+      font-size: 11.5px;
+      letter-spacing: 0.04em;
       padding: 9px 0;
-      border-bottom: 1px solid rgba(230, 201, 143, 0.35);
+      border-bottom: 1px solid var(--line-dark);
     }
     .topbar-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
     .topbar-left, .topbar-right {
       display: flex;
@@ -321,276 +345,368 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
       gap: 18px;
       flex-wrap: wrap;
     }
-    .topbar a:hover { color: var(--gold-light); }
-    .ig-pill {
+    .topbar-item {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255,255,255,0.12);
-      padding: 3px 10px;
-      border-radius: 99px;
-      font-weight: 600;
-      border: 1px solid rgba(230,201,143,0.35);
     }
+    .topbar-sep {
+      color: #4A423C;
+    }
+    .topbar a:hover { color: var(--bronze-light); }
 
-    /* Main Header */
+    /* Main Architectural Header */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(250, 247, 242, 0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(249, 247, 243, 0.97);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
-      box-shadow: 0 4px 20px rgba(30, 25, 22, 0.04);
     }
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 0;
-      gap: 20px;
+      height: 84px;
+      gap: 24px;
     }
     .brand-logo img {
-      height: 62px;
+      height: 54px;
       width: auto;
     }
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-size: 14.5px;
+      gap: 28px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--ink);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
     }
     .main-nav a {
       position: relative;
       padding: 6px 0;
-      transition: color 0.2s;
+    }
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--claret);
+      transition: width 0.25s ease;
     }
     .main-nav a:hover { color: var(--claret); }
+    .main-nav a:hover::after { width: 100%; }
+
     .header-cta {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 28px 24px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--linen);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Architectural Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 12px 22px;
-      border-radius: 99px;
-      font-weight: 700;
-      font-size: 14px;
+      gap: 9px;
+      padding: 13px 24px;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 12.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: all 0.22s ease;
       cursor: pointer;
-      border: none;
+      border: 1px solid transparent;
     }
-    .btn-claret {
-      background: linear-gradient(135deg, var(--claret-soft), var(--claret-dark));
+    .btn-primary {
+      background: var(--claret);
       color: var(--white);
-      box-shadow: 0 8px 22px rgba(107, 18, 32, 0.24);
+      border-color: var(--claret);
     }
-    .btn-claret:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(107, 18, 32, 0.34);
+    .btn-primary:hover {
+      background: var(--claret-dark);
+      border-color: var(--claret-dark);
+    }
+    .btn-dark {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+    .btn-dark:hover {
+      background: var(--claret);
+      border-color: var(--claret);
     }
     .btn-outline {
-      background: var(--white);
-      color: var(--claret);
-      border: 1.5px solid rgba(107, 18, 32, 0.28);
+      background: transparent;
+      color: var(--ink);
+      border-color: #BDB3A4;
     }
     .btn-outline:hover {
-      border-color: var(--claret);
-      background: #FDF9F4;
+      border-color: var(--ink);
+      background: var(--white);
     }
-    .btn-wa {
-      background: var(--wa);
-      color: var(--white);
-      box-shadow: 0 8px 20px rgba(31, 142, 77, 0.25);
+    .btn-full { width: 100%; }
+
+    /* Editorial Kicker / Overline */
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-bottom: 16px;
     }
-    .btn-wa:hover {
-      transform: translateY(-2px);
-      background: #18773f;
+    .kicker::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--bronze);
     }
 
     /* Hero Section */
     .hero {
-      padding: 46px 0 64px;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(197, 155, 82, 0.13), transparent 42%),
-        radial-gradient(circle at 88% 15%, rgba(107, 18, 32, 0.08), transparent 40%),
-        linear-gradient(180deg, #FAF7F2 0%, #F3EDE2 100%);
+      padding: 56px 0 0;
+      background: var(--alabaster);
       border-bottom: 1px solid var(--line);
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 44px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
       align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--claret);
-      background: rgba(107, 18, 32, 0.08);
-      border: 1px solid rgba(107, 18, 32, 0.18);
-      padding: 6px 14px;
-      border-radius: 99px;
-      margin-bottom: 18px;
+      padding-bottom: 56px;
     }
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(36px, 4.6vw, 58px);
+      font-size: clamp(38px, 4.4vw, 60px);
       line-height: 1.08;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--ink);
-      margin-bottom: 18px;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
     }
     .hero h1 em {
       color: var(--claret);
       font-style: italic;
+      font-weight: 500;
     }
     .hero-lead {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--muted);
-      margin-bottom: 26px;
-      max-width: 610px;
+      margin-bottom: 32px;
+      max-width: 590px;
+      line-height: 1.75;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 36px;
     }
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+    .hero-meta-note {
+      display: flex;
+      align-items: center;
+      gap: 16px;
       padding-top: 22px;
       border-top: 1px solid var(--line);
-    }
-    .trust-item strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 28px;
-      color: var(--claret);
-      line-height: 1.1;
-    }
-    .trust-item span {
       font-size: 13px;
       color: var(--muted);
-      font-weight: 500;
+    }
+    .hero-meta-note strong {
+      color: var(--ink);
+      font-weight: 600;
     }
 
-    /* Hero Visual Collage */
-    .hero-Showcase {
+    /* Hero Architectural Showcase */
+    .hero-showcase {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 14px;
+      gap: 18px;
       align-items: stretch;
     }
-    .hero-main-card {
-      position: relative;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 22px 48px rgba(30, 25, 22, 0.16);
-      border: 3px solid var(--white);
-      aspect-ratio: 9 / 14;
-      background: #231b18;
-    }
-    .hero-main-card img, .hero-main-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-side-stack {
+    .showcase-primary {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 10px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
     }
-    .hero-sub-card {
-      position: relative;
-      flex: 1;
-      border-radius: 18px;
+    .showcase-primary-img {
+      aspect-ratio: 4 / 5.2;
       overflow: hidden;
-      border: 3px solid var(--white);
-      box-shadow: 0 14px 32px rgba(30, 25, 22, 0.12);
-      min-height: 190px;
+      background: #231E1B;
     }
-    .hero-sub-card img {
+    .showcase-primary-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .img-tag {
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      right: 12px;
-      background: rgba(24, 17, 15, 0.78);
-      backdrop-filter: blur(8px);
-      color: #FAF5EC;
-      padding: 8px 12px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-      border: 1px solid rgba(230, 201, 143, 0.35);
+    .showcase-secondary-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
-    .img-tag small {
-      display: block;
-      color: var(--gold-light);
+    .showcase-secondary {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .showcase-secondary-img {
+      flex: 1;
+      min-height: 195px;
+      overflow: hidden;
+      background: #231E1B;
+    }
+    .showcase-secondary-img img, .showcase-secondary-img video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .showcase-caption {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    .showcase-caption strong {
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .showcase-caption span {
       font-size: 10.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.1em;
+      color: var(--bronze);
+      font-weight: 600;
     }
 
-    /* Section Headers */
-    section { padding: 72px 0; }
-    .sec-head {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 44px;
+    /* Corporate Ledger Bar */
+    .ledger-bar {
+      border-top: 1px solid var(--line);
+      background: var(--linen);
     }
-    .sec-head h2 {
+    .ledger-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .ledger-cell {
+      padding: 26px 24px;
+      border-right: 1px solid var(--line);
+    }
+    .ledger-cell:last-child { border-right: none; }
+    .ledger-num {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--bronze);
+      margin-bottom: 6px;
+    }
+    .ledger-cell strong {
+      display: block;
       font-family: var(--serif);
-      font-size: clamp(30px, 3.6vw, 44px);
+      font-size: 21px;
+      font-weight: 600;
       color: var(--ink);
-      line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
     }
-    .sec-head p {
+    .ledger-cell p {
+      font-size: 13px;
       color: var(--muted);
-      font-size: 16px;
+      line-height: 1.5;
     }
 
-    /* Collections Grid */
+    /* Section Foundations */
+    section { padding: 84px 0; }
+    .sec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 48px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+    .sec-header-left { max-width: 720px; }
+    .sec-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.4vw, 44px);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.12;
+      margin-bottom: 10px;
+    }
+    .sec-header p {
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    /* Collections Lookbook Grid */
     .collections-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
     }
     .col-card {
       background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
       border: 1px solid var(--line);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
+      transition: border-color 0.25s ease, transform 0.25s ease;
     }
     .col-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(30, 25, 22, 0.1);
+      border-color: var(--bronze);
+      transform: translateY(-3px);
     }
     .col-img {
       position: relative;
-      aspect-ratio: 4 / 4.6;
+      aspect-ratio: 4 / 3.2;
       overflow: hidden;
       background: #231c19;
     }
@@ -598,92 +714,106 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.45s ease;
+      object-position: center top;
+      transition: transform 0.55s ease;
     }
-    .col-card:hover .col-img img { transform: scale(1.05); }
-    .col-badge {
+    .col-card:hover .col-img img { transform: scale(1.04); }
+    .col-index {
       position: absolute;
       top: 14px;
       left: 14px;
-      background: var(--claret);
-      color: var(--white);
-      font-size: 11px;
-      font-weight: 700;
+      background: rgba(24, 21, 19, 0.88);
+      color: #F5F1EA;
+      font-size: 10.5px;
+      font-weight: 600;
       padding: 5px 11px;
-      border-radius: 99px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
     .col-body {
-      padding: 22px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
     .col-body h3 {
       font-family: var(--serif);
-      font-size: 24px;
-      margin-bottom: 8px;
+      font-size: 25px;
+      font-weight: 600;
+      margin-bottom: 10px;
       color: var(--ink);
+      line-height: 1.2;
     }
     .col-body p {
       font-size: 14px;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       flex: 1;
+      line-height: 1.65;
     }
     .col-foot {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      font-size: 13px;
-      font-weight: 700;
+      padding-top: 16px;
+      border-top: 1px solid var(--linen);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--claret);
     }
+    .col-foot span {
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 12.5px;
+    }
 
-    /* Gallery Section */
-    .gallery-sec { background: var(--sand); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    /* Portfolio / Real Installations Section */
+    .gallery-sec {
+      background: var(--linen);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
     .filter-bar {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 32px;
+      gap: 8px;
+      margin-bottom: 36px;
     }
     .filter-btn {
       background: var(--white);
       border: 1px solid var(--line);
-      padding: 9px 18px;
-      border-radius: 99px;
-      font-size: 13.5px;
+      padding: 10px 18px;
+      font-size: 12px;
       font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--muted);
       cursor: pointer;
       transition: all 0.2s;
     }
     .filter-btn.active, .filter-btn:hover {
-      background: var(--claret);
+      background: var(--ink);
       color: var(--white);
-      border-color: var(--claret);
+      border-color: var(--ink);
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 24px;
     }
     .gal-card {
       background: var(--white);
-      border-radius: 18px;
-      overflow: hidden;
       border: 1px solid var(--line);
-      box-shadow: 0 8px 22px rgba(30,25,22,0.05);
       display: flex;
       flex-direction: column;
     }
     .gal-media {
       position: relative;
-      aspect-ratio: 9 / 13;
+      aspect-ratio: 4 / 4.6;
       overflow: hidden;
       background: #1b1513;
     }
@@ -691,297 +821,357 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
     }
     .gal-loc {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(24, 17, 15, 0.78);
-      color: var(--gold-light);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 99px;
+      bottom: 0;
+      left: 0;
+      background: rgba(24, 21, 19, 0.86);
+      color: #EFECE6;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 12px;
     }
     .gal-info {
-      padding: 16px 18px;
+      padding: 18px 20px;
     }
     .gal-info h3 {
-      font-size: 15.5px;
-      font-weight: 700;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
       margin-bottom: 6px;
       color: var(--ink);
+      line-height: 1.25;
     }
     .gal-info p {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    /* Calculator */
+    /* Technical Calculator Section */
     .calc-section {
-      background: linear-gradient(135deg, #241316 0%, #3E1019 55%, #231619 100%);
-      color: #FAF5EC;
+      background: var(--ink);
+      color: #F2ECE1;
+      border-bottom: 1px solid var(--line-dark);
     }
     .calc-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 44px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
       align-items: center;
     }
-    .calc-info .eyebrow {
-      background: rgba(230, 201, 143, 0.15);
-      color: var(--gold-light);
-      border-color: rgba(230, 201, 143, 0.35);
-    }
+    .calc-info .kicker { color: var(--bronze-light); }
     .calc-info h2 {
       font-family: var(--serif);
-      font-size: clamp(30px, 3.6vw, 44px);
-      margin-bottom: 14px;
+      font-size: clamp(30px, 3.5vw, 44px);
+      font-weight: 600;
+      margin-bottom: 16px;
       color: var(--white);
+      line-height: 1.15;
     }
     .calc-info p {
-      color: rgba(250, 245, 236, 0.82);
-      margin-bottom: 24px;
-      font-size: 15.5px;
+      color: #C6BDB1;
+      margin-bottom: 28px;
+      font-size: 15px;
+      line-height: 1.7;
     }
-    .calc-badges {
+    .calc-specs {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      border-top: 1px solid var(--line-dark);
     }
-    .c-badge {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(230,201,143,0.22);
-      padding: 13px 16px;
-      border-radius: 14px;
+    .spec-row {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-dark);
     }
-    .c-badge strong {
+    .spec-idx {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--bronze-light);
+      padding-top: 3px;
+    }
+    .spec-row strong {
       display: block;
-      color: var(--gold-light);
+      color: var(--white);
       font-size: 14.5px;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
-    .c-badge span {
+    .spec-row span {
       font-size: 13px;
-      color: rgba(250,245,236,0.78);
+      color: #B4AA9E;
     }
     .calc-card {
-      background: var(--white);
+      background: var(--alabaster);
       color: var(--ink);
-      padding: 32px;
-      border-radius: 24px;
-      box-shadow: 0 24px 54px rgba(0,0,0,0.3);
+      padding: 36px;
+      border: 1px solid var(--bronze);
+    }
+    .calc-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--bronze);
     }
     .calc-card h3 {
       font-family: var(--serif);
       font-size: 28px;
-      margin-bottom: 18px;
-      color: var(--claret);
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--ink);
     }
-    .form-row { margin-bottom: 14px; }
+    .form-row { margin-bottom: 16px; }
     .form-row label {
       display: block;
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--ink);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+      color: var(--charcoal);
     }
     .form-row select, .form-row input {
       width: 100%;
       padding: 12px 14px;
-      border: 1.5px solid var(--line);
-      border-radius: 12px;
-      font-size: 14.5px;
+      border: 1px solid #C8BEB0;
+      border-radius: 2px;
+      font-size: 14px;
       font-family: var(--sans);
-      background: var(--ivory);
+      background: var(--white);
+      color: var(--ink);
     }
     .form-two {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
     }
     .calc-result {
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #F8F3EA;
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--linen);
       border: 1px solid var(--line);
     }
     .res-top {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      padding-bottom: 12px;
+      gap: 14px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--line);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .res-label {
       display: block;
-      font-size: 11.5px;
+      font-size: 10.5px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.1em;
       color: var(--muted);
+      margin-bottom: 4px;
     }
     .res-val {
-      font-size: 18px;
+      font-family: var(--serif);
+      font-size: 22px;
       color: var(--claret);
-      font-weight: 800;
+      font-weight: 700;
     }
     .res-sub {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--ink);
+      font-weight: 600;
     }
     .res-disclaimer {
       font-size: 12.5px;
       color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .btn-wa-full {
-      width: 100%;
-      background: var(--wa);
-      color: var(--white);
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 700;
+      margin-bottom: 14px;
     }
 
-    /* Reviews & Store Location */
+    /* Client Testimonials & Showroom Strip */
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
     }
     .rev-card {
       background: var(--white);
       border: 1px solid var(--line);
-      padding: 24px;
-      border-radius: 18px;
-    }
-    .rev-stars { color: #E59819; font-size: 16px; margin-bottom: 10px; }
-    .rev-card p { font-size: 14.5px; color: var(--ink); margin-bottom: 14px; font-style: italic; }
-    .rev-meta { font-size: 13px; color: var(--muted); font-weight: 600; }
-
-    /* Regional Links Pill Cloud */
-    .region-pills {
+      padding: 28px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 24px;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .region-pill {
+    .rev-quote {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .rev-meta {
+      padding-top: 14px;
+      border-top: 1px solid var(--linen);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Regional Service Directory */
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .region-card {
       background: var(--white);
       border: 1px solid var(--line);
-      padding: 11px 20px;
-      border-radius: 99px;
-      font-size: 14px;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
       font-weight: 600;
-      transition: all 0.2s;
+      color: var(--ink);
     }
-    .region-pill:hover {
+    .region-card:hover {
       border-color: var(--claret);
       color: var(--claret);
-      transform: translateY(-2px);
+    }
+    .region-card span {
+      font-size: 11px;
+      color: var(--bronze);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
-    /* Article / Detail Page Content */
+    /* Inner Pages & Editorial Prose */
     .page-hero {
-      padding: 48px 0;
-      background: linear-gradient(180deg, #F5EFE4 0%, #FAF7F2 100%);
+      padding: 52px 0;
+      background: var(--linen);
       border-bottom: 1px solid var(--line);
     }
     .breadcrumb {
-      font-size: 13px;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .breadcrumb a { color: var(--claret); font-weight: 600; }
     .prose {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 36px;
+      padding: 42px;
     }
     .prose h2 {
       font-family: var(--serif);
       font-size: 30px;
-      color: var(--claret);
-      margin: 24px 0 12px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 28px 0 12px;
+      line-height: 1.2;
     }
     .prose h2:first-child { margin-top: 0; }
     .prose h3 {
       font-family: var(--serif);
       font-size: 23px;
-      margin: 20px 0 10px;
+      font-weight: 600;
+      margin: 22px 0 10px;
+      color: var(--claret);
     }
-    .prose p { margin-bottom: 14px; color: var(--ink); }
-    .prose ul, .prose ol { margin: 0 0 18px 22px; }
-    .prose li { margin-bottom: 8px; }
+    .prose p { margin-bottom: 16px; color: var(--charcoal); line-height: 1.75; }
+    .prose ul, .prose ol { margin: 0 0 20px 22px; }
+    .prose li { margin-bottom: 9px; color: var(--charcoal); }
 
-    /* Footer */
+    /* Corporate Footer */
     .site-footer {
-      background: #1B1314;
-      color: #E9E0D4;
-      padding: 64px 0 32px;
-      border-top: 3px solid var(--gold);
+      background: var(--ink);
+      color: #D8D0C5;
+      padding: 72px 0 36px;
+      border-top: 2px solid var(--bronze);
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
-      gap: 36px;
-      margin-bottom: 44px;
+      grid-template-columns: 1.35fr 1fr 1fr 1.15fr;
+      gap: 40px;
+      margin-bottom: 52px;
     }
     .footer-col h4 {
-      font-family: var(--serif);
-      font-size: 22px;
-      color: var(--gold-light);
-      margin-bottom: 16px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bronze-light);
+      margin-bottom: 20px;
     }
     .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 9px; font-size: 14px; color: rgba(233,224,212,0.8); }
-    .footer-col a:hover { color: var(--gold-light); }
+    .footer-col li {
+      margin-bottom: 10px;
+      font-size: 13.5px;
+      color: #B8AFA3;
+      line-height: 1.55;
+    }
+    .footer-col a:hover { color: var(--white); }
     .footer-bottom {
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 26px;
+      border-top: 1px solid var(--line-dark);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      font-size: 13px;
-      color: rgba(233,224,212,0.65);
+      font-size: 12px;
+      color: #8C8277;
+      letter-spacing: 0.03em;
     }
 
-    /* Sticky Mobile Call/WhatsApp Bar */
+    /* Discreet Corporate Contact Bar */
     .floating-bar {
       position: fixed;
-      bottom: 16px;
-      right: 16px;
+      bottom: 20px;
+      right: 20px;
       z-index: 999;
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
     .float-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 13px 20px;
-      border-radius: 99px;
-      font-weight: 700;
-      font-size: 14px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+      padding: 12px 18px;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1024px) {
       .hero-grid, .calc-grid, .footer-grid { grid-template-columns: 1fr; }
+      .ledger-grid { grid-template-columns: 1fr 1fr; }
+      .ledger-cell { border-bottom: 1px solid var(--line); }
       .main-nav { display: none; }
-      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .mobile-toggle { display: inline-flex; }
     }
-    @media (max-width: 600px) {
-      .hero-Showcase { grid-template-columns: 1fr; }
-      .form-two, .res-top { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .hero-showcase, .ledger-grid, .form-two, .res-top, .collections-grid { grid-template-columns: 1fr; }
       .header-cta .btn-outline { display: none; }
+      .prose { padding: 24px; }
     }
   </style>
 </head>
@@ -989,14 +1179,20 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-left">
-        <span>📍 ${escapeHtml(SITE.address.full)}</span>
-        <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener">🗺️ Google Haritalar Yol Tarifi</a>
+        <span class="topbar-item">${ICONS.pin} <span>${escapeHtml(SITE.address.full)}</span></span>
+        <span class="topbar-sep">|</span>
+        <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener">Harita &amp; Yol Tarifi</a>
       </div>
       <div class="topbar-right">
-        <a href="${SITE.instagramUrl}" target="_blank" rel="noopener" class="ig-pill">
-          📸 Instagram ${escapeHtml(SITE.instagramHandle)} (${escapeHtml(SITE.instagramFollowers)} Takipçi • ${escapeHtml(SITE.instagramPosts)} Uygulama)
+        <a href="${SITE.instagramUrl}" target="_blank" rel="noopener" class="topbar-item">
+          ${ICONS.instagram}
+          <span>${escapeHtml(SITE.instagramHandle)}</span>
         </a>
-        <a href="tel:${SITE.phoneRaw}"><strong>☎️ Sipariş &amp; Ölçü (Dilek Hanım): ${escapeHtml(SITE.phoneDisplay)}</strong></a>
+        <span class="topbar-sep">|</span>
+        <a href="tel:${SITE.phoneRaw}" class="topbar-item">
+          ${ICONS.phone}
+          <strong>Danışma &amp; Ölçü Hattı: ${escapeHtml(SITE.phoneDisplay)}</strong>
+        </a>
       </div>
     </div>
   </div>
@@ -1004,21 +1200,32 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand-logo" aria-label="${escapeHtml(SITE.name)} Ana Sayfa">
-        <img src="/images/logo.svg" alt="${escapeHtml(SITE.name)} Logo" width="275" height="62" />
+        <img src="/images/logo.svg" alt="${escapeHtml(SITE.name)} Logo" width="270" height="54" />
       </a>
       <nav class="main-nav" aria-label="Ana Menü">
         <a href="/">Ana Sayfa</a>
-        <a href="/#koleksiyonlar">Perde Modelleri</a>
-        <a href="/uygulamalarimiz">Gerçek Uygulamalarımız</a>
-        <a href="/perde-olcu-ve-fiyat-hesaplama">Ölçü &amp; Metraj Hesapla</a>
-        <a href="/rehber">Perde Blog &amp; Rehber</a>
-        <a href="/bolge/kahramankazan-perdeci">Hizmet Bölgeleri</a>
+        <a href="/#koleksiyonlar">Koleksiyonlar</a>
+        <a href="/uygulamalarimiz">Referans Projeler</a>
+        <a href="/perde-olcu-ve-fiyat-hesaplama">Metraj Hesaplama</a>
+        <a href="/rehber">Atölye Notları</a>
+        <a href="/hakkimizda">Kurumsal</a>
         <a href="/iletisim">İletişim</a>
       </nav>
       <div class="header-cta">
-        <a href="tel:${SITE.phoneRaw}" class="btn btn-outline">☎️ ${escapeHtml(SITE.phoneDisplay)}</a>
-        <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa">💬 WhatsApp Ölçü &amp; Fiyat</a>
+        <a href="tel:${SITE.phoneRaw}" class="btn btn-outline">${ICONS.phone} <span>${escapeHtml(SITE.phoneDisplay)}</span></a>
+        <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary">${ICONS.whatsapp} <span>Ücretsiz Keşif</span></a>
+        <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Menüyü Aç">Menü</button>
       </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/">Ana Sayfa</a>
+      <a href="/#koleksiyonlar">Koleksiyonlar</a>
+      <a href="/uygulamalarimiz">Referans Projeler</a>
+      <a href="/perde-olcu-ve-fiyat-hesaplama">Teknik Metraj Hesaplama</a>
+      <a href="/rehber">Atölye Notları &amp; Rehber</a>
+      <a href="/bolge/kahramankazan-perdeci">Hizmet Bölgeleri</a>
+      <a href="/hakkimizda">Kurumsal</a>
+      <a href="/iletisim">İletişim &amp; Mağaza Konumu</a>
     </div>
   </header>
 
@@ -1030,50 +1237,62 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="/images/logo-light.svg" alt="${escapeHtml(SITE.name)}" width="250" height="56" style="margin-bottom:14px" />
-          <p style="font-size:14px;color:rgba(233,224,212,0.82);margin-bottom:14px">
-            Kahramankazan'daki mağazamız ve özel dikim atölyemizle; salon, mutfak, yatak odası, cam balkon ve villa projeleriniz için tül, fon, Plisell plise, ahşap jaluzi ve stor perde tasarımları üretiyoruz.
+          <img src="/images/logo-light.svg" alt="${escapeHtml(SITE.name)}" width="250" height="50" style="margin-bottom:18px" />
+          <p style="font-size:13.5px;color:#B8AFA3;margin-bottom:16px;line-height:1.7">
+            Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi'ndeki showroomumuz ve özel dikim atölyemizle; konut, villa ve kurumsal projeler için tül, fon, Plisell plise, masif ahşap jaluzi ve mekanizmalı perde sistemleri üretiyoruz.
           </p>
-          <p style="font-size:13px;color:var(--gold-light)">
-            Rideau textile de maison • Vorhang und Heimtext • Curtain &amp; Home Textile
+          <p style="font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bronze-light)">
+            Rideau Textile de Maison • Vorhang und Heimtext
           </p>
         </div>
         <div class="footer-col">
-          <h4>Koleksiyonlarımız</h4>
+          <h4>Ürün Koleksiyonları</h4>
           <ul>
             ${COLLECTIONS.map((c) => `<li><a href="/koleksiyon/${c.slug}">${escapeHtml(c.shortTitle)}</a></li>`).join("")}
-            <li><a href="/perde-olcu-ve-fiyat-hesaplama">Perde Ölçü &amp; Fiyat Hesaplama</a></li>
+            <li><a href="/perde-olcu-ve-fiyat-hesaplama">Teknik Metraj &amp; Pile Hesaplama</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Hizmet Bölgelerimiz</h4>
+          <h4>Hizmet Bölgeleri</h4>
           <ul>
-            ${REGIONS.map((r) => `<li><a href="/bolge/${r.slug}">${escapeHtml(r.name)} Perde Tasarım</a></li>`).join("")}
-            ${GUIDES.map((g) => `<li><a href="/rehber/${g.slug}">${escapeHtml(g.title.split("?")[0])}</a></li>`).join("")}
+            ${REGIONS.map((r) => `<li><a href="/bolge/${r.slug}">${escapeHtml(r.name)}</a></li>`).join("")}
+            <li><a href="/rehber">Atölye &amp; Dekorasyon Rehberi</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Mağaza &amp; İletişim</h4>
+          <h4>Showroom &amp; Atölye</h4>
           <ul>
-            <li>📍 <strong>Adres:</strong> ${escapeHtml(SITE.address.full)}</li>
-            <li>☎️ <strong>Dilek Hanım:</strong> <a href="tel:${SITE.phoneRaw}">${escapeHtml(SITE.phoneDisplay)}</a></li>
-            <li>📸 <strong>Instagram:</strong> <a href="${SITE.instagramUrl}" target="_blank" rel="noopener">${escapeHtml(SITE.instagramHandle)}</a></li>
-            <li>🗺️ <strong>Konum:</strong> <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener">Google İşletme &amp; Harita Kaydımız</a></li>
-            <li>🕒 <strong>Çalışma Saatleri:</strong> ${escapeHtml(SITE.hours)}</li>
+            <li><strong style="color:#F5F1EA">Adres:</strong> ${escapeHtml(SITE.address.full)}</li>
+            <li><strong style="color:#F5F1EA">Telefon:</strong> <a href="tel:${SITE.phoneRaw}">${escapeHtml(SITE.phoneDisplay)}</a> (${escapeHtml(SITE.owner)})</li>
+            <li><strong style="color:#F5F1EA">Instagram:</strong> <a href="${SITE.instagramUrl}" target="_blank" rel="noopener">${escapeHtml(SITE.instagramHandle)}</a></li>
+            <li><strong style="color:#F5F1EA">Harita:</strong> <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener">Google Haritalar Konumu</a></li>
+            <li><strong style="color:#F5F1EA">Çalışma Saatleri:</strong> ${escapeHtml(SITE.hours)}</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© ${new Date().getFullYear()} ${escapeHtml(SITE.name)} (${escapeHtml(SITE.legalName)}). Tüm hakları saklıdır.</span>
-        <span>Kahramankazan / Ankara • Türkiye &amp; Avrupa Özel Dikim Gönderim</span>
+        <span>© ${new Date().getFullYear()} ${escapeHtml(SITE.name)} — ${escapeHtml(SITE.legalName)}. Tüm hakları saklıdır.</span>
+        <span>Kahramankazan / Ankara • Türkiye &amp; Avrupa Özel Dikim Sevk</span>
       </div>
     </div>
   </footer>
 
   <div class="floating-bar">
-    <a href="tel:${SITE.phoneRaw}" class="float-btn btn-claret">☎️ Hemen Ara</a>
-    <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="float-btn btn-wa">💬 WhatsApp Sipariş</a>
+    <a href="tel:${SITE.phoneRaw}" class="float-btn btn-dark">${ICONS.phone} <span>${escapeHtml(SITE.phoneDisplay)}</span></a>
+    <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="float-btn btn-primary">${ICONS.whatsapp} <span>WhatsApp</span></a>
   </div>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      if(btn && menu){
+        btn.addEventListener('click', function(){
+          menu.classList.toggle('open');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>`;
 }
@@ -1114,57 +1333,86 @@ function renderHomePage() {
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">✦ KAHRAMANKAZAN &amp; ANKARA ÖZEL DİKİM PERDE ATÖLYESİ</span>
-          <h1>Evinizin Işığını ve Ruhunu Değiştiren <em>Usta İşi Perdeler</em></h1>
+          <div class="kicker">KAHRAMANKAZAN &amp; ANKARA • ÖZEL DİKİM PERDE ATÖLYESİ</div>
+          <h1>Mekânın Işığını ve Mimarisini Tamamlayan <em>Özel Dikim Perdeler</em></h1>
           <p class="hero-lead">
-            Kahramankazan Kazım Karabekir Caddesi'ndeki showroomumuzda <strong>Dilek Hanım</strong>'ın birebir tasarım danışmanlığıyla; ütü istemeyen keten tüller, İtalyan kadife fonlar, <strong>Plisell cam balkon perdeleri</strong>, <strong>50mm doğal ahşap jaluzi</strong> ve <strong>3 boyutlu dikey tül</strong> koleksiyonlarını evinizin ölçüsüne özel dikiyor ve monte ediyoruz.
+            Kahramankazan Kazım Karabekir Caddesi'ndeki mağazamız ve dikim atölyemizde; yüksek gramajlı keten ve grek tülleri, İtalyan kadife fonları, <strong>Plisell cam balkon sistemlerini</strong> ve <strong>50mm masif ahşap jaluzileri</strong> pencerelerinizin ölçüsüne özel hazırlıyor, kendi montaj ekibimizle teslim ediyoruz.
           </p>
           <div class="hero-actions">
-            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa">💬 WhatsApp'tan Ücretsiz Ölçü &amp; Fiyat Al</a>
-            <a href="tel:${SITE.phoneRaw}" class="btn btn-claret">☎️ Dilek Hanım: ${escapeHtml(SITE.phoneDisplay)}</a>
-            <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener" class="btn btn-outline">📍 Mağaza Yol Tarifi</a>
+            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary">
+              ${ICONS.whatsapp}
+              <span>Ücretsiz Keşif &amp; Ölçü Randevusu</span>
+            </a>
+            <a href="tel:${SITE.phoneRaw}" class="btn btn-dark">
+              ${ICONS.phone}
+              <span>${escapeHtml(SITE.phoneDisplay)}</span>
+            </a>
+            <a href="/uygulamalarimiz" class="btn btn-outline">
+              <span>Referans Uygulamalar</span>
+              ${ICONS.arrowRight}
+            </a>
           </div>
-          <div class="trust-strip">
-            <div class="trust-item">
-              <strong>704+</strong>
-              <span>Instagram'da Paylaşılan Gerçek Ev &amp; Villa Teslimatı</span>
-            </div>
-            <div class="trust-item">
-              <strong>7.580+</strong>
-              <span>@dilek_perde_home Mutlu Takipçi &amp; Müşteri Ailesi</span>
-            </div>
-            <div class="trust-item">
-              <strong>%100</strong>
-              <span>Ücretsiz Yerinde Keşif, Lazer Ölçü &amp; Garantili Montaj</span>
-            </div>
+          <div class="hero-meta-note">
+            <span><strong>Showroom:</strong> Atatürk Mah. Kazım Karabekir Cad. No: 12/A–B, Kahramankazan</span>
+            <span>•</span>
+            <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener" style="color:var(--claret);font-weight:600">Yol Tarifi Al →</a>
           </div>
         </div>
 
-        <div class="hero-Showcase">
-          <div class="hero-main-card">
-            <video autoplay loop muted playsinline poster="/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg">
-              <source src="/images/gallery/showroom-vitrin-tur.mp4" type="video/mp4" />
-            </video>
-            <div class="img-tag">
-              <small>CANLI MAĞAZA VİTRİNİ • KAHRAMANKAZAN</small>
-              Atatürk Mah. Kazım Karabekir Cad. No:12/A-B Showroomumuz
+        <div class="hero-showcase">
+          <div class="showcase-primary">
+            <div class="showcase-primary-img">
+              <img src="/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg" alt="Modern Salon Vizon Fon ve 1x3 Sık Pile Keten Tül Uygulaması" />
+            </div>
+            <div class="showcase-caption">
+              <strong>Vizon Fon &amp; 1x3 Kanun Pile Keten Tül</strong>
+              <span>SALON PROJESİ</span>
             </div>
           </div>
-          <div class="hero-side-stack">
-            <div class="hero-sub-card">
-              <img src="/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg" alt="Kahramankazan Salon Vizon Fon ve Keten Tül Perde Uygulaması" />
-              <div class="img-tag">
-                <small>SALON UYGULAMASI</small>
-                Vizon Fon &amp; 1x3 Sık Pile Keten Tül
+          <div class="showcase-secondary-col">
+            <div class="showcase-secondary">
+              <div class="showcase-secondary-img">
+                <img src="/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg" alt="Kahramankazan Villa Panoramik İtalyan Kruvaze Tül Uygulaması" />
+              </div>
+              <div class="showcase-caption">
+                <strong>Panoramik İtalyan Kruvaze Tül</strong>
+                <span>VİLLA UYGULAMASI</span>
               </div>
             </div>
-            <div class="hero-sub-card">
-              <img src="/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg" alt="Kahramankazan Villa İtalyan Kruvaze Tül Perde Çalışması" />
-              <div class="img-tag">
-                <small>VİLLA PROJESİ</small>
-                İtalyan Kruvaze Tül &amp; Özel Braçol
+            <div class="showcase-secondary">
+              <div class="showcase-secondary-img">
+                <img src="/images/gallery/klasik-salon-antrasit-fon-ve-pileli-tul-perde.jpg" alt="Antrasit Fon ve Etek Kurşunlu Salon Tülü" />
+              </div>
+              <div class="showcase-caption">
+                <strong>Antrasit Kanat Fon &amp; Dikey Dokulu Tül</strong>
+                <span>KONUT PROJESİ</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ledger-bar">
+        <div class="container ledger-grid">
+          <div class="ledger-cell">
+            <span class="ledger-num">STANDART 01</span>
+            <strong>Yerinde Kartela &amp; Işık Analizi</strong>
+            <p>Kumaş dokularını mağaza spotu altında değil, kendi salonunuzun doğal gün ışığında ve mobilyalarınızın yanında seçiyoruz.</p>
+          </div>
+          <div class="ledger-cell">
+            <span class="ledger-num">STANDART 02</span>
+            <strong>Tam Metraj &amp; Etek Kurşunlu Dikim</strong>
+            <p>1x3 sık kanun pile ve boru pile dikimlerde metrajdan ödün vermiyor, etek kurşunuyla ütüsüz formunu koruyan tüller üretiyoruz.</p>
+          </div>
+          <div class="ledger-cell">
+            <span class="ledger-num">STANDART 03</span>
+            <strong>700+ Gerçek Konut &amp; Villa Teslimatı</strong>
+            <p>Kahramankazan, Ars Evleri, Eryaman, İncek ve Çayyolu'nda yüzlerce ailenin tüm daire perde tasarımını tamamladık.</p>
+          </div>
+          <div class="ledger-cell">
+            <span class="ledger-num">STANDART 04</span>
+            <strong>Türkiye &amp; Avrupa Özel Gönderim</strong>
+            <p>Görüntülü kumaş seçimiyle Türkiye'nin 81 iline ve Almanya, Fransa, Hollanda'daki evlerin ray sistemine uyumlu dikim yapıyoruz.</p>
           </div>
         </div>
       </div>
@@ -1172,24 +1420,27 @@ function renderHomePage() {
 
     <section id="koleksiyonlar">
       <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">ÖZEL DİKİM KOLEKSİYONLARIMIZ</span>
-          <h2>Her Odaya, Her Pencereye Özel Perde Çözümleri</h2>
-          <p>Brillant yetkili koleksiyonları ve özenle seçilmiş keten, kadife, bambu ve Plisell mekanizmalı sistemlerimizle tanışın.</p>
+        <div class="sec-header">
+          <div class="sec-header-left">
+            <div class="kicker">ÜRÜN GRUPLARI &amp; KOLEKSİYONLAR</div>
+            <h2>Mekâna Özel Dikim ve Mekanizmalı Perde Sistemleri</h2>
+            <p>Brillant yetkili koleksiyonları ile seçkin keten, kadife, bambu, Plisell ve masif ıhlamur ağacı jaluzi serilerimiz.</p>
+          </div>
+          <a href="/perde-olcu-ve-fiyat-hesaplama" class="btn btn-outline">Metraj &amp; Pile Hesapla ${ICONS.arrowRight}</a>
         </div>
         <div class="collections-grid">
-          ${COLLECTIONS.map((col) => `
+          ${COLLECTIONS.map((col, idx) => `
             <article class="col-card">
               <a href="/koleksiyon/${col.slug}" class="col-img">
                 <img src="${col.heroImage}" alt="${escapeHtml(col.title)}" loading="lazy" />
-                <span class="col-badge">${escapeHtml(col.badge)}</span>
+                <span class="col-index">0${idx + 1} / ${escapeHtml(col.badge)}</span>
               </a>
               <div class="col-body">
                 <h3><a href="/koleksiyon/${col.slug}">${escapeHtml(col.shortTitle)}</a></h3>
                 <p>${escapeHtml(col.summary)}</p>
                 <div class="col-foot">
-                  <span>${escapeHtml(col.priceHint.slice(0, 38))}...</span>
-                  <a href="/koleksiyon/${col.slug}">Detaylı İncele →</a>
+                  <span>${escapeHtml(col.priceHint.slice(0, 42))}</span>
+                  <a href="/koleksiyon/${col.slug}">İncele →</a>
                 </div>
               </div>
             </article>
@@ -1200,19 +1451,22 @@ function renderHomePage() {
 
     <section class="gallery-sec" id="uygulamalar">
       <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">📸 @dilek_perde_home GERÇEK TESLİMATLARIMIZ</span>
-          <h2>Kahramankazan ve Ankara'da Teslim Ettiğimiz Evlerden Kareler</h2>
-          <p>Sitemizdeki tüm fotoğraflar stok görsel değil; bizzat kendi atölyemizde dikip müşterilerimizin evlerine monte ettiğimiz gerçek işlerimizdir.</p>
+        <div class="sec-header">
+          <div class="sec-header-left">
+            <div class="kicker">PORTFOLYO &amp; GERÇEK TESLİMATLAR</div>
+            <h2>Atölyemizden Çıkan Konut ve Villa Uygulamaları</h2>
+            <p>Sitemizde yer alan tüm görseller stok fotoğraf değil; Kahramankazan ve Ankara genelinde bizzat dikimini ve montajını gerçekleştirdiğimiz projelerdir.</p>
+          </div>
+          <a href="/uygulamalarimiz" class="btn btn-dark">Tüm Portfolyoyu Gör ${ICONS.arrowRight}</a>
         </div>
 
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">Tümü (16 Gerçek Uygulama)</button>
+          <button class="filter-btn active" data-filter="all">Tümü (${GALLERY_ITEMS.length} Proje)</button>
           <button class="filter-btn" data-filter="Salon Perdeleri">Salon &amp; Kruvaze</button>
           <button class="filter-btn" data-filter="Fon Perdeler">Kadife &amp; Keten Fon</button>
           <button class="filter-btn" data-filter="Mutfak & Balkon">Mutfak &amp; 3 Boyutlu Tül</button>
           <button class="filter-btn" data-filter="Stor & Cam Balkon">Stor &amp; Cam Balkon</button>
-          <button class="filter-btn" data-filter="Mağaza Showroom">Mağaza &amp; Showroom</button>
+          <button class="filter-btn" data-filter="Mağaza Showroom">Showroom &amp; Kartela</button>
         </div>
 
         <div class="gallery-grid" id="gal-grid">
@@ -1220,7 +1474,7 @@ function renderHomePage() {
             <article class="gal-card" data-cat="${escapeHtml(item.category)}">
               <div class="gal-media">
                 <img src="${item.image}" alt="${escapeHtml(item.title)} - ${escapeHtml(item.location)}" loading="lazy" />
-                <span class="gal-loc">📍 ${escapeHtml(item.location)}</span>
+                <span class="gal-loc">${escapeHtml(item.location)}</span>
               </div>
               <div class="gal-info">
                 <h3>${escapeHtml(item.title)}</h3>
@@ -1228,11 +1482,6 @@ function renderHomePage() {
               </div>
             </article>
           `).join("")}
-        </div>
-
-        <div style="text-align:center;margin-top:36px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="${SITE.instagramUrl}" target="_blank" rel="noopener" class="btn btn-claret">📸 Instagram'da 704+ Paylaşımımızın Tamamını Gör (@dilek_perde_home)</a>
-          <a href="/uygulamalarimiz" class="btn btn-outline">Tüm Uygulama Galerisini Aç →</a>
         </div>
       </div>
       <script>
@@ -1262,78 +1511,84 @@ function renderHomePage() {
 
     <section>
       <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">MÜŞTERİ DENEYİMLERİ &amp; GOOGLE İŞLETME KAYDI</span>
-          <h2>Evini Dilek Perde'ye Emanet Eden Komşularımız Ne Diyor?</h2>
-          <p>Kahramankazan, Ars Evleri, Yeşilova, Eryaman ve İncek'te perde dikimi ve montajı yaptığımız ailelerimizin yorumları.</p>
+        <div class="sec-header">
+          <div class="sec-header-left">
+            <div class="kicker">MÜŞTERİ REFERANSLARI</div>
+            <h2>Teslim Ettiğimiz Projelerden Geri Bildirimler</h2>
+            <p>Kahramankazan, Ars Evleri, Yeşilova, Eryaman ve İncek'te perde tasarım ve montaj hizmeti sunduğumuz müşterilerimizin değerlendirmeleri.</p>
+          </div>
+          <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener" class="btn btn-outline">Google İşletme Kaydımız ${ICONS.arrowRight}</a>
         </div>
         <div class="reviews-grid">
           ${REVIEWS.map((r) => `
             <div class="rev-card">
-              <div class="rev-stars">★★★★★</div>
-              <p>"${escapeHtml(r.text)}"</p>
-              <div class="rev-meta">${escapeHtml(r.author)} — 📍 ${escapeHtml(r.location)} (${escapeHtml(r.date)})</div>
+              <p class="rev-quote">"${escapeHtml(r.text)}"</p>
+              <div class="rev-meta">
+                <span>${escapeHtml(r.author)}</span>
+                <span>${escapeHtml(r.location)} • ${escapeHtml(r.date)}</span>
+              </div>
             </div>
           `).join("")}
-        </div>
-        <div style="text-align:center;margin-top:32px">
-          <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener" class="btn btn-outline">⭐ Google İşletme Profilimizi &amp; Harita Kaydımızı İnceleyin</a>
         </div>
       </div>
     </section>
 
-    <section id="rehberler" style="background:var(--white);border-top:1px solid var(--line)">
+    <section id="rehberler" style="background:var(--linen);border-top:1px solid var(--line)">
       <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">📖 GÜNLÜK PERDE BLOGU &amp; DEKORASYON REHBERİ</span>
-          <h2>Perde Seçimi, Ölçü Alma, Yıkama ve 2026 Modelleri Rehberi</h2>
-          <p>Usta terzilerimiz ve Dilek Hanım'ın tecrübesiyle hazırlanan; tül, fon, plise cam balkon, ahşap jaluzi ve zebra perde rehberlerimiz.</p>
+        <div class="sec-header">
+          <div class="sec-header-left">
+            <div class="kicker">ATÖLYE NOTLARI &amp; TEKNİK REHBER</div>
+            <h2>Doğru Kumaş Seçimi, Ölçü Alma ve Bakım Kılavuzu</h2>
+            <p>Perde metrajı hesaplama, pile oranları, kumaş dokuları ve yıkama standartları üzerine uzman incelemelerimiz.</p>
+          </div>
+          <a href="/rehber" class="btn btn-outline">Tüm Makaleler (${GUIDES.length}) ${ICONS.arrowRight}</a>
         </div>
         <div class="collections-grid">
-          ${GUIDES.slice(0, 6).map((g) => `
+          ${GUIDES.slice(0, 6).map((g, idx) => `
             <article class="col-card">
               <a href="/rehber/${g.slug}" class="col-img">
                 <img src="${g.heroImage}" alt="${escapeHtml(g.title)}" loading="lazy" />
-                <span class="col-badge">${escapeHtml(g.readTime)}</span>
+                <span class="col-index">REHBER 0${idx + 1} • ${escapeHtml(g.readTime)}</span>
               </a>
               <div class="col-body">
                 <h3><a href="/rehber/${g.slug}">${escapeHtml(g.title)}</a></h3>
                 <p>${escapeHtml(g.excerpt)}</p>
                 <div class="col-foot">
-                  <span>📅 ${escapeHtml(g.date)}</span>
-                  <a href="/rehber/${g.slug}">Rehberi Oku →</a>
+                  <span>${escapeHtml(g.date)}</span>
+                  <a href="/rehber/${g.slug}">Makaleyi Oku →</a>
                 </div>
               </div>
             </article>
           `).join("")}
         </div>
-        <div style="text-align:center;margin-top:28px">
-          <a href="/rehber" class="btn btn-claret">Tüm Perde Blog Yazılarını &amp; Rehberleri Gör (${GUIDES.length} Makale) →</a>
-        </div>
       </div>
     </section>
 
-    <section style="background:var(--sand);border-top:1px solid var(--line)">
+    <section style="background:var(--alabaster);border-top:1px solid var(--line)">
       <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">KAHRAMANKAZAN • ANKARA • TÜRKİYE &amp; AVRUPA</span>
-          <h2>Hizmet Bölgelerimiz ve Popüler Perde Aramaları</h2>
-          <p>Kahramankazan ve Ankara içi ücretsiz yerinde ölçü ve montaj; Türkiye'nin 81 ili ile Almanya ve Fransa'ya kornişe takmaya hazır özel dikim kargo gönderimi.</p>
+        <div class="sec-header">
+          <div class="sec-header-left">
+            <div class="kicker">HİZMET BÖLGELERİMİZ</div>
+            <h2>Yerinde Keşif, Ölçü ve Montaj Ağımız</h2>
+            <p>Kahramankazan ve Ankara genelinde kendi servis aracımızla yerinde kartela sunumu; Türkiye'nin 81 ili ve Avrupa'ya kornişe hazır özel dikim gönderim.</p>
+          </div>
+          <a href="/iletisim" class="btn btn-primary">Mağaza İletişim &amp; Konum</a>
         </div>
-        <div class="region-pills" style="margin-bottom:20px">
-          ${REGIONS.map((r) => `<a href="/bolge/${r.slug}" class="region-pill">📍 ${escapeHtml(r.name)} Perde Tasarım</a>`).join("")}
-          ${GUIDES.map((g) => `<a href="/rehber/${g.slug}" class="region-pill">📖 ${escapeHtml(g.title.split("?")[0].split(":")[0])}</a>`).join("")}
-        </div>
-        <div class="region-pills" style="opacity:0.85">
-          ${SEO_KEYWORDS.map((kw) => `<span class="region-pill" style="font-size:12px;padding:6px 12px">#${escapeHtml(kw)}</span>`).join("")}
+        <div class="region-grid">
+          ${REGIONS.map((r) => `
+            <a href="/bolge/${r.slug}" class="region-card">
+              <strong>${escapeHtml(r.name)}</strong>
+              <span>Keşif &amp; Montaj →</span>
+            </a>
+          `).join("")}
         </div>
       </div>
     </section>
   `;
 
   return renderLayout({
-    title: "Dilek Perde Home | Kahramankazan & Ankara Perde Modelleri, Özel Dikim Tül, Fon, Plise & Jaluzi",
-    description: "Kahramankazan (Kazan) ve Ankara'da 704+ gerçek ev referansıyla özel dikim tül perde, kadife/keten fon perde, Plisell cam balkon perdesi, 50mm ahşap jaluzi ve stor perde. Ücretsiz ölçü: 0551 402 27 07.",
+    title: "Dilek Perde Home | Kahramankazan & Ankara Özel Dikim Perde, Tül, Fon, Plise & Ahşap Jaluzi",
+    description: "Kahramankazan ve Ankara'da özel dikim tül perde, kadife/keten fon perde, Plisell cam balkon perdesi, 50mm masif ahşap jaluzi ve stor perde tasarım atölyesi. Ücretsiz keşif: 0551 402 27 07.",
     canonicalPath: "/",
     extraSchema: faqSchema,
     bodyContent
@@ -1363,41 +1618,42 @@ function renderCollectionPage(col) {
     <div class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="/">Ana Sayfa</a> / <a href="/#koleksiyonlar">Koleksiyonlar</a> / ${escapeHtml(col.shortTitle)}</div>
-        <span class="eyebrow">${escapeHtml(col.badge)}</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">${escapeHtml(col.title)}</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:760px">${escapeHtml(col.summary)}</p>
+        <div class="kicker">${escapeHtml(col.badge)}</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:14px">${escapeHtml(col.title)}</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:760px">${escapeHtml(col.summary)}</p>
       </div>
     </div>
 
     <section>
-      <div class="container" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:36px;align-items:start">
+      <div class="container" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:start">
         <div class="prose">
           ${col.bodyHtml}
-          <h3>Öne Çıkan Atölye ve Kumaş Özelliklerimiz</h3>
+          <h3>Atölye ve Kumaş Standartlarımız</h3>
           <ul>
             ${col.highlights.map((h) => `<li>${escapeHtml(h)}</li>`).join("")}
           </ul>
           ${col.faqs.length ? `
             <h2>Sıkça Sorulan Sorular</h2>
             ${col.faqs.map((f) => `
-              <div style="margin-bottom:16px;padding:16px;background:var(--ivory);border-radius:12px;border:1px solid var(--line)">
-                <strong style="display:block;color:var(--claret);margin-bottom:6px">${escapeHtml(f.q)}</strong>
-                <p style="margin:0;font-size:14.5px">${escapeHtml(f.a)}</p>
+              <div style="margin-bottom:16px;padding:20px;background:var(--alabaster);border:1px solid var(--line)">
+                <strong style="display:block;color:var(--ink);margin-bottom:6px;font-size:15.5px">${escapeHtml(f.q)}</strong>
+                <p style="margin:0;font-size:14.5px;color:var(--muted)">${escapeHtml(f.a)}</p>
               </div>
             `).join("")}
           ` : ""}
         </div>
 
-        <aside style="display:flex;flex-direction:column;gap:20px">
-          <div style="background:var(--white);padding:16px;border-radius:20px;border:1px solid var(--line)">
-            <img src="${col.heroImage}" alt="${escapeHtml(col.title)}" style="border-radius:14px;width:100%;aspect-ratio:4/4.8;object-fit:cover;margin-bottom:12px" />
-            <img src="${col.secondaryImage}" alt="${escapeHtml(col.shortTitle)} Uygulama Örneği" style="border-radius:14px;width:100%;aspect-ratio:4/3.5;object-fit:cover" />
+        <aside style="display:flex;flex-direction:column;gap:24px">
+          <div style="background:var(--white);padding:14px;border:1px solid var(--line)">
+            <img src="${col.heroImage}" alt="${escapeHtml(col.title)}" style="width:100%;aspect-ratio:4/4.5;object-fit:cover;object-position:center top;margin-bottom:14px" />
+            <img src="${col.secondaryImage}" alt="${escapeHtml(col.shortTitle)} Uygulama Örneği" style="width:100%;aspect-ratio:4/3.2;object-fit:cover;object-position:center top" />
           </div>
-          <div style="background:var(--claret);color:var(--white);padding:26px;border-radius:20px">
-            <h3 style="font-family:var(--serif);font-size:26px;margin-bottom:10px">Ücretsiz Ölçü &amp; Kartela Randevusu</h3>
-            <p style="font-size:14px;opacity:0.9;margin-bottom:18px">Kahramankazan ve Ankara genelinde kartela numunelerimizle evinize geliyor, koltuk ve halınıza en uygun modeli birlikte seçiyoruz.</p>
-            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;margin-bottom:10px">💬 WhatsApp'tan Fiyat Sor</a>
-            <a href="tel:${SITE.phoneRaw}" class="btn btn-outline" style="width:100%">☎️ ${escapeHtml(SITE.phoneDisplay)}</a>
+          <div style="background:var(--ink);color:var(--white);padding:32px;border:1px solid var(--bronze)">
+            <div class="kicker" style="color:var(--bronze-light)">ÜCRETSİZ KEŞİF &amp; KARTELA</div>
+            <h3 style="font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:12px">Evinizin Işığında Birlikte Seçelim</h3>
+            <p style="font-size:14px;color:#C6BDB1;margin-bottom:22px;line-height:1.65">Kahramankazan ve Ankara genelinde kartela numunelerimizle adresinize geliyor, mobilya ve duvar tonunuza en uygun dokuyu yerinde belirliyoruz.</p>
+            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-full" style="margin-bottom:10px">${ICONS.whatsapp} <span>WhatsApp'tan Fiyat Teklifi Al</span></a>
+            <a href="tel:${SITE.phoneRaw}" class="btn btn-outline btn-full" style="color:var(--white);border-color:#4A423C">${ICONS.phone} <span>${escapeHtml(SITE.phoneDisplay)}</span></a>
           </div>
         </aside>
       </div>
@@ -1420,43 +1676,44 @@ function renderRegionPage(reg) {
     <div class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Hizmet Bölgeleri / ${escapeHtml(reg.name)}</div>
-        <span class="eyebrow">📍 ${escapeHtml(reg.name.toUpperCase())} ÖZEL DİKİM PERDE &amp; MONTAJ</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">${escapeHtml(reg.title)}</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:780px">${escapeHtml(reg.intro)}</p>
+        <div class="kicker">${escapeHtml(reg.name.toUpperCase())} • YERİNDE KEŞİF &amp; MONTAJ</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:14px">${escapeHtml(reg.title)}</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:780px">${escapeHtml(reg.intro)}</p>
       </div>
     </div>
 
     <section>
-      <div class="container" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:36px;align-items:start">
+      <div class="container" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:start">
         <div class="prose">
           <h2>${escapeHtml(reg.name)} Bölgesinde Sunduğumuz Perde ve Ev Tekstili Hizmetleri</h2>
-          <p><strong>Dilek Perde Home</strong> olarak Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A-B adresindeki mağazamız ve kendi dikim atölyemizle, <strong>${escapeHtml(reg.name)}</strong> bölgesindeki daire, villa ve iş yerlerine aracısız atölye fiyatlarıyla hizmet veriyoruz.</p>
+          <p><strong>Dilek Perde Home</strong> olarak Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A–B adresindeki showroomumuz ve özel dikim atölyemizle, <strong>${escapeHtml(reg.name)}</strong> bölgesindeki konut, villa ve kurumsal projelere aracısız atölye standartlarıyla hizmet veriyoruz.</p>
           <ul>
-            <li><strong>Ütü İstemeyen Tül Perdeler:</strong> Keten dokulu, grek, bambu, kapsül tül ve İtalyan kruvaze salon tülleri.</li>
+            <li><strong>Özel Dikim Tül Perdeler:</strong> Keten dokulu, grek, bambu, kapsül tül ve İtalyan kruvaze salon tülleri.</li>
             <li><strong>Kadife, Keten ve Blackout Fon Perdeler:</strong> Koltuk takımınızla birebir renk uyumunda boru pile ve kanun pile fon kanatlar.</li>
             <li><strong>Plisell Cam Balkon Perdesi:</strong> Katlanır ve sürgülü cam balkonlara milimetrik uyumlu, alttan ve üstten açılır ısı yalıtımlı plise perdeler.</li>
             <li><strong>50mm Doğal Ahşap Jaluzi &amp; Stor/Zebra:</strong> Masif ıhlamur ağacı jaluzi ve alüminyum kasalı bambu zebra perdeler.</li>
           </ul>
-          <h3>Hizmet Verdiğimiz Başlıca Mahalle ve Noktalar</h3>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
-            ${reg.neighborhoods.map((n) => `<span style="background:var(--sand);padding:6px 14px;border-radius:99px;font-size:13px;font-weight:600">📍 ${escapeHtml(n)}</span>`).join("")}
+          <h3>Hizmet Verdiğimiz Başlıca Mahalle ve Yerleşimler</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+            ${reg.neighborhoods.map((n) => `<span style="background:var(--linen);border:1px solid var(--line);padding:6px 14px;font-size:12.5px;font-weight:600">${escapeHtml(n)}</span>`).join("")}
           </div>
-          <h3>Nasıl Çalışıyoruz?</h3>
+          <h3>Çalışma Sürecimiz</h3>
           <ol>
-            <li><strong>İletişim &amp; Randevu:</strong> <a href="tel:${SITE.phoneRaw}"><strong>${escapeHtml(SITE.phoneDisplay)}</strong></a> numaralı telefondan veya WhatsApp üzerinden bize ulaşırsınız.</li>
+            <li><strong>Randevu &amp; Ön Görüşme:</strong> <a href="tel:${SITE.phoneRaw}"><strong>${escapeHtml(SITE.phoneDisplay)}</strong></a> numaralı telefondan veya WhatsApp üzerinden bize ulaşırsınız.</li>
             <li><strong>Yerinde Kartela Sunumu &amp; Lazer Ölçü:</strong> Evinizin kendi ışığında koltuk ve duvar renginize göre kumaşları birlikte seçer, pencerelerinizi milimetrik ölçeriz.</li>
-            <li><strong>Özel Atölye Dikimi &amp; Montaj:</strong> Seçtiğiniz kumaşlar kendi ustalarımız tarafından dikilir, ütülenir ve korniş/mekanizma montajıyla eksiksiz teslim edilir.</li>
+            <li><strong>Atölye Dikimi &amp; Profesyonel Montaj:</strong> Seçtiğiniz kumaşlar kendi ustalarımız tarafından dikilir, buharlı ütüden geçirilir ve korniş/mekanizma montajıyla eksiksiz teslim edilir.</li>
           </ol>
         </div>
-        <aside style="display:flex;flex-direction:column;gap:20px">
-          <div style="background:var(--white);padding:16px;border-radius:20px;border:1px solid var(--line)">
-            <img src="${reg.heroImage}" alt="${escapeHtml(reg.title)}" style="border-radius:14px;width:100%;aspect-ratio:4/4.8;object-fit:cover" />
+        <aside style="display:flex;flex-direction:column;gap:24px">
+          <div style="background:var(--white);padding:14px;border:1px solid var(--line)">
+            <img src="${reg.heroImage}" alt="${escapeHtml(reg.title)}" style="width:100%;aspect-ratio:4/4.5;object-fit:cover;object-position:center top" />
           </div>
-          <div style="background:var(--claret);color:var(--white);padding:26px;border-radius:20px">
-            <h3 style="font-family:var(--serif);font-size:26px;margin-bottom:10px">${escapeHtml(reg.name)} Ücretsiz Ölçü Hattı</h3>
-            <p style="font-size:14px;opacity:0.9;margin-bottom:18px">Dilek Hanım ile doğrudan görüşerek ücretsiz keşif randevusu oluşturun:</p>
-            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa" style="width:100%;margin-bottom:10px">💬 WhatsApp'tan Randevu Al</a>
-            <a href="tel:${SITE.phoneRaw}" class="btn btn-outline" style="width:100%">☎️ ${escapeHtml(SITE.phoneDisplay)}</a>
+          <div style="background:var(--ink);color:var(--white);padding:32px;border:1px solid var(--bronze)">
+            <div class="kicker" style="color:var(--bronze-light)">KEŞİF RANDEVUSU</div>
+            <h3 style="font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:10px">${escapeHtml(reg.name)} Ölçü Hattı</h3>
+            <p style="font-size:14px;color:#C6BDB1;margin-bottom:20px">Ücretsiz yerinde keşif ve kartela sunumu için doğrudan iletişime geçin:</p>
+            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-full" style="margin-bottom:10px">${ICONS.whatsapp} <span>WhatsApp'tan Randevu Al</span></a>
+            <a href="tel:${SITE.phoneRaw}" class="btn btn-outline btn-full" style="color:var(--white);border-color:#4A423C">${ICONS.phone} <span>${escapeHtml(SITE.phoneDisplay)}</span></a>
           </div>
         </aside>
       </div>
@@ -1492,25 +1749,25 @@ function renderGuidePage(guide) {
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / <a href="/rehber">Perde Blog &amp; Rehber</a> / ${escapeHtml(guide.title)}</div>
-        <span class="eyebrow">📖 DİLEK PERDE HOME UZMAN REHBERİ • ${escapeHtml(guide.readTime)}</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(30px,4vw,46px);margin-bottom:12px">${escapeHtml(guide.title)}</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:760px">${escapeHtml(guide.excerpt)}</p>
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / <a href="/rehber">Atölye Notları &amp; Rehber</a> / ${escapeHtml(guide.title)}</div>
+        <div class="kicker">ATÖLYE REHBERİ • ${escapeHtml(guide.readTime)}</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:600;margin-bottom:12px">${escapeHtml(guide.title)}</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:760px">${escapeHtml(guide.excerpt)}</p>
       </div>
     </div>
     <section>
-      <div class="container" style="max-width:920px">
+      <div class="container" style="max-width:940px">
         <div class="prose">
-          <img src="${guide.heroImage}" alt="${escapeHtml(guide.title)}" style="width:100%;max-height:440px;object-fit:cover;border-radius:18px;margin-bottom:24px" />
+          <img src="${guide.heroImage}" alt="${escapeHtml(guide.title)}" style="width:100%;max-height:460px;object-fit:cover;object-position:center top;margin-bottom:28px;border:1px solid var(--line)" />
           ${guide.contentHtml}
-          <div style="margin-top:28px;padding:22px;background:var(--sand);border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div style="margin-top:32px;padding:26px;background:var(--linen);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
             <div>
-              <strong style="display:block;font-size:17px;color:var(--claret)">Pencereniz için doğru kumaş ve ölçüyü birlikte belirleyelim</strong>
-              <span style="font-size:14px;color:var(--muted)">Kahramankazan mağazamıza bekleriz veya WhatsApp'tan pencere fotoğrafınızı gönderebilirsiniz.</span>
+              <strong style="display:block;font-family:var(--serif);font-size:22px;color:var(--ink)">Pencereniz için doğru kumaş ve ölçüyü birlikte belirleyelim</strong>
+              <span style="font-size:14px;color:var(--muted)">Kahramankazan showroomumuza bekleriz veya WhatsApp'tan pencere fotoğrafınızı iletebilirsiniz.</span>
             </div>
-            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa">💬 Dilek Hanım'a Sor (${escapeHtml(SITE.phoneDisplay)})</a>
+            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary">${ICONS.whatsapp} <span>Danışma Hattı (${escapeHtml(SITE.phoneDisplay)})</span></a>
           </div>
-          <h3 style="margin-top:32px">Diğer Uzman Perde Rehberlerimiz</h3>
+          <h3 style="margin-top:36px">İlgili Diğer Teknik Rehberler</h3>
           <ul>
             ${otherGuides.map((og) => `<li><a href="/rehber/${og.slug}" style="color:var(--claret);font-weight:600">${escapeHtml(og.title)}</a></li>`).join("")}
           </ul>
@@ -1534,26 +1791,26 @@ function renderGuidesIndexPage() {
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Perde Blog &amp; Dekorasyon Rehberi</div>
-        <span class="eyebrow">📖 GÜNLÜK GÜNCELLENEN PERDE ANSİKLOPEDİSİ (${GUIDES.length} MAKALE)</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">Perde Modelleri, Ölçü Alma, Yıkama ve 2026 Dekorasyon Blogu</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:780px">Kahramankazan ve Ankara'daki perde atölyemizin 20 yıllık tecrübesiyle hazırlanan; tül, fon, cam balkon plise, ahşap jaluzi ve zebra perde rehberleri.</p>
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Atölye Notları &amp; Dekorasyon Rehberi</div>
+        <div class="kicker">TEKNİK KILAVUZ &amp; DEKORASYON NOTLARI (${GUIDES.length} MAKALE)</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:12px">Perde Modelleri, Ölçü Alma ve Kumaş Seçim Rehberi</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:780px">Kahramankazan ve Ankara'daki perde atölyemizin deneyimiyle hazırlanan; tül, fon, cam balkon plise, ahşap jaluzi ve mekanizmalı perde incelemeleri.</p>
       </div>
     </div>
     <section>
       <div class="container">
         <div class="collections-grid">
-          ${GUIDES.map((g) => `
+          ${GUIDES.map((g, idx) => `
             <article class="col-card">
               <a href="/rehber/${g.slug}" class="col-img">
                 <img src="${g.heroImage}" alt="${escapeHtml(g.title)}" loading="lazy" />
-                <span class="col-badge">${escapeHtml(g.readTime)}</span>
+                <span class="col-index">MAKALE ${idx + 1} • ${escapeHtml(g.readTime)}</span>
               </a>
               <div class="col-body">
                 <h3><a href="/rehber/${g.slug}">${escapeHtml(g.title)}</a></h3>
                 <p>${escapeHtml(g.excerpt)}</p>
                 <div class="col-foot">
-                  <span>📅 ${escapeHtml(g.date)}</span>
+                  <span>${escapeHtml(g.date)}</span>
                   <a href="/rehber/${g.slug}">Makaleyi Oku →</a>
                 </div>
               </div>
@@ -1566,8 +1823,8 @@ function renderGuidesIndexPage() {
   `;
 
   return renderLayout({
-    title: "Perde Blogu & 2026 Perde Modelleri Rehberi | Dilek Perde Home",
-    description: "Tül perde, fon perde, cam balkon plise perde, 50mm ahşap jaluzi, perde ölçüsü alma ve yıkama rehberleri. Dilek Perde Home uzman blogu.",
+    title: "Perde Rehberi & Dekorasyon Notları | Dilek Perde Home",
+    description: "Tül perde, fon perde, cam balkon plise perde, 50mm ahşap jaluzi, perde ölçüsü alma ve yıkama rehberleri. Dilek Perde Home uzman kılavuzu.",
     canonicalPath: "/rehber",
     bodyContent
   });
@@ -1577,29 +1834,29 @@ function renderGalleryPage() {
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Gerçek Uygulamalarımız</div>
-        <span class="eyebrow">📸 @dilek_perde_home UYGULAMA PORTFOLYOSU</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">Gerçek Ev, Villa ve Cam Balkon Perde Teslimatlarımız</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:780px">Kahramankazan merkez, Ars Evleri, Yeşilova Mahallesi, Eryaman ve İncek'te bizzat dikimini ve montajını gerçekleştirdiğimiz perde uygulamalarımız.</p>
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Referans Projeler</div>
+        <div class="kicker">UYGULAMA PORTFOLYOSU</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:12px">Teslim Ettiğimiz Konut, Villa ve Showroom Projeleri</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:780px">Kahramankazan merkez, Ars Evleri, Yeşilova Mahallesi, Eryaman ve İncek'te dikimini ve montajını gerçekleştirdiğimiz gerçek perde uygulamalarımız.</p>
       </div>
     </div>
     <section>
       <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:44px">
           <div class="gal-card">
             <div class="gal-media" style="aspect-ratio:16/10">
-              <video controls autoplay loop muted playsinline poster="/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg">
+              <video controls autoplay loop muted playsinline poster="/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg">
                 <source src="/images/gallery/showroom-vitrin-tur.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="gal-info">
-              <h3>Kahramankazan Mağaza &amp; Showroom Turu (Kazım Karabekir Cad. No:12/A-B)</h3>
-              <p>Yüzlerce tül, fon, ahşap jaluzi ve Plisell cam balkon kartelasını canlı inceleyebileceğiniz mağazamız.</p>
+              <h3>Kahramankazan Showroom &amp; Kartela Koleksiyonu (Kazım Karabekir Cad. No:12/A–B)</h3>
+              <p>Yüzlerce tül, fon, ahşap jaluzi ve Plisell cam balkon kartelasını yakından inceleyebileceğiniz mağazamız.</p>
             </div>
           </div>
           <div class="gal-card">
             <div class="gal-media" style="aspect-ratio:16/10">
-              <video controls autoplay loop muted playsinline poster="/images/gallery/incek-ankara-daire-stor-ve-guneslik-perde.jpg">
+              <video controls autoplay loop muted playsinline poster="/images/gallery/cam-balkon-ve-mutfak-antrasit-stor-perde.jpg">
                 <source src="/images/gallery/incek-daire-uygulama.mp4" type="video/mp4" />
               </video>
             </div>
@@ -1614,7 +1871,7 @@ function renderGalleryPage() {
             <article class="gal-card">
               <div class="gal-media">
                 <img src="${item.image}" alt="${escapeHtml(item.title)} - ${escapeHtml(item.location)}" loading="lazy" />
-                <span class="gal-loc">📍 ${escapeHtml(item.location)}</span>
+                <span class="gal-loc">${escapeHtml(item.location)}</span>
               </div>
               <div class="gal-info">
                 <h3>${escapeHtml(item.title)}</h3>
@@ -1628,7 +1885,7 @@ function renderGalleryPage() {
   `;
 
   return renderLayout({
-    title: "Gerçek Perde Uygulamalarımız (@dilek_perde_home) | Kahramankazan & Ankara | Dilek Perde Home",
+    title: "Referans Perde Uygulamalarımız | Kahramankazan & Ankara | Dilek Perde Home",
     description: "Dilek Perde Home tarafından Kahramankazan, Ars Evleri, Yeşilova, Eryaman ve İncek'te yapılan gerçek salon tül, fon, kruvaze, ahşap jaluzi ve stor perde uygulamaları.",
     canonicalPath: "/uygulamalarimiz",
     bodyContent
@@ -1639,37 +1896,37 @@ function renderAboutPage() {
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Hakkımızda</div>
-        <span class="eyebrow">KURUMSAL HİKAYEMİZ &amp; ATÖLYE DEĞERLERİMİZ</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">Dilek Perde Home: Kahramankazan'dan Tüm Ankara ve Avrupa'ya Uzanan Ustalık</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:780px">Her pencereyi kendi evimizin penceresi gibi ölçüyor, her dikişi yıllarca bozulmadan kullanılacak titizlikle tamamlıyoruz.</p>
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Kurumsal</div>
+        <div class="kicker">KURUMSAL HİKAYEMİZ &amp; ATÖLYE DEĞERLERİMİZ</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:12px">Dilek Perde Home: Özel Dikim Geleneği ve Mimari Tekstil</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:780px">Her pencereyi kendi evimizin penceresi gibi ölçüyor, her dikişi yıllarca formunu koruyacak atölye disipliniyle tamamlıyoruz.</p>
       </div>
     </div>
     <section>
-      <div class="container" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:36px;align-items:start">
+      <div class="container" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:start">
         <div class="prose">
-          <h2>Samimiyet, Doğru Kumaş ve Kusursuz İşçilik</h2>
-          <p><strong>Dilek Perde Home</strong>, kurucumuz <strong>Dilek Hanım</strong> yönetiminde Ankara Kahramankazan'da (Atatürk Mahallesi, Kazım Karabekir Caddesi No: 12/A - 12/B) faaliyet gösteren butik bir perde tasarım mağazası ve özel dikim atölyesidir.</p>
-          <p>Hazır paket perdelerin aksine; her evin tavan yüksekliğinin, aldığı gün ışığının, koltuk ve halı dokusunun kendine özgü olduğunu biliyoruz. Bu yüzden mağazamızda <strong>Brillant</strong> başta olmak üzere Türkiye'nin en seçkin dokuma fabrikalarının keten, grek, kadife, şönil, bambu zebra, <strong>Plisell cam balkon</strong> ve <strong>masif ahşap jaluzi</strong> koleksiyonlarını bulunduruyoruz.</p>
-          <h3>Neden Yüzlerce Aile Bizi Tercih Ediyor?</h3>
+          <h2>Doğru Kumaş, Tam Metraj ve Kusursuz İşçilik</h2>
+          <p><strong>Dilek Perde Home</strong>, kurucumuz <strong>Dilek Hanım</strong> yönetiminde Ankara Kahramankazan'da (Atatürk Mahallesi, Kazım Karabekir Caddesi No: 12/A - 12/B) faaliyet gösteren kurumsal bir perde tasarım mağazası ve özel dikim atölyesidir.</p>
+          <p>Hazır paket perdelerin aksine; her evin tavan yüksekliğinin, aldığı gün ışığının, koltuk ve halı dokusunun kendine özgü olduğunu biliyoruz. Bu doğrultuda mağazamızda <strong>Brillant</strong> başta olmak üzere Türkiye'nin önde gelen dokuma fabrikalarının keten, grek, kadife, şönil, bambu zebra, <strong>Plisell cam balkon</strong> ve <strong>masif ahşap jaluzi</strong> koleksiyonlarını sunuyoruz.</p>
+          <h3>Atölye İlkelerimiz</h3>
           <ul>
             <li><strong>Eksiksiz Metraj ve Gerçek Pile:</strong> 1x3 sık pile sözü verdiğimizde kumaştan asla ödün vermeden tam metraj kullanırız.</li>
             <li><strong>Ütü ve Etek İşçiliği:</strong> Tüm tüllerimiz etek kurşunlu, yan dikişleri kasma yapmayan özel makinelerde dikilir ve buhar kazanlı ütüden geçerek asılır.</li>
-            <li><strong>Avrupa ve Türkiye Geneli Güvenli Sipariş:</strong> Almanya, Fransa, Hollanda ve Türkiye'nin dört bir yanındaki müşterilerimize görüntülü kumaş seçimiyle özel dikim kargo gönderimi sağlıyoruz.</li>
+            <li><strong>Avrupa ve Türkiye Geneli Güvenli Sipariş:</strong> Almanya, Fransa, Hollanda ve Türkiye'nin dört bir yanındaki müşterilerimize görüntülü kumaş seçimiyle özel dikim gönderim sağlıyoruz.</li>
           </ul>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-          <img src="/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg" alt="Dilek Perde Home Mağaza Vitrin" style="border-radius:16px;aspect-ratio:3/4;object-fit:cover" />
-          <img src="/images/gallery/dilek-perde-showroom-danisma-masasi.jpg" alt="Dilek Perde Home Showroom" style="border-radius:16px;aspect-ratio:3/4;object-fit:cover" />
-          <img src="/images/gallery/dilek-perde-brillant-yetkili-satis-magaza.jpg" alt="Dilek Perde Brillant" style="border-radius:16px;aspect-ratio:3/4;object-fit:cover" />
-          <img src="/images/gallery/dilek-perde-showroom-kumas-koleksiyonu.jpg" alt="Dilek Perde Kumaş Reyonu" style="border-radius:16px;aspect-ratio:3/4;object-fit:cover" />
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <img src="/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg" alt="Dilek Perde Home Salon Uygulaması" style="border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover" />
+          <img src="/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg" alt="Dilek Perde Home Villa Projesi" style="border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover" />
+          <img src="/images/gallery/klasik-salon-antrasit-fon-ve-pileli-tul-perde.jpg" alt="Dilek Perde Fon ve Tül" style="border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover" />
+          <img src="/images/gallery/haki-yesil-kadife-fon-perde-ve-dikey-tul.jpg" alt="Dilek Perde Kadife Fon" style="border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover" />
         </div>
       </div>
     </section>
   `;
 
   return renderLayout({
-    title: "Hakkımızda | Dilek Perde Home — Kahramankazan & Ankara Perde Tasarım Mağazası",
+    title: "Kurumsal | Dilek Perde Home — Kahramankazan & Ankara Perde Tasarım Atölyesi",
     description: "Dilek Hanım yönetimindeki Dilek Perde Home; Kahramankazan Atatürk Mah. Kazım Karabekir Cad. No:12/A-B adresindeki showroomu ve özel dikim atölyesiyle hizmetinizde.",
     canonicalPath: "/hakkimizda",
     bodyContent
@@ -1681,34 +1938,34 @@ function renderContactPage() {
     <div class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="/">Ana Sayfa</a> / İletişim &amp; Mağaza Konumu</div>
-        <span class="eyebrow">📍 KAHRAMANKAZAN MERKEZ SHOWROOM</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">İletişim, Ücretsiz Ölçü Randevusu &amp; Yol Tarifi</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:760px">Mağazamızda çayımızı içerken kumaşlarımızı yakından inceleyebilir veya tek telefonla ücretsiz evde ölçü randevusu oluşturabilirsiniz.</p>
+        <div class="kicker">KAHRAMANKAZAN MERKEZ SHOWROOM</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:12px">İletişim, Keşif Randevusu &amp; Yol Tarifi</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:760px">Showroomumuzda kumaş koleksiyonlarımızı yakından inceleyebilir veya ücretsiz yerinde ölçü randevusu oluşturabilirsiniz.</p>
       </div>
     </div>
     <section>
-      <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start">
+      <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
         <div class="prose">
-          <h2>Mağaza İletişim Bilgilerimiz</h2>
-          <p><strong>Mağaza Unvanı:</strong> ${escapeHtml(SITE.name)} (${escapeHtml(SITE.legalName)})</p>
-          <p><strong>Yetkili Tasarım Danışmanı:</strong> ${escapeHtml(SITE.owner)}</p>
-          <p><strong>Açık Adres:</strong> ${escapeHtml(SITE.address.full)}</p>
-          <p><strong>Sipariş &amp; Ölçü Hattı:</strong> <a href="tel:${SITE.phoneRaw}" style="color:var(--claret);font-weight:800;font-size:20px">${escapeHtml(SITE.phoneDisplay)}</a></p>
-          <p><strong>Instagram:</strong> <a href="${SITE.instagramUrl}" target="_blank" rel="noopener" style="color:var(--claret);font-weight:700">${escapeHtml(SITE.instagramHandle)}</a> (${escapeHtml(SITE.instagramFollowers)} Takipçi)</p>
-          <p><strong>Çalışma Saatlerimiz:</strong> ${escapeHtml(SITE.hours)}</p>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
-            <a href="tel:${SITE.phoneRaw}" class="btn btn-claret">☎️ Hemen Ara (${escapeHtml(SITE.phoneDisplay)})</a>
-            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-wa">💬 WhatsApp'tan Mesaj Gönder</a>
-            <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener" class="btn btn-outline">🗺️ Google Haritalar'da Aç</a>
+          <h2>Showroom &amp; Atölye İletişim Bilgileri</h2>
+          <p><strong>Kurumsal Unvan:</strong> ${escapeHtml(SITE.name)} (${escapeHtml(SITE.legalName)})</p>
+          <p><strong>Müşteri İlişkileri &amp; Tasarım:</strong> ${escapeHtml(SITE.owner)}</p>
+          <p><strong>Adres:</strong> ${escapeHtml(SITE.address.full)}</p>
+          <p><strong>Telefon &amp; Keşif Hattı:</strong> <a href="tel:${SITE.phoneRaw}" style="color:var(--claret);font-weight:700;font-size:18px">${escapeHtml(SITE.phoneDisplay)}</a></p>
+          <p><strong>Instagram:</strong> <a href="${SITE.instagramUrl}" target="_blank" rel="noopener" style="color:var(--claret);font-weight:600">${escapeHtml(SITE.instagramHandle)}</a></p>
+          <p><strong>Çalışma Saatleri:</strong> ${escapeHtml(SITE.hours)}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
+            <a href="tel:${SITE.phoneRaw}" class="btn btn-dark">${ICONS.phone} <span>Hemen Ara (${escapeHtml(SITE.phoneDisplay)})</span></a>
+            <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" class="btn btn-primary">${ICONS.whatsapp} <span>WhatsApp'tan Mesaj Gönder</span></a>
+            <a href="${SITE.googleShareUrl}" target="_blank" rel="noopener" class="btn btn-outline">${ICONS.pin} <span>Google Haritalar'da Aç</span></a>
           </div>
         </div>
-        <div style="background:var(--white);padding:18px;border-radius:22px;border:1px solid var(--line)">
+        <div style="background:var(--white);padding:16px;border:1px solid var(--line)">
           <iframe
             title="Dilek Perde Home Kahramankazan Harita Konumu"
             src="https://www.google.com/maps?q=Atat%C3%BCrk+Mahallesi,+Kaz%C4%B1m+Karabekir+Caddesi+No:12,+Kahramankazan,+Ankara&output=embed"
             width="100%"
-            height="420"
-            style="border:0;border-radius:14px"
+            height="430"
+            style="border:0"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
@@ -1730,17 +1987,17 @@ function renderCalculatorPage() {
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
-        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Perde Ölçü &amp; Metraj Hesaplama</div>
-        <span class="eyebrow">ONLINE PERDE METRAJ ROBOTU</span>
-        <h1 style="font-family:var(--serif);font-size:clamp(32px,4.2vw,50px);margin-bottom:12px">Perde Ölçü, Pile Sıklığı (1x3 / 1x2.5) ve Kumaş Metrajı Hesaplama</h1>
-        <p style="font-size:17px;color:var(--muted);max-width:780px">Pencerenizin en ve boy ölçüsünü girerek tül, fon, plise cam balkon, ahşap jaluzi ve zebra perde için gereken net kumaş miktarını saniyeler içinde hesaplayın.</p>
+        <div class="breadcrumb"><a href="/">Ana Sayfa</a> / Teknik Metraj &amp; Pile Hesaplama</div>
+        <div class="kicker">TEKNİK METRAJ CETVELİ</div>
+        <h1 style="font-family:var(--serif);font-size:clamp(34px,4.2vw,52px);font-weight:600;margin-bottom:12px">Perde Ölçü, Pile Sıklığı (1x3 / 1x2.5) ve Kumaş Metrajı Hesaplama</h1>
+        <p style="font-size:16px;color:var(--muted);max-width:780px">Pencerenizin en ve boy ölçüsünü girerek tül, fon, plise cam balkon, ahşap jaluzi ve zebra perde için gereken net kumaş miktarını hesaplayın.</p>
       </div>
     </div>
     ${calculatorWidgetHtml()}
   `;
 
   return renderLayout({
-    title: "Perde Ölçü ve Fiyat Hesaplama Robotu (1x3 Sık Pile Metraj) | Dilek Perde Home",
+    title: "Perde Ölçü ve Metraj Hesaplama Cetveli (1x3 Sık Pile) | Dilek Perde Home",
     description: "Cama kaç metre tül ve fon perde gider? 1x3 sık pile, 1x2.5 normal pile tül perde ve m² cam balkon plise, zebra, ahşap jaluzi perde hesaplama aracı.",
     canonicalPath: "/perde-olcu-ve-fiyat-hesaplama",
     bodyContent

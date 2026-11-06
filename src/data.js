@@ -183,7 +183,7 @@ export const COLLECTIONS = [
       <h3>2026–2027 Sezonunda En Çok Diktiğimiz Tül Grupları</h3>
       <ul>
         <li><strong>Doğal Keten Dokulu Tüller:</strong> Modern ve spor salonlarda mat duruşuyla plastik parlaklığı olmayan, yumuşak dökümlü keten tüller.</li>
-        <li><strong>Kapsül Tül🖤 &amp; Çizgili Dikey Tüller:</strong> Tavanı olduğundan daha yüksek gösteren, etek ağırlığı sayesinde jilet gibi duran modern dokumalar.</li>
+        <li><strong>Kapsül Tül &amp; Çizgili Dikey Tüller:</strong> Tavanı olduğundan daha yüksek gösteren, etek ağırlığı sayesinde jilet gibi duran modern dokumalar.</li>
         <li><strong>Grek &amp; File Dokuma Tüller:</strong> Özellikle mutfak, oturma odası ve çocuk odalarında hava sirkülasyonunu kesmeyen dayanıklı gözenekli yapı.</li>
         <li><strong>İtalyan Kruvaze &amp; Braçollu Tüller:</strong> Geniş salon camlarında ve villa cephelerinde mıknatıslı veya sutaşı braçollarla iki yana toplanan zarif modeller.</li>
       </ul>
