@@ -232,6 +232,7 @@ function renderLayout({ title, description, canonicalPath = "/", extraSchema = n
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escapeHtml(title)}</title>
+  <meta name="google-site-verification" content="h4lWn2OfmVRUE4BinkQwjrJp5_1pJxxvj3hKGKcxzQk" />
   <meta name="description" content="${escapeHtml(description)}" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="${canonicalUrl}" />
