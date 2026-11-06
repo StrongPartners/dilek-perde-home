@@ -1094,9 +1094,51 @@ function renderLayout({ title, description, keywords = "", canonicalPath = "/", 
       margin: 22px 0 10px;
       color: var(--claret);
     }
-    .prose p { margin-bottom: 16px; color: var(--charcoal); line-height: 1.75; }
-    .prose ul, .prose ol { margin: 0 0 20px 22px; }
-    .prose li { margin-bottom: 9px; color: var(--charcoal); }
+    .prose p { margin-bottom: 16px; color: var(--charcoal); line-height: 1.78; }
+    .prose ul, .prose ol { margin: 0 0 22px 22px; }
+    .prose li { margin-bottom: 10px; color: var(--charcoal); line-height: 1.7; }
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0 28px;
+      font-size: 13.5px;
+      border: 1px solid var(--line);
+    }
+    .prose th {
+      background: var(--linen);
+      color: var(--ink);
+      text-align: left;
+      padding: 12px 14px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--line);
+    }
+    .prose td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--linen);
+      color: var(--charcoal);
+      vertical-align: top;
+    }
+    .prose tr:nth-child(even) td { background: #FCFBF9; }
+    .atelier-callout {
+      margin: 24px 0;
+      padding: 20px 24px;
+      background: var(--alabaster);
+      border-left: 3px solid var(--claret);
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .atelier-callout strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--claret);
+      margin-bottom: 6px;
+    }
 
     /* Corporate Footer */
     .site-footer {
@@ -1598,20 +1640,32 @@ function renderHomePage() {
 function renderCollectionPage(col) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: col.title,
-    image: `${SITE.domain}${col.heroImage}`,
-    description: col.metaDesc,
-    brand: { "@type": "Brand", name: SITE.name },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "TRY",
-      lowPrice: "450",
-      highPrice: "18500",
-      offerCount: "25",
-      availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: SITE.name }
-    }
+    "@graph": [
+      {
+        "@type": "Product",
+        name: col.title,
+        image: `${SITE.domain}${col.heroImage}`,
+        description: col.metaDesc,
+        brand: { "@type": "Brand", name: SITE.name },
+        offers: {
+          "@type": "AggregateOffer",
+          priceCurrency: "TRY",
+          lowPrice: "450",
+          highPrice: "18500",
+          offerCount: "25",
+          availability: "https://schema.org/InStock",
+          seller: { "@type": "Organization", name: SITE.name }
+        }
+      },
+      ...(col.faqs?.length ? [{
+        "@type": "FAQPage",
+        mainEntity: col.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a }
+        }))
+      }] : [])
+    ]
   };
 
   const bodyContent = `
@@ -1632,6 +1686,50 @@ function renderCollectionPage(col) {
           <ul>
             ${col.highlights.map((h) => `<li>${escapeHtml(h)}</li>`).join("")}
           </ul>
+
+          <h3>Pencere Genişliğine Göre Örnek Metraj ve Pile Tablosu</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Korniş / Pencere Genişliği</th>
+                <th>1x3 Sık (Kanun) Pile Metrajı</th>
+                <th>1x2.5 Orta Pile Metrajı</th>
+                <th>Önerilen Kullanım Alanı</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>200 cm (2.0 Metre)</strong></td>
+                <td>6,00 Metre (+40 cm Yan Pay)</td>
+                <td>5,00 Metre (+40 cm Yan Pay)</td>
+                <td>Mutfak, Çocuk Odası, Çalışma Odası</td>
+              </tr>
+              <tr>
+                <td><strong>250 cm (2.5 Metre)</strong></td>
+                <td>7,50 Metre (+40 cm Yan Pay)</td>
+                <td>6,25 Metre (+40 cm Yan Pay)</td>
+                <td>Oturma Odası, Yatak Odası</td>
+              </tr>
+              <tr>
+                <td><strong>300 cm (3.0 Metre)</strong></td>
+                <td>9,00 Metre (+40 cm Yan Pay)</td>
+                <td>7,50 Metre (+40 cm Yan Pay)</td>
+                <td>Standart Salon Cephesi</td>
+              </tr>
+              <tr>
+                <td><strong>400 cm (4.0 Metre)</strong></td>
+                <td>12,00 Metre (Çift Kanat Önerilir)</td>
+                <td>10,00 Metre (Çift Kanat)</td>
+                <td>Panoramik Salon, Fransız Cam &amp; Villa</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="atelier-callout">
+            <strong>YERİNDE KARTELA &amp; LAZER ÖLÇÜ HİZMETİ</strong>
+            Seçtiğiniz perde grubunun kendi evinizin gün ışığında ve mobilyalarınızın yanında nasıl duracağını görmek için Kahramankazan ve Ankara genelinde ücretsiz yerinde keşif randevusu oluşturabilirsiniz.
+          </div>
+
           ${col.faqs.length ? `
             <h2>Sıkça Sorulan Sorular</h2>
             ${col.faqs.map((f) => `
@@ -1672,6 +1770,29 @@ function renderCollectionPage(col) {
 }
 
 function renderRegionPage(reg) {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `${reg.name} bölgesinde eve gelip ücretsiz perde ölçüsü alıyor musunuz?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Evet. Dilek Perde Home olarak ${reg.name} (${reg.neighborhoods.slice(0, 5).join(", ")}) genelinde kendi servis aracımızla adresinize geliyor, zengin kumaş kartelalarımızı evinizin doğal ışığında sunarak ücretsiz lazerli ölçü alıyoruz.`
+        }
+      },
+      {
+        "@type": "Question",
+        name: `${reg.name} perde siparişlerinde dikim ve montaj süresi kaç gündür?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Ölçü ve kumaş seçiminin ardından tül ve fon perdeler Kahramankazan'daki kendi atölyemizde ortalama 4 ila 7 iş günü içinde etek kurşunlu olarak dikilir, buhar kazanlı ütüden geçirilir ve kendi ustalarımız tarafından korniş/mekanizma montajıyla teslim edilir.`
+        }
+      }
+    ]
+  };
+
   const bodyContent = `
     <div class="page-hero">
       <div class="container">
@@ -1685,24 +1806,78 @@ function renderRegionPage(reg) {
     <section>
       <div class="container" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:start">
         <div class="prose">
-          <h2>${escapeHtml(reg.name)} Bölgesinde Sunduğumuz Perde ve Ev Tekstili Hizmetleri</h2>
-          <p><strong>Dilek Perde Home</strong> olarak Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A–B adresindeki showroomumuz ve özel dikim atölyemizle, <strong>${escapeHtml(reg.name)}</strong> bölgesindeki konut, villa ve kurumsal projelere aracısız atölye standartlarıyla hizmet veriyoruz.</p>
+          <h2>${escapeHtml(reg.name)} Bölgesinde Özel Dikim Perde ve Mimari Tekstil Çözümlerimiz</h2>
+          <p><strong>Dilek Perde Home</strong> olarak Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A–B adresindeki showroomumuz ve özel dikim atölyemizle, <strong>${escapeHtml(reg.name)}</strong> bölgesindeki konut, rezidans, villa ve kurumsal iş yeri projelerine aracısız atölye standartlarıyla hizmet veriyoruz. Hazır paket ürünlerin aksine her pencerenin cephe yönünü, gün ışığı açısını, kalorifer peteği mesafesini ve tavan kartonpiyer derinliğini yerinde analiz ediyoruz.</p>
           <ul>
-            <li><strong>Özel Dikim Tül Perdeler:</strong> Keten dokulu, grek, bambu, kapsül tül ve İtalyan kruvaze salon tülleri.</li>
-            <li><strong>Kadife, Keten ve Blackout Fon Perdeler:</strong> Koltuk takımınızla birebir renk uyumunda boru pile ve kanun pile fon kanatlar.</li>
-            <li><strong>Plisell Cam Balkon Perdesi:</strong> Katlanır ve sürgülü cam balkonlara milimetrik uyumlu, alttan ve üstten açılır ısı yalıtımlı plise perdeler.</li>
-            <li><strong>50mm Doğal Ahşap Jaluzi &amp; Stor/Zebra:</strong> Masif ıhlamur ağacı jaluzi ve alüminyum kasalı bambu zebra perdeler.</li>
+            <li><strong>Özel Dikim Tül Perde Koleksiyonları:</strong> 30°C'de yıkanıp nemli asıldığında ütü gerektirmeyen doğal keten dokulu tüller, kırılmaz grek (file) dokumalar, bambu ve ipek şantuk serileri, etek kurşunlu 1x3 sık kanun pile ve İtalyan kruvaze salon tülleri.</li>
+            <li><strong>Kadife, Keten ve Termal Blackout Fon Perdeler:</strong> Koltuk döşemeniz, halınız ve duvar boyanızla evinizin kendi aydınlatmasında birebir eşleştirilen İtalyan mat kadife, ham keten, şönil ve %98–100 ışık kesen üç iplik dokuma blackout karartma fon kanatlar.</li>
+            <li><strong>Plisell Cam Balkon &amp; Kış Bahçesi Sistemleri:</strong> Katlanır ve sürgülü cam balkon kanatlarının alüminyum profiline sıfır monte edilen, camlarla birlikte katlanan ve hem alttan hem üstten istediğiniz seviyede durdurulabilen ısı yalıtımlı plise perdeler.</li>
+            <li><strong>50mm Masif Ahşap Jaluzi &amp; Mekanizmalı Stor/Zebra:</strong> Fırınlanmış doğal ıhlamur ağacından (Basswood) üretilen 50mm kurdeleli ahşap jaluziler, ağır hizmet tipi alüminyum kasalı bambu zebra perdeler ve tül arkası mat stor güneşlikler.</li>
           </ul>
+
+          <h3>${escapeHtml(reg.name)} Konut Tiplerine Göre Önerilen Perde Kombinasyonları</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Mekân / Pencere Tipi</th>
+                <th>Önerilen Tül &amp; Mekanizma</th>
+                <th>Fon &amp; Güneşlik Çözümü</th>
+                <th>İdeal Pile / Ölçü Standardı</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Geniş Cepheli Salon &amp; Fransız Cam</strong></td>
+                <td>Keten Dokulu veya İnce Dikey Çizgili Tül</td>
+                <td>İki Yanda Boru Pile Kadife / Keten Fon + Arkada Mat Stor Güneşlik</td>
+                <td>1x3 Sık (Kanun) Pile • Zeminden 2 cm Yukarıda</td>
+              </tr>
+              <tr>
+                <td><strong>Mutfak &amp; Balkon Kapılı Odalar</strong></td>
+                <td>Akıllı Dikey Tül, 3 Boyutlu Tül veya Mekanizmalı Kruvaze</td>
+                <td>Silinebilir Bambu Zebra veya Leke Tutmaz Screen Stor</td>
+                <td>Kapı Geçişine Uygun Bağımsız Kanat Planlaması</td>
+              </tr>
+              <tr>
+                <td><strong>Yatak &amp; Çocuk Odası</strong></td>
+                <td>Yumuşak Dökümlü Bambu veya Ekru Grek Tül</td>
+                <td>Üç İplik Dokuma Blackout (Tam Karartma) Fon veya Stor</td>
+                <td>Pencere Kasasından Sağ/Sol 25 cm Taşma Paylı</td>
+              </tr>
+              <tr>
+                <td><strong>Katlanır Cam Balkon &amp; Teras</strong></td>
+                <td>Alttan-Üstten Çalışan Orijinal Plisell Plise</td>
+                <td>Yarı Karartma (Dimout) veya Gece-Gündüz Çift Kumaş</td>
+                <td>Her Cam Kanadına Milimetrik Profil İçi Montaj</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="atelier-callout">
+            <strong>ATÖLYE KEŞİF NOTU — ${escapeHtml(reg.name.toUpperCase())}</strong>
+            Mağaza spot ışıkları altında seçilen kumaş tonları, evinizin kuzey veya güney cephe gün ışığında farklı görünebilir. Bu nedenle ${escapeHtml(reg.name)} bölgesindeki müşterilerimize kartela klasörlerimizi doğrudan evlerinde, kendi koltuk ve halılarının yanında test etme imkânı sunuyoruz.
+          </div>
+
           <h3>Hizmet Verdiğimiz Başlıca Mahalle ve Yerleşimler</h3>
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
             ${reg.neighborhoods.map((n) => `<span style="background:var(--linen);border:1px solid var(--line);padding:6px 14px;font-size:12.5px;font-weight:600">${escapeHtml(n)}</span>`).join("")}
           </div>
-          <h3>Çalışma Sürecimiz</h3>
+          <h3>Adım Adım Keşif, Dikim ve Montaj Sürecimiz</h3>
           <ol>
-            <li><strong>Randevu &amp; Ön Görüşme:</strong> <a href="tel:${SITE.phoneRaw}"><strong>${escapeHtml(SITE.phoneDisplay)}</strong></a> numaralı telefondan veya WhatsApp üzerinden bize ulaşırsınız.</li>
-            <li><strong>Yerinde Kartela Sunumu &amp; Lazer Ölçü:</strong> Evinizin kendi ışığında koltuk ve duvar renginize göre kumaşları birlikte seçer, pencerelerinizi milimetrik ölçeriz.</li>
-            <li><strong>Atölye Dikimi &amp; Profesyonel Montaj:</strong> Seçtiğiniz kumaşlar kendi ustalarımız tarafından dikilir, buharlı ütüden geçirilir ve korniş/mekanizma montajıyla eksiksiz teslim edilir.</li>
+            <li><strong>Randevu &amp; Ön Görüşme:</strong> <a href="tel:${SITE.phoneRaw}"><strong>${escapeHtml(SITE.phoneDisplay)}</strong></a> numaralı telefondan veya WhatsApp üzerinden bize ulaştığınızda müsait gün ve saatinize göre keşif planlaması yapılır.</li>
+            <li><strong>Yerinde Kartela Sunumu &amp; Lazer Ölçü:</strong> Pencerelerinizin en-boy ölçüleri, korniş kanal sayısı, kartonpiyer derinliği ve kalorifer çıkıntıları lazer metre ile milimetrik olarak kayıt altına alınır.</li>
+            <li><strong>Atölye Dikimi, Ütü &amp; Profesyonel Montaj:</strong> Seçtiğiniz kumaşlar ustalarımız tarafından etek kurşunlu olarak dikilir, her 7–8 cm'de bir birinci sınıf kırılmaz rulet takılır, buhar kazanlı ütüden geçirilerek adresinizde kornişe/mekanizmaya monte edilir.</li>
           </ol>
+
+          <h2>Sıkça Sorulan Sorular (${escapeHtml(reg.name)})</h2>
+          <div style="margin-bottom:16px;padding:20px;background:var(--alabaster);border:1px solid var(--line)">
+            <strong style="display:block;color:var(--ink);margin-bottom:6px;font-size:15.5px">${escapeHtml(reg.name)} bölgesinde eve gelip ücretsiz ölçü alıyor musunuz?</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--muted)">Evet. ${escapeHtml(reg.name)} (${escapeHtml(reg.neighborhoods.slice(0, 5).join(", "))}) genelinde kartela numunelerimizle adresinize gelerek ücretsiz lazerli ölçü ve tasarım danışmanlığı sunuyoruz.</p>
+          </div>
+          <div style="margin-bottom:16px;padding:20px;background:var(--alabaster);border:1px solid var(--line)">
+            <strong style="display:block;color:var(--ink);margin-bottom:6px;font-size:15.5px">Sipariş sonrası teslimat ve montaj kaç gün sürer?</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--muted)">Özel dikim tül ve fon perdelerimiz ile Plisell cam balkon ve ahşap jaluzi siparişleriniz, ölçü onayından itibaren ortalama 4 ila 7 iş günü içerisinde kendi ekibimizce monte edilerek teslim edilir.</p>
+          </div>
         </div>
         <aside style="display:flex;flex-direction:column;gap:24px">
           <div style="background:var(--white);padding:14px;border:1px solid var(--line)">
@@ -1726,25 +1901,49 @@ function renderRegionPage(reg) {
     title: reg.metaTitle,
     description: reg.metaDesc,
     canonicalPath: `/bolge/${reg.slug}`,
+    extraSchema: faqSchema,
     bodyContent
   });
 }
 
 function renderGuidePage(guide) {
+  const defaultFaqs = guide.faqs && guide.faqs.length ? guide.faqs : [
+    {
+      q: `${guide.title.split(":")[0].split("?")[0]} için yerinde keşif ve kartela sunumu yapıyor musunuz?`,
+      a: "Evet. Kahramankazan merkez showroomumuzdan tüm Kahramankazan mahallelerine, Eryaman, Batıkent, İncek, Çayyolu ve Ankara geneline ücretsiz yerinde ölçü ve canlı kartela sunumu hizmeti veriyoruz."
+    },
+    {
+      q: "Verdiğim ölçülere göre şehir dışına veya Avrupa'ya dikilmiş perde gönderiyor musunuz?",
+      a: "Evet. 0551 402 27 07 numaralı WhatsApp hattımız üzerinden görüntülü görüşme ile kumaşları canlı seçebilir, Türkiye'nin 81 iline ve Almanya, Fransa, Hollanda, Avusturya'ya kornişe/rustiğe takmaya hazır özel dikim sipariş verebilirsiniz."
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: guide.title,
-    description: guide.metaDesc,
-    keywords: guide.keywords || SEO_KEYWORDS.join(", "),
-    image: `${SITE.domain}${guide.heroImage}`,
-    datePublished: guide.date,
-    dateModified: guide.date,
-    author: { "@type": "Person", name: SITE.owner },
-    publisher: { "@id": `${SITE.domain}/#organization` }
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: guide.title,
+        description: guide.metaDesc,
+        keywords: guide.keywords || SEO_KEYWORDS.join(", "),
+        image: `${SITE.domain}${guide.heroImage}`,
+        datePublished: guide.date,
+        dateModified: guide.date,
+        author: { "@type": "Person", name: SITE.owner },
+        publisher: { "@id": `${SITE.domain}/#organization` }
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: defaultFaqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a }
+        }))
+      }
+    ]
   };
 
-  const otherGuides = GUIDES.filter((g) => g.slug !== guide.slug).slice(0, 4);
+  const otherGuides = GUIDES.filter((g) => g.slug !== guide.slug).slice(0, 5);
 
   const bodyContent = `
     <div class="page-hero">
@@ -1756,10 +1955,71 @@ function renderGuidePage(guide) {
       </div>
     </div>
     <section>
-      <div class="container" style="max-width:940px">
+      <div class="container" style="max-width:960px">
         <div class="prose">
           <img src="${guide.heroImage}" alt="${escapeHtml(guide.title)}" style="width:100%;max-height:460px;object-fit:cover;object-position:center top;margin-bottom:28px;border:1px solid var(--line)" />
           ${guide.contentHtml}
+
+          ${!guide.contentHtml.includes("<table") ? `
+          <h2>Atölye Teknik Metraj, Pile ve Kumaş Karşılaştırma Cetveli</h2>
+          <p>Pencereniz için perde planlaması yaparken kumaş dokusu kadar <strong>pile sıklığı</strong>, <strong>etek kurşunu gramajı</strong> ve <strong>yıkama dayanımı</strong> da uzun ömürlü kullanım için belirleyicidir. Aşağıdaki teknik tablomuzda atölyemizin standart üretim değerlerini inceleyebilirsiniz:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Perde &amp; Sistem Grubu</th>
+                <th>Önerilen Pile / Mekanizma</th>
+                <th>Işık &amp; Mahremiyet Kontrolü</th>
+                <th>Bakım &amp; Yıkama Standardı</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Keten &amp; Grek Tül Perdeler</strong></td>
+                <td>1x3 Sık (Kanun) Pile / Etek Kurşunlu</td>
+                <td>Gün ışığını yumuşatır, gündüz içeriyi göstermez</td>
+                <td>30°C Perde Programı • 400 Devir • Ütüsüz Nemli Asım</td>
+              </tr>
+              <tr>
+                <td><strong>İtalyan Kadife &amp; Keten Fonlar</strong></td>
+                <td>Boru Pile veya 1x3 Kanun Pile Kanat</td>
+                <td>Akustik derinlik, çerçeveleme ve akşam mahremiyeti</td>
+                <td>30°C Hassas Yıkama veya Kuru Temizleme</td>
+              </tr>
+              <tr>
+                <td><strong>Üç İplik Blackout (Karartma)</strong></td>
+                <td>Tam Kapanır Fon veya Alüminyum Kasalı Stor</td>
+                <td>%98–100 ışık kesme ve yaz/kış termal ısı yalıtımı</td>
+                <td>Silikon kaplamasız dokuma serilerde 30°C yıkanabilir</td>
+              </tr>
+              <tr>
+                <td><strong>Plisell Cam Balkon Perdesi</strong></td>
+                <td>Alttan ve Üstten Hareketli Çift Yönlü Profil</td>
+                <td>Cam kanatlarıyla birlikte katlanır, istenen seviyede durur</td>
+                <td>Klipslerinden çıkarılıp ılık suyla yıkanabilir, apresi bozulmaz</td>
+              </tr>
+              <tr>
+                <td><strong>50mm Masif Ahşap Jaluzi</strong></td>
+                <td>Fırınlanmış Ihlamur Ağacı (Basswood) • Kurdeleli</td>
+                <td>Bant açısıyla dış manzarayı kesmeden tam mahremiyet</td>
+                <td>Kapalı konumda mikrofiber bezle pratik toz alma</td>
+              </tr>
+            </tbody>
+          </table>
+          ` : ""}
+
+          <div class="atelier-callout">
+            <strong>DİLEK PERDE HOME • ATÖLYE KALİTE GÜVENCESİ</strong>
+            Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No: 12/A–B adresindeki mağazamızda ve dikiş atölyemizde hazırlanan tüm tül ve fon perdelerde her 7–8 cm'de bir kırılmaz birinci sınıf rulet kullanılır; kenar dikişleri büzüşme yapmayan özel makinelerde tamamlanıp buhar kazanlı ütüden geçirilerek teslim edilir.
+          </div>
+
+          <h2>Konuyla İlgili Sıkça Sorulan Sorular</h2>
+          ${defaultFaqs.map((f) => `
+            <div style="margin-bottom:16px;padding:20px;background:var(--alabaster);border:1px solid var(--line)">
+              <strong style="display:block;color:var(--ink);margin-bottom:6px;font-size:15.5px">${escapeHtml(f.q)}</strong>
+              <p style="margin:0;font-size:14.5px;color:var(--muted)">${escapeHtml(f.a)}</p>
+            </div>
+          `).join("")}
+
           <div style="margin-top:32px;padding:26px;background:var(--linen);border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
             <div>
               <strong style="display:block;font-family:var(--serif);font-size:22px;color:var(--ink)">Pencereniz için doğru kumaş ve ölçüyü birlikte belirleyelim</strong>

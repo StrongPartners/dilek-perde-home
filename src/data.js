@@ -577,289 +577,378 @@ export const GUIDES = [
     `
   },
   {
-    slug: "perde-olcusu-nasil-alinir",
-    title: "Evde Perde Ölçüsü Nasıl Alınır? (Tül, Fon, Stor ve Cam Balkon Ölçü Rehberi)",
-    metaTitle: "Perde Ölçüsü Nasıl Alınır? Tül, Fon ve Stor Ölçü Alma Rehberi | Dilek Perde Home",
-    metaDesc: "Kornişten zemine tül ve fon perde ölçüsü, pencere taşma payları, stor perde ve cam balkon plise perde ölçüsü nasıl alınır? Adım adım resimli usta rehberi.",
-    keywords: "perde ölçüsü nasıl alınır, tül perde ölçüsü alma, fon perde boyu kaç cm olmalı, stor perde ölçüsü nasıl alınır, cam balkon plise perde ölçüsü",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/dilek-perde-showroom-danisma-masasi.jpg",
-    excerpt: "Şehir dışından veya Avrupa'dan sipariş verirken şerit metreyle hatasız en ve boy ölçüsü almanın usta püf noktaları.",
-    contentHtml: `
-      <h2>1. Tül ve Fon Perde İçin En (Genişlik) Ölçüsü Nasıl Alınır?</h2>
-      <p>Salon ve odalarda tül perdenin pencere kenarlarındaki duvar paylarını şık bir şekilde kapatması gerekir:</p>
-      <ul>
-        <li><strong>Duvardan Duvara Uygulama:</strong> Pencereniz duvarın büyük kısmını kaplıyorsa, sol duvardan sağ duvara kadar kornişin tam boyunu ölçün (süpürgelik payı için her iki yandan 2–3 cm düşebilirsiniz).</li>
-        <li><strong>Sadece Pencere Üstü Uygulama:</strong> Pencere pervazının sağından <strong>25–30 cm</strong>, solundan <strong>25–30 cm</strong> taşacak şekilde toplam genişliği ölçün. Örneğin 160 cm genişliğindeki bir pencere için ideal tül bitmiş eni <strong>210–220 cm</strong>'dir.</li>
-      </ul>
-      <h2>2. Boy (Yükseklik) Ölçüsü Nasıl Alınır?</h2>
-      <ul>
-        <li><strong>Uzun (Yere Kadar) Perdeler:</strong> Şerit metrenin ucunu tavandaki kornişin içine (veya yanına) dayayın ve zemine kadar dik olarak indirin. Perdenin yere sürtünmemesi ve süpürge/robot süpürge geçişine engel olmaması için çıkan ölçüden <strong>2 ile 3 cm düşerek</strong> net boy ölçüsünü belirleyin.</li>
-        <li><strong>Petek Üstü (Kısa) Perdeler:</strong> Kornişten kalorifer peteğinin üst hizasına kadar ölçün; peteğin ısıyı odaya rahat vermesi için petek üstünden <strong>2–3 cm yukarıda</strong> veya petek önünden yere kadar (kornişin petekten öne çıktığı durumlarda) planlayın.</li>
-      </ul>
-      <h2>3. Stor ve Zebra Perde Ölçüsü</h2>
-      <p>Stor perdelerde kasa genişliği kumaştan toplam <strong>4 cm daha geniştir</strong> (sağda 2 cm, solda 2 cm mekanizma payı). Bu nedenle pencere kasasının dışına en az 10'ar cm taşma payı bırakarak ölçü almanız ışık sızmasını engeller.</p>
-    `
+    "slug": "kornise-perde-nasil-takilir-rulet-ve-stoper-rehberi",
+    "title": "Kornişe Perde Nasıl Takılır? Rulet Sıklığı, Korniş Stoperi ve Pratik Asma Teknikleri",
+    "metaTitle": "Kornişe Perde Nasıl Takılır? Kolay Perde Asma Rehberi | Dilek Perde Home",
+    "metaDesc": "Üçlü ve dörtlü korniş kanallarına tül, güneşlik ve fon perde hangi sırayla takılır? Rulet kancası, stoper kullanımı ve takılmayan perde montaj rehberi.",
+    "keywords": "kornişe perde nasıl takılır, üçlü korniş perde sırası, perde ruleti nedir, korniş stoperi nasıl takılır, dörtlü korniş kullanımı",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
+    "excerpt": "Üçlü ve dörtlü tavan kornişlerinde güneşlik, tül ve fon perdenin birbirine sürtünmeden akıcı kayması için doğru kanal sıralaması, rulet aralığı ve stoper kilitleme teknikleri.",
+    "contentHtml": "\n      <h2>Üçlü ve Dörtlü Tavan Kornişinde Doğru Kanal Sıralaması Neden Önemlidir?</h2>\n      <p>Yıkama sonrasında veya yeni dikilen perdeleri asarken en sık karşılaşılan sorun, tül perdeyi ya da güneşliği çekerken fon kanatların pilelerine takılmasıdır. Bunun temel sebebi korniş kanallarının yanlış sıralamayla doldurulmasıdır. <strong>Dilek Perde Home</strong> montaj ekibimizin Kahramankazan ve Ankara genelindeki tüm konut teslimatlarında uyguladığı standart korniş kanal dizilimi, perde katmanlarının birbirine temas etmeden çalışmasını garanti eder.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Korniş Kanalı</th>\n            <th>Konumu</th>\n            <th>Takılacak Perde Katmanı</th>\n            <th>Stoper (Durdurucu) Konumu</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>1. Kanal (En Arka)</strong></td>\n            <td>Pencere camına en yakın ray</td>\n            <td>Güneşlik, Blackout Karartma veya Korniş Aparatlı Stor</td>\n            <td>Sağ ve sol uçta son ruletten hemen sonra</td>\n          </tr>\n          <tr>\n            <td><strong>2. Kanal (Orta Ray)</strong></td>\n            <td>Merkez kanal</td>\n            <td>Ana Tül Perde (Keten, Grek, Bambu veya İtalyan Kruvaze)</td>\n            <td>Kornişin her iki başında sabit kilitleme</td>\n          </tr>\n          <tr>\n            <td><strong>3. Kanal (En Ön)</strong></td>\n            <td>Salon / oda içine bakan ray</td>\n            <td>Sağ ve Sol Dekoratif Fon Kanatlar (Kadife / Keten)</td>\n            <td>Kanadın hem ilk hem son ruletinde çift taraflı</td>\n          </tr>\n          <tr>\n            <td><strong>4. Kanal (Varsa Ek Ray)</strong></td>\n            <td>Ön dekoratif ray</td>\n            <td>Kruvaze Üst Katmanı veya Ekstra Dekoratif Braçol Kanadı</td>\n            <td>Merkez birleşim ve yan bitiş noktalarında</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Adım Adım Yorulmadan Kornişe Perde Takma Tekniği</h2>\n      <p>Genişliği 3,5 veya 4 metreyi bulan salon tüllerini kollarınızı yukarıda tutarak tek tek rulet geçirmeye çalışmak boyun ve omuz ağrısına yol açar. Ustalarımızın uyguladığı pratik sıralama şu şekildedir:</p>\n      <ol>\n        <li><strong>Önce Arka Kanalı (Güneşliği) Tamamlayın:</strong> En arkadaki kanala güneşliği takmadan önce orta kanala tül takarsanız, tülün ağırlığı ve pile hacmi arka kanalı görmenizi engeller. Bu nedenle montaja daima cama en yakın kanaldan başlayın.</li>\n        <li><strong>Perdeyi Omuz Üzerine Alarak Yürütün:</strong> Tül perdenin tamamını yerden kaldırmak yerine, ağırlığını omzunuza verin ve sadece korniş giriş ağzındaki 4–5 ruleti sırayla kanala sürün. Her 5 rulette bir perdeyi ray boyunca ileri kaydırarak ilerleyin.</li>\n        <li><strong>İlk Ruleti Sabitleyin:</strong> Uzun tül perdelerde başlangıç ruletini kanala sürdükten sonra orta kısma gelip geçici bir stoper sıkıştırırsanız, siz diğer ucu takarken perdenin ilk taktığınız kısmı ağırlıkla raydan geri çıkmaz.</li>\n        <li><strong>Son Rulet ve Yan Duvar Payı Ayarı:</strong> Tüm ruletler kanala girdikten sonra en uçtaki son 2 ruleti stoperin dışına değil, stoperden hemen önceye gelecek şekilde kilitleyin. Böylece perdeyi çektiğinizde yan duvar payı bozulmaz.</li>\n      </ol>\n\n      <h2>Rulet Sıklığı ve Kırılmaz Ekstrafor İşçiliği</h2>\n      <p>Hazır konfeksiyon perdelerde maliyet düşürmek için 12–15 cm aralıklarla zayıf plastik düğmeler kullanılır; bu da perdenin iki düğme arasında sarkmasına (\"kulak yapmasına\") neden olur. <strong>Dilek Perde Home</strong> atölyesinde dikilen tüm tül ve fon perdelerde:</p>\n      <ul>\n        <li><strong>7–8 cm Rulet Sıklığı:</strong> Her kanun pilenin tam sırt noktasına 1. sınıf esnek kopolimer rulet dikilir; makinede yıkandığında kırılmaz ve güneşte gevremez.</li>\n        <li><strong>Çift Dikişli 6–8 cm Ekstrafor:</strong> Perde başlığının dik ve tok durması için yüksek gramajlı ütü tutucu ekstrafor kullanılır.</li>\n        <li><strong>Kornişmatik ve Kilitli Stoper Desteği:</strong> Yüksek tavanlı dairelerde merdivene çıkmadan perde takmayı sağlayan aparatlara tam uyumlu tekerlekli rulet seçeneği sunulur.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Kornişte ruletler takılıyor ve zor kayıyorsa ne yapılmalı?",
+        "a": "Zamanla korniş kanallarında biriken toz ruletlerin yürümesini zorlaştırır. Perdeyi asmadan önce kuru bir bezin ucuna çok az silikon sprey veya beyaz sabun sürerek kanal içini boydan boya silerseniz ruletler yağ gibi kayacaktır."
+      },
+      {
+        "q": "Fon perdelerin ortadaki tüle doğru kaymasını nasıl engellerim?",
+        "a": "Dekoratif fon kanadın hem ilk ruletinden önce hem de son ruletinden sonra olmak üzere her kanat için 2 adet kilitli korniş stoperi takılmalıdır. Böylece fon kanat pencere kenarında istediğiniz genişlikte (örneğin 80 cm) sabit kalır."
+      }
+    ]
   },
   {
-    slug: "salon-icin-en-iyi-perde-secimi-2026",
-    title: "2026–2027 Salon Perde Trendleri: Keten Tül, Kadife Fon ve Renk Uyumu",
-    metaTitle: "Salon İçin En İyi Perde Seçimi 2026 | Tül ve Fon Uyumu | Dilek Perde Home",
-    metaDesc: "2026-2027 salon perde modellerinde hangi renk ve kumaşlar öne çıkıyor? Koltuk ve halı rengine göre tül-fon perde kombinasyonu rehberi.",
-    keywords: "2026 perde modelleri, salon perde modelleri, keten tül perde, kadife fon perde, koltuk rengine göre perde seçimi, salon tül fon kombinleri",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
-    excerpt: "Parlak ve ağır taşlı perdelerin yerini alan doğal keten tüller, mat kadife fonlar ve dikey mimari çizgiler.",
-    contentHtml: `
-      <h2>Doğal Dokular ve Dingin Tonlar Ön Planda</h2>
-      <p>Son yıllarda salon dekorasyonunda gözü yoran parlak organze tüller yerine, ışığı yumuşak kıran <strong>ham keten dokulu tüller</strong>, <strong>ekru-krem geçişler</strong> ve <strong>boru pile mat fonlar</strong> tercih ediliyor. Kahramankazan ve Ankara'da gerçekleştirdiğimiz yeni daire teslimatlarında en çok beğenilen üç kombinasyon:</p>
-      <ol>
-        <li><strong>Krem/Boucle Koltuk Takımları İçin:</strong> Sıcak vizon veya taş rengi keten fon perde + ince dikey dokulu kırık beyaz keten tül.</li>
-        <li><strong>Gri ve Antrasit Salonlar İçin:</strong> Antrasit veya füme mat kadife fon perde + gümüş/ekru geçişli 1x3 sık pile grek tül.</li>
-        <li><strong>Ahşap ve Toprak Tonlu Yemek Odaları İçin:</strong> 50mm doğal meşe ahşap jaluzi + iki yanda haki yeşil veya tarçın fon kanatlar.</li>
-      </ol>
-    `
+    "slug": "perde-olcusu-nasil-alinir",
+    "title": "Evde Perde Ölçüsü Nasıl Alınır? (Tül, Fon, Stor ve Cam Balkon Ölçü Rehberi)",
+    "metaTitle": "Perde Ölçüsü Nasıl Alınır? Tül, Fon ve Stor Ölçü Alma Rehberi | Dilek Perde Home",
+    "metaDesc": "Kornişten zemine tül ve fon perde ölçüsü, pencere taşma payları, stor perde ve cam balkon plise perde ölçüsü nasıl alınır? Adım adım tablo ve usta rehberi.",
+    "keywords": "perde ölçüsü nasıl alınır, tül perde ölçüsü alma, fon perde boyu kaç cm olmalı, stor perde ölçüsü nasıl alınır, cam balkon plise perde ölçüsü",
+    "date": "2026-11-06",
+    "readTime": "9 dk okuma",
+    "heroImage": "/images/gallery/dilek-perde-showroom-danisma-masasi.jpg",
+    "excerpt": "Şehir dışından veya Avrupa'dan sipariş verirken çelik şerit metreyle hatasız en ve boy ölçüsü almanın usta formülleri, taşma payları ve kontrol tablosu.",
+    "contentHtml": "\n      <h2>Hatasız Perde Ölçüsü İçin Neden Çelik Şerit Metre Kullanılmalı?</h2>\n      <p>Evde perde ölçüsü alırken yapılan en yaygın hata, terzi mezurası (yumuşak şerit) kullanmak veya pencerenin sadece cam kısmını ölçmektir. Yumuşak mezuralar zamanla esnediği için 260 cm'lik bir boy ölçüsünde 3–4 cm sapmaya yol açabilir. <strong>Dilek Perde Home</strong> olarak Kahramankazan ve Ankara içi tüm adreslere <strong>ücretsiz lazerli keşif</strong> hizmeti sunuyoruz; şehir dışından veya yurt dışından sipariş veren müşterilerimiz ise aşağıdaki teknik tabloyu takip ederek milimetrik ölçü alabilirler.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Perde Türü</th>\n            <th>En (Genişlik) Ölçü Formülü</th>\n            <th>Boy (Yükseklik) Ölçü Formülü</th>\n            <th>Kritik Dikkat Noktası</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Tam Boy Salon Tülü</strong></td>\n            <td>Duvardan duvara korniş boyu (veya Pencere Eni + 60 cm)</td>\n            <td>Kornişten zemine net yükseklik − 2 cm (veya −3 cm)</td>\n            <td>Odanın sol, orta ve sağından 3 ayrı boy ölçüsü alınmalıdır</td>\n          </tr>\n          <tr>\n            <td><strong>Petek Üstü Kısa Tül</strong></td>\n            <td>Pencere pervaz genişliği + sağdan 25 cm + soldan 25 cm</td>\n            <td>Kornişten kalorifer peteği üst hizasına − 2 cm</td>\n            <td>Petek vanası çıkıntısı varsa yan taşma payı kontrol edilmelidir</td>\n          </tr>\n          <tr>\n            <td><strong>Dekoratif Fon Kanat</strong></td>\n            <td>Standart kanat bitmiş eni: 70 cm, 80 cm veya 90 cm</td>\n            <td>Tül perde boyu ile birebir aynı (zeminden 1–2 cm yukarıda)</td>\n            <td>Pencere yanındaki duvar payı 30 cm'den darsa tek kanat önerilir</td>\n          </tr>\n          <tr>\n            <td><strong>Stor / Zebra Perde</strong></td>\n            <td>Pencere dıştan dışa eni + 20 cm (sağ +10 cm, sol +10 cm)</td>\n            <td>Kornişten pencere mermeri altına + 15 cm</td>\n            <td>Kasa genişliği kumaştan toplam 4 cm daha geniştir (2+2 cm)</td>\n          </tr>\n          <tr>\n            <td><strong>Plise Cam Balkon</strong></td>\n            <td>Her camın görünür net cam genişliği (fitilden fitile)</td>\n            <td>Alüminyum profil arasındaki net cam yüksekliği</td>\n            <td>Açılır ilk kanat (ana kanat) diğerlerinden 1–2 cm dar olabilir</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>1. Tül ve Fon Perde İçin En (Genişlik) Ölçüsü Nasıl Alınır?</h2>\n      <p>Salon ve odalarda tül perdenin pencere kenarlarındaki duvar paylarını dengeli biçimde kapatması ve dışarıdan bakıldığında simetrik görünmesi gerekir:</p>\n      <ul>\n        <li><strong>Duvardan Duvara Uygulama:</strong> Pencereniz duvarın büyük kısmını kaplıyorsa veya koltuk yerleşiminiz uygunsa, sol duvardan sağ duvara kadar kornişin tam boyunu ölçün. Süpürgelik çıkıntısı veya köşe kolon payı için her iki yandan 2–3 cm düşerek net bitmiş eni belirleyin.</li>\n        <li><strong>Sadece Pencere Üstü Uygulama:</strong> Pencere pervazının sağından <strong>25–30 cm</strong>, solundan <strong>25–30 cm</strong> taşacak şekilde toplam genişliği ölçün. Örneğin 160 cm genişliğindeki bir pencere için ideal tül bitmiş eni <strong>210–220 cm</strong>'dir.</li>\n      </ul>\n\n      <h2>2. Boy (Yükseklik) Ölçüsünde 3 Nokta Kontrolü</h2>\n      <p>Betonarme binalarda tavan sıvası veya parke şapı காரணமாக odanın sağ köşesi ile sol köşesi arasında <strong>1 ile 2,5 cm arasında yükseklik farkı</strong> bulunması çok yaygındır. Bu nedenle:</p>\n      <ul>\n        <li>Şerit metrenin metal ucunu tavandaki kornişin yüzeyine dayayın ve zemine kadar dik olarak indirin.</li>\n        <li>Pencerenin <strong>sol başından, tam ortasından ve sağ başından</strong> olmak üzere üç ayrı boy ölçüsü alın ve en düşük çıkan ölçüden <strong>2 cm düşerek</strong> sipariş boyunu netleştirin.</li>\n        <li>Evde <strong>robot süpürge</strong> kullanılıyorsa, süpürgenin üst lazer kulesinin perde eteğine takılmaması için zeminden <strong>3 cm yukarıda</strong> biten ölçü tercih edilmelidir.</li>\n      </ul>\n\n      <h2>3. Stor, Zebra ve Ahşap Jaluzi Ölçüsü Alırken Mekanizma Payı</h2>\n      <p>Stor ve zebra perdelerde üst alüminyum kasa ve zincir mekanizması, içindeki kumaştan toplam <strong>4 cm daha geniştir</strong> (sağda 2 cm, solda 2 cm). Örneğin \"160 cm kasa ölçüsü\" verdiğinizde içinden çıkan kumaş 156 cm olacaktır. Güneş ışığının kenarlardan sızmaması için pencere kasasının dışına sağdan ve soldan en az 10'ar cm taşma payı bırakmanız gerekir.</p>\n    ",
+    "faqs": [
+      {
+        "q": "Perde ölçüsü verirken pile payını biz mi ekliyoruz yoksa atölye mi hesaplıyor?",
+        "a": "Siz sadece kornişte perdenin kaplamasını istediğiniz net bitmiş genişliği (örneğin 300 cm) söylüyorsunuz. Seçtiğiniz pile sıklığına göre (örneğin 1x3 sık pile için 900 cm kumaş) hesaplamayı atölyemiz otomatik olarak yapıyor."
+      },
+      {
+        "q": "Kalorifer peteği pencereden daha genişse boy ölçüsü nasıl alınmalı?",
+        "a": "Kornişiniz kalorifer peteğinin ön yüzünden daha önde duruyorsa tam boy (yere kadar) perde yaptırabilirsiniz. Ancak korniş peteğin üst hizasında kalıyorsa tül perdeyi petek üstünden 2 cm yukarıda bitirip, yan fon kanatları peteğin dışından yere kadar indirmek en doğru mimari çözümdür."
+      }
+    ]
   },
   {
-    slug: "almanya-ve-fransa-gurbetci-perde-siparisi",
-    title: "Avrupa'daki Gurbetçiler İçin Türkiye'den Özel Dikim Perde Siparişi (Vorhang & Rideau)",
-    metaTitle: "Almanya ve Fransa'ya Türkiye'den Özel Dikim Perde Siparişi | Dilek Perde Home",
-    metaDesc: "Almanya (Vorhang & Gardinen), Fransa (Rideau sur mesure), Hollanda ve Avusturya'dan ölçüye özel Türk tül ve fon perde siparişi nasıl verilir?",
-    keywords: "almanya perde siparişi, fransa perde siparişi, gurbetçi perde dikimi, vorhang nach maß türkei, rideau sur mesure turquie",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg",
-    excerpt: "Avrupa'daki ray ve rustik sistemlerinize birebir uyumlu ekstrafor/rulet dikimi ve WhatsApp görüntülü kartela seçimi.",
-    contentHtml: `
-      <h2>Avrupa'daki Pencere Sistemlerine %100 Uyumlu Dikim</h2>
-      <p>Instagram profilimizde de yer alan <em>"Rideau textile de maison • Vorhang und Heimtext"</em> uzmanlığımızla, Almanya, Fransa, Hollanda, Belçika ve Avusturya'da yaşayan gurbetçi ailelerimizin perde siparişlerini Kahramankazan'daki atölyemizde özenle hazırlıyoruz.</p>
-      <ul>
-        <li><strong>Avrupa Ray &amp; Rustik Uyumu:</strong> Avrupa'daki evlerde kullanılan ince ray (Gardinenstange / Innenlauf), kancalı ekstrafor veya kapsül (Ösenschal) sistemlerine birebir uyumlu başlık dikiyoruz.</li>
-        <li><strong>WhatsApp Görüntülü Kumaş Seçimi:</strong> <a href="tel:+905514022707">0551 402 27 07</a> numaralı hattımızdan Dilek Hanım ile görüntülü bağlanarak mağazamızdaki kumaşların dokusunu ve ışık geçirgenliğini canlı olarak seçebilirsiniz.</li>
-      </ul>
-    `
+    "slug": "salon-icin-en-iyi-perde-secimi-2026",
+    "title": "2026–2027 Salon Perde Trendleri: Keten Tül, Kadife Fon ve Renk Uyumu",
+    "metaTitle": "Salon İçin En İyi Perde Seçimi 2026 | Tül ve Fon Uyumu | Dilek Perde Home",
+    "metaDesc": "2026-2027 salon perde modellerinde hangi renk ve kumaşlar öne çıkıyor? Koltuk, halı ve duvar rengine göre tül-fon perde kombinasyonu ve cephe ışık rehberi.",
+    "keywords": "2026 perde modelleri, salon perde modelleri, keten tül perde, kadife fon perde, koltuk rengine göre perde seçimi, salon tül fon kombinleri",
+    "date": "2026-11-06",
+    "readTime": "8 dk okuma",
+    "heroImage": "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
+    "excerpt": "Parlak ve ağır taşlı perdelerin yerini alan doğal keten tüller, mat İtalyan kadife fonlar, boru pile dikim ve cephe ışığına göre renk eşleştirme tablosu.",
+    "contentHtml": "\n      <h2>2026–2027 Salon Dekorasyonunda Doğal Dokular ve Dingin Tonlar</h2>\n      <p>Son yıllarda salon iç mimarisinde gözü yoran parlak organze tüller, simli kumaşlar ve ağır boncuklu sarkıtlar yerini ışığı yumuşak kıran <strong>ham keten dokulu tüllere</strong>, <strong>ekru-taş geçişlere</strong> ve <strong>boru pile mat fonlara</strong> bıraktı. Kahramankazan ve Ankara'da gerçekleştirdiğimiz yeni daire ve villa teslimatlarında, mobilyanın tarzına ve salonun aldığı gün ışığına göre kişiselleştirilmiş katmanlı tasarımlar uyguluyoruz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Salon & Koltuk Tarzı</th>\n            <th>Önerilen Tül Perde Dokusu</th>\n            <th>Önerilen Fon Perde & Renk</th>\n            <th>İdeal Pile & Dikim Tekniği</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Krem / Boucle Modern Koltuk</strong></td>\n            <td>İnce şantuklu kırık beyaz veya sıcak ekru keten tül</td>\n            <td>Sıcak vizon, kum beji veya adaçayı yeşili mat keten fon</td>\n            <td>Tülde 1x3 kanun pile, fonda dikey boru pile</td>\n          </tr>\n          <tr>\n            <td><strong>Gri / Antrasit / Füme Salon</strong></td>\n            <td>Gümüş-ekru geçişli dökümlü grek veya bambu tül</td>\n            <td>Koyu antrasit, petrol mavisi veya kiremit mat kadife fon</td>\n            <td>Tülde 1x3 sık pile, fonda Amerikan (rustik) pile</td>\n          </tr>\n          <tr>\n            <td><strong>Ceviz Mobilya & Toprak Tonları</strong></td>\n            <td>Doğal ekru ipek-keten tül veya 50mm ahşap jaluzi</td>\n            <td>Haki yeşil, tarçın-kehribar veya acı kahve kadife fon</td>\n            <td>Mıknatıslı sutaşı braçol ile toplanan çift kanat fon</td>\n          </tr>\n          <tr>\n            <td><strong>Klasik / Avangard / Chester</strong></td>\n            <td>Etek ağırlıklı İtalyan kruvaze tül veya Fransız kupürlü tül</td>\n            <td>Yüksek gramajlı İtalyan mat kadife veya jakarlı şönil fon</td>\n            <td>Kruvaze mekanizma + 1x3 dolgun kanat fon</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Salonun Cephesine (Kuzey / Güney) Göre Kumaş ve Ton Seçimi</h2>\n      <p>Bir perde kumaşının mağaza vitrinindeki duruşu ile evinizin camındaki duruşunu belirleyen ana unsur <strong>gün ışığının geliş açısıdır</strong>:</p>\n      <ul>\n        <li><strong>Kuzey ve Doğu Cepheli (Az Işık Alan) Salonlar:</strong> Koyu gri veya ağır gramajlı kapalı tüller odayı loşlaştırır. Bu cephelerde ışığı maksimum geçiren ince gözenekli <em>bambu tül</em> veya <em>ince keten tül</em> ile sıcak tonlu (krem, sıcak vizon, şampanya, tarçın) fon perdeler seçilerek mekâna ferahlık kazandırılmalıdır.</li>\n        <li><strong>Güney ve Batı Cepheli (Yoğun Güneş Alan) Salonlar:</strong> Öğleden sonra gelen dik güneş ışığı mobilya ve parkeleri soldurabilir. Bu cephelerde UV dayanımlı <em>1x3 sık pile keten/grek tül</em> ve arka kanalda güneş ısısını kesen <em>termal stor güneşlik</em> kullanılması hem konfor hem de kumaş ömrü açısından şarttır.</li>\n      </ul>\n\n      <h2>Tavan Yüksekliğini Daha Ferah Gösteren Dikim Detayları</h2>\n      <p>Perdenin kornişten zemine kadar kesintisiz dikey çizgilerle inmesi, 260 cm'lik standart daire tavanlarını bile çok daha yüksek ve mimari gösterir. Atölyemizde her tül perdenin alt eteğine gizli <strong>100 gr/m kurşun ağırlık kordonu</strong> dokunmakta, böylece pileler tavandan zemine kadar cetvelle çizilmiş gibi düzgün inmektedir.</p>\n    ",
+    "faqs": [
+      {
+        "q": "Salonda hem güneşlik hem fon perde kullanmak şart mı?",
+        "a": "Eğer fon perdelerinizi sadece pencerenin iki yanında dekoratif (sabit kanat) olarak kullanacaksanız, akşamları mahremiyet ve gündüz güneşi kontrolü için arka kanala mutlaka stor veya kumaş güneşlik takılmalıdır. Fon perdeleri camı tamamen kapatacak metrajda yaptırırsanız ayrıca güneşliğe ihtiyaç kalmaz."
+      },
+      {
+        "q": "Keten tül perdeler salonda karanlık yapar mı?",
+        "a": "Hayır. Mağazamızdaki yeni nesil keten tüller kaba çuval keteni değil, ışığı homojen dağıtan yarı-transparan mikro-keten dokumalardır. Dışarıdan içerinin görünmesini keserken salonun gün ışığını korur."
+      }
+    ]
   },
   {
-    slug: "perde-modelleri-ve-fiyatlari-2026-rehberi",
-    title: "2026 Perde Modelleri ve Fiyatları: Tül, Fon, Zebra, Plise ve Ahşap Jaluzi Karşılaştırması",
-    metaTitle: "Perde Modelleri ve Fiyatları 2026 | Tül, Fon, Plise, Zebra | Dilek Perde Home",
-    metaDesc: "2026 yılı tül perde, kadife/keten fon perde, cam balkon plise perde, bambu zebra ve ahşap jaluzi perde modelleri, kullanım alanları ve metraj hesaplama rehberi.",
-    keywords: "perde modelleri, perde fiyatları 2026, tül perde fiyatları, fon perde modelleri, zebra perde fiyatları, plise perde m2 fiyatı, kazanda perde",
-    date: "2026-11-06",
-    readTime: "6 dk okuma",
-    heroImage: "/images/gallery/dilek-perde-showroom-kumas-koleksiyonu.jpg",
-    excerpt: "Hangi odaya hangi perde modeli seçilmeli? Kumaş gramajı, pile sıklığı ve mekanizma kalitesine göre 2026 perde rehberi.",
-    contentHtml: `
-      <h2>Oda Tipine Göre Doğru Perde Modeli Nasıl Seçilir?</h2>
-      <p>Bir evin ruhunu ve akustiğini belirleyen en temel unsur perdedir. <strong>Dilek Perde Home</strong> olarak Kahramankazan ve Ankara genelinde 700'ü aşkın konut projesinde edindiğimiz tecrübeyle, oda bazında en uzun ömürlü perde modellerini karşılaştırdık:</p>
-      <ul>
-        <li><strong>Salon ve Misafir Odaları:</strong> 1x3 sık pile <em>Keten/Grek Tül Perde</em> + yanlarda iki kanat <em>Mat Kadife veya Keten Fon Perde</em> + arka kanalda kornişe uyumlu <em>Mat Stor Güneşlik</em>.</li>
-        <li><strong>Mutfak ve Oturma Odaları:</strong> Yemek buharından etkilenmeyen, kolay yıkanabilir <em>3 Boyutlu Tül</em>, <em>Mekanizmalı Kruvaze Tül</em> veya silinebilir <em>Bambu Zebra Perde</em>.</li>
-        <li><strong>Yatak ve Çocuk Odaları:</strong> Gece sokak ışığını ve sabah güneşini %95–100 kesen <em>Blackout (Karartma) Fon veya Stor Perde</em> + yumuşak dokulu <em>Bambu Tül</em>.</li>
-        <li><strong>Cam Balkonlar:</strong> Her cam kanadına ayrı monte edilen, hem alttan hem üstten açılabilen <em>Orijinal Plisell (Plise) Perde</em>.</li>
-      </ul>
-      <h2>Metraj Hesaplamasında Pile Sıklığının Önemi</h2>
-      <p>Tül perdede fiyatı ve duruşu belirleyen ana faktör pile oranıdır. 3 metrelik bir salon camında <strong>1x3 sık pile</strong> seçildiğinde 9 metre tül kumaş kullanılırken, <strong>1x2 seyrek pile</strong> seçildiğinde 6 metre kumaş kullanılır. Geniş salonlarda tok ve dökümlü bir görünüm için daima 1x3 sık pile veya kanun pile öneriyoruz.</p>
-    `
+    "slug": "almanya-ve-fransa-gurbetci-perde-siparisi",
+    "title": "Avrupa'daki Gurbetçiler İçin Türkiye'den Özel Dikim Perde Siparişi (Vorhang & Rideau)",
+    "metaTitle": "Almanya ve Fransa'ya Türkiye'den Özel Dikim Perde Siparişi | Dilek Perde Home",
+    "metaDesc": "Almanya (Vorhang & Gardinen), Fransa (Rideau sur mesure), Hollanda ve Avusturya'dan ölçüye özel Türk tül ve fon perde siparişi, Avrupa ray uyumu ve teslimat süreci.",
+    "keywords": "almanya perde siparişi, fransa perde siparişi, gurbetçi perde dikimi, vorhang nach maß türkei, rideau sur mesure turquie",
+    "date": "2026-11-06",
+    "readTime": "8 dk okuma",
+    "heroImage": "/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg",
+    "excerpt": "Almanya, Fransa, Hollanda, Belçika ve Avusturya'daki ray ve rustik sistemlerinize birebir uyumlu ekstrafor/rulet dikimi, görüntülü kartela seçimi ve vakumlu paketleme.",
+    "contentHtml": "\n      <h2>Avrupa'daki Pencere ve Ray Sistemlerine %100 Uyumlu Atölye Dikimi</h2>\n      <p>Avrupa'da hazır satılan standart ölçülü perdeler (Fertiggardinen), Türk ailelerinin alışkın olduğu <strong>1x3 sık kanun pile dolgunluğunu</strong>, <strong>etek kurşunlu kusursuz dökümü</strong> ve pencereye milimetrik oturan terzi işçiliğini sunmaz. Kurumsal kimliğimizde yer alan <em>\"Rideau textile de maison • Vorhang und Heimtext\"</em> uzmanlığımızla, Almanya, Fransa, Hollanda, Belçika, Avusturya ve İsviçre'de yaşayan gurbetçi ailelerimizin perde siparişlerini Kahramankazan'daki atölyemizde hazırlıyoruz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Avrupa'daki Montaj Sistemi</th>\n            <th>Almanca / Fransızca Karşılığı</th>\n            <th>Atölyemizde Uyguladığımız Başlık & Rulet Çözümü</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>İnce Alüminyum Tavan Rayı</strong></td>\n            <td>Innenlauf-Schiene / Rail plafond</td>\n            <td>6 mm ince kanala uyumlu mini kayar rulet (X-Gleiter / Clic-Gleiter) dikimi</td>\n          </tr>\n          <tr>\n            <td><strong>Kancalı Ekstrafor Sistemi</strong></td>\n            <td>Kräuselband / Ruflette à crochets</td>\n            <td>Avrupa kancalarının (Faltenlegehaken) takılabildiği 4 cepli yüksek gramajlı ekstrafor</td>\n          </tr>\n          <tr>\n            <td><strong>Rustik Boru Sistemi</strong></td>\n            <td>Gardinenstange / Tringle à rideaux</td>\n            <td>Paslanmaz metal kapsül (Ösenschal / Oeillets) veya gizli köprülü (Schlaufenband) dikim</td>\n          </tr>\n          <tr>\n            <td><strong>Klasik Türk Kornişi</strong></td>\n            <td>Dreiseiten-Schiene</td>\n            <td>Standart 7 cm aralıklı kırılmaz korniş ruleti ve kilitli stoper seti</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Adım Adım Yurt Dışı ve Gurbetçi Sipariş Süreci</h2>\n      <ol>\n        <li><strong>WhatsApp Üzerinden Pencere Fotoğrafı ve Ölçü Kontrolü:</strong> <a href=\"tel:+905514022707\">+90 551 402 27 07</a> numaralı hattımızdan pencerenizin ve tavandaki ray/boru sisteminizin fotoğrafını gönderiyorsunuz. Ustalarımız görüntülü görüşmede şerit metreyle doğru noktadan ölçü almanıza eşlik ediyor.</li>\n        <li><strong>Canlı Görüntülü Kartela Seçimi:</strong> Mağazamızdaki 400'ü aşkın keten tül, grek tül, İtalyan kruvaze ve kadife/blackout fon kartelasını gün ışığında kamerayla yakından göstererek dokusunu ve ışık geçirgenliğini birlikte seçiyoruz.</li>\n        <li><strong>Özel Dikim ve Kalite Kontrol:</strong> Seçilen kumaşlar atölyemizde ölçülerinize göre dikilir, buharlı sanayi ütüsünden geçirilir ve tüm rulet/kanca aksesuarları üzerinde takılı hale getirilir.</li>\n        <li><strong>Bavula Uygun Vakumlu Paketleme veya Kargo:</strong> Yaz izninde Türkiye'ye gelen müşterilerimiz için siparişleri 3–5 iş gününde tamamlayıp uçak bavulunda yer kaplamayan özel vakumlu/korumalı ambalajda teslim ediyor veya adresinize sigortalı kargo ile gönderiyoruz.</li>\n      </ol>\n    ",
+    "faqs": [
+      {
+        "q": "Almanya'daki evimde Türk kornişi yok, ince alüminyum ray var. Perdeler uyar mı?",
+        "a": "Evet, kesinlikle uyar. Sipariş sırasında rayınızın fotoğrafını paylaştığınızda standart Türk ruleti yerine Avrupa'daki dar kanallı alüminyum raylara (Innenlauf) uyumlu ince rulet veya kancalı ekstrafor dikiyoruz."
+      },
+      {
+        "q": "Yaz tatilinde Ankara'ya geldiğimizde kaç günde teslim alabiliriz?",
+        "a": "İzin sürenizin kısıtlı olduğunu bildiğimiz için gurbetçi siparişlerine atölyemizde öncelik tanıyor, komple ev perdelerini ortalama 3 ile 5 iş günü içinde dikip ütülenmiş ve vakumlanmış olarak teslim ediyoruz."
+      }
+    ]
   },
   {
-    slug: "tul-ve-fon-perde-nasil-yikanir",
-    title: "Tül ve Fon Perde Nasıl Yıkanır? Kırışmadan ve Sararmadan Yıkama Püf Noktaları",
-    metaTitle: "Tül ve Fon Perde Nasıl Yıkanır? Kaç Derecede, Hangi Programda? | Dilek Perde",
-    metaDesc: "Keten tül, grek tül, ipek tül ve kadife fon perdeler çamaşır makinesinde kaç derecede, kaç devirde yıkanmalı? Ütü istemeyen perde yıkama tekniği.",
-    keywords: "tül perde nasıl yıkanır, fon perde nasıl yıkanır, keten tül perde ütü ister mi, perde kaç derecede yıkanır, tül perde beyazlatma",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/yesilova-mahallesi-uc-boyutlu-bracollu-tul-perde.jpg",
-    excerpt: "Perdelerinizi makineden çıktığı gibi ütüsüz kornişe asabilmek için uygulamanız gereken 30°C ve 400 devir kuralı.",
-    contentHtml: `
-      <h2>Ütü Gerektirmeyen Perde Yıkamanın 5 Altın Kuralı</h2>
-      <p>Müşterilerimizin en çok sorduğu soru <em>"Keten veya grek tül perde yıkandıktan sonra kırışır mı?"</em> oluyor. Doğru yıkama adımlarını izlediğinizde atölyemizde dikilen kurşunlu etekli tülleri hiç ütülemeden doğrudan kornişe asabilirsiniz:</p>
-      <ol>
-        <li><strong>Perde Filesi Kullanın:</strong> Ruletlerin (korniş düğmelerinin) makine tamburuna takılıp kumaşı çekmemesi için perdenin üst kısmını katlayarak perde yıkama filesine yerleştirin.</li>
-        <li><strong>Maksimum 30°C Sıcaklık:</strong> Yüksek sıcaklık polyester ve keten liflerde kalıcı kırışıklık (kırık izi) yapar. Daima <strong>30 derece</strong> narin/perde programını seçin.</li>
-        <li><strong>Sıkma Devrini 400'e Düşürün:</strong> 800 veya 1000 devir sıkma, tül perdeleri buruşturur. Sıkma devrini <strong>400 devire</strong> (veya sıkmasız programa) ayarlayın.</li>
-        <li><strong>Nemliyken Kornişe Asın:</strong> Makine biter bitmez perdeyi bekletmeden çıkarıp nemli halde kornişe takın; alt etekteki kurşun ağırlık, perdenin kendi ağırlığıyla jilet gibi açılmasını sağlar.</li>
-        <li><strong>Ağartıcı (Çamaşır Suyu) Kullanmayın:</strong> Klorlu ağartıcılar ekru ve beyaz tüllerin apesini bozarak sararmaya yol açar; bunun yerine oksijen bazlı perde deterjanı veya bir kaşık karbonat tercih edin.</li>
-      </ol>
-    `
+    "slug": "perde-modelleri-ve-fiyatlari-2026-rehberi",
+    "title": "2026 Perde Modelleri ve Fiyatları: Tül, Fon, Zebra, Plise ve Ahşap Jaluzi Karşılaştırması",
+    "metaTitle": "Perde Modelleri ve Fiyatları 2026 | Tül, Fon, Plise, Zebra | Dilek Perde Home",
+    "metaDesc": "2026 yılı tül perde, kadife/keten fon perde, cam balkon plise perde, bambu zebra ve ahşap jaluzi perde modelleri, kullanım alanları ve metraj hesaplama rehberi.",
+    "keywords": "perde modelleri, perde fiyatları 2026, tül perde fiyatları, fon perde modelleri, zebra perde fiyatları, plise perde m2 fiyatı, kazanda perde",
+    "date": "2026-11-06",
+    "readTime": "9 dk okuma",
+    "heroImage": "/images/gallery/dilek-perde-showroom-kumas-koleksiyonu.jpg",
+    "excerpt": "Hangi odaya hangi perde modeli seçilmeli? Kumaş gramajı, pile sıklığı ve mekanizma kalitesine göre 2026 perde modelleri karşılaştırma ve metraj hesaplama tablosu.",
+    "contentHtml": "\n      <h2>Oda Tipine ve Kullanım Amacına Göre Doğru Perde Modeli Seçimi</h2>\n      <p>Bir evin ruhunu, mahremiyetini ve akustiğini belirleyen en temel unsur perdedir. <strong>Dilek Perde Home</strong> olarak Kahramankazan ve Ankara genelinde 700'ü aşkın konut projesinde edindiğimiz tecrübeyle, oda bazında en uzun ömürlü perde modellerini ve metraj hesaplama kriterlerini tek tabloda birleştirdik:</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Perde Modeli</th>\n            <th>En Uygun Olduğu Mekânlar</th>\n            <th>Fiyatlandırma Birimi</th>\n            <th>Ortalama Kullanım Ömrü & Bakım</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Keten & Grek Tül Perde</strong></td>\n            <td>Salon, Oturma Odası, Yatak Odası</td>\n            <td>Metretül (Pile oranına göre kumaş metrajı)</td>\n            <td>10+ Yıl | 30°C makinede yıkanır, ütü istemez</td>\n          </tr>\n          <tr>\n            <td><strong>Kadife / Keten / Blackout Fon</strong></td>\n            <td>Salon, Yemek Odası, Bebek & Yatak Odası</td>\n            <td>Kanat Adedi veya Metretül</td>\n            <td>10–15 Yıl | 30°C hassas yıkama veya kuru temizleme</td>\n          </tr>\n          <tr>\n            <td><strong>Plise (Plisell) Perde</strong></td>\n            <td>Katlanır & Sürgülü Cam Balkon, Kış Bahçesi</td>\n            <td>Metrekare (m²) — Her kanat ayrı ölçülür</td>\n            <td>8–12 Yıl | Ilık su ve süngerle yerinde silinir</td>\n          </tr>\n          <tr>\n            <td><strong>Bambu Zebra & Stor Perde</strong></td>\n            <td>Mutfak, Çocuk Odası, Çalışma Odası</td>\n            <td>Metrekare (m²) — Alüminyum kasa dahil</td>\n            <td>7–10 Yıl | Nemli mikrofiber bezle silinir</td>\n          </tr>\n          <tr>\n            <td><strong>50mm Masif Ahşap Jaluzi</strong></td>\n            <td>Modern Salon, Mutfak, Yönetici Ofisi</td>\n            <td>Metrekare (m²) — Ihlamur ağacı bant</td>\n            <td>12+ Yıl | Toz alma aparatı veya nemli bez</td>\n          </tr>\n          <tr>\n            <td><strong>Akıllı Dikey Tül Perde</strong></td>\n            <td>Balkon Kapılı Salonlar, Panoramik Camlar</td>\n            <td>Metrekare (m²) veya Ray Metrajı</td>\n            <td>10+ Yıl | Şeritler tek tek çıkarılıp makinede yıkanır</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Perde Fiyatını ve Metrajını Belirleyen 3 Teknik Faktör</h2>\n      <p>Müşterilerimiz bazen aynı pencere ölçüsü için farklı mağazalardan çok farklı fiyat teklifleri alabildiklerini belirtiyorlar. Bunun sebebi kullanılan kumaş miktarı ve mekanizma standardıdır:</p>\n      <ol>\n        <li><strong>Pile Sıklığı (Kumaş Çarpanı):</strong> 3 metre genişliğindeki bir salon camında <strong>1x3 sık kanun pile</strong> seçildiğinde tam <strong>9 metre</strong> tül kumaş kullanılır. Aynı cama <strong>1x2 seyrek pile</strong> yapıldığında ise <strong>6 metre</strong> kumaş gider. Aradaki 3 metrelik kumaş farkı hem fiyatı hem de perdenin camdaki zenginliğini doğrudan değiştirir.</li>\n        <li><strong>İplik Gramajı ve Etek Kurşunu:</strong> Düşük gramajlı polyester tüller yıkama sonrasında kabarır ve ütü ister. Oysa ağır gramajlı ve etek kurşunlu 1. sınıf dokuma tüller kendi ağırlığıyla jilet gibi asılır.</li>\n        <li><strong>Alüminyum Kasa ve Zincir Kalitesi:</strong> Stor, zebra ve plise perdelerde plastik yan kapaklar ve ince profiller yerine kalın etli fırın boyalı alüminyum kasa kullanılması, mekanizmanın yıllarca sarkmadan çalışmasını sağlar.</li>\n      </ol>\n    ",
+    "faqs": [
+      {
+        "q": "3+1 standart bir dairenin komple perde maliyeti nasıl hesaplanır?",
+        "a": "Fiyatlandırma pencerelerin en ölçüsüne, seçilen tülün pile sıklığına (1x2.5 veya 1x3) ve cam balkon olup olmamasına göre değişir. WhatsApp hattımızdan pencerelerinizin yaklaşık en ölçülerini paylaştığınızda 5 dakika içinde şeffaf ve detaylı metraj tablosu çıkarıyoruz."
+      },
+      {
+        "q": "Fiyatlarınıza dikim, rulet, korniş montajı ve ütü dahil mi?",
+        "a": "Evet. Dilek Perde Home'dan aldığınız tüm fiyat tekliflerine 1. sınıf atölye dikimi, kırılmaz rulet/ekstrafor işçiliği, Kahramankazan ve Ankara içi adrese teslimat ve kendi ustalarımız tarafından yapılan montaj tamamen dahildir."
+      }
+    ]
   },
   {
-    slug: "1x3-sik-pile-ile-1x2-seyrek-pile-farki-nedir",
-    title: "Perdede 1x3 Sık Pile, 1x2.5 Orta Pile ve Boru Pile Farkı Nedir?",
-    metaTitle: "Perdede 1x3 Sık Pile Nedir? Pile Sıklığı Nasıl Seçilir? | Dilek Perde Home",
-    metaDesc: "Tül ve fon perdede 1x3 sık pile, 1x2.5 orta pile, 1x2 seyrek pile, kanun pile ve boru pile arasındaki farklar ve pencereye göre kumaş hesaplama.",
-    keywords: "1x3 sık pile nedir, perde pile çeşitleri, kanun pile nedir, boru pile fon perde, 1x2.5 orta pile hesaplama",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/klasik-salon-antrasit-fon-ve-pileli-tul-perde.jpg",
-    excerpt: "Pencerenizin genişliğine ve seçtiğiniz tülün dokusuna göre en zengin duruşu sağlayan pile oranları.",
-    contentHtml: `
-      <h2>Pile Oranı Perdenin Duruşunu Nasıl Değiştirir?</h2>
-      <p>Perde dikiminde <strong>pile sıklığı</strong>, 1 metrelik bitmiş korniş genişliği için kaç metre kumaş katlandığını ifade eder:</p>
-      <ul>
-        <li><strong>1x3 Sık Pile (Kanun / Kutu Pile):</strong> 1 metre korniş için tam 3 metre kumaş kullanılır. Pileler arasında boşluk kalmaz, perde dışarıdan içerinin görünmesini maksimum düzeyde keser ve salona çok zengin bir derinlik verir.</li>
-        <li><strong>1x2.5 Orta Pile:</strong> 1 metre korniş için 2,5 metre kumaş kullanılır. Özellikle kalın dokulu keten tüllerde ve oturma odalarında hem ekonomik hem de dolgun bir denge sunar.</li>
-        <li><strong>1x2 Seyrek (Amerikan) Pile:</strong> 1 metre için 2 metre kumaş kullanılır. Kendinden desenli veya kalın zeminli tüllerde desenin kaybolmaması için tercih edilir.</li>
-      </ul>
-    `
+    "slug": "tul-ve-fon-perde-nasil-yikanir",
+    "title": "Tül ve Fon Perde Nasıl Yıkanır? Kırışmadan ve Sararmadan Yıkama Püf Noktaları",
+    "metaTitle": "Tül ve Fon Perde Nasıl Yıkanır? Kaç Derecede, Hangi Programda? | Dilek Perde",
+    "metaDesc": "Keten tül, grek tül, ipek tül ve kadife fon perdeler çamaşır makinesinde kaç derecede, kaç devirde yıkanmalı? Ütü istemeyen perde yıkama tablosu.",
+    "keywords": "tül perde nasıl yıkanır, fon perde nasıl yıkanır, keten tül perde ütü ister mi, perde kaç derecede yıkanır, tül perde beyazlatma",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/yesilova-mahallesi-uc-boyutlu-bracollu-tul-perde.jpg",
+    "excerpt": "Perdelerinizi makineden çıktığı gibi ütüsüz kornişe asabilmek için kumaş türüne göre yıkama sıcaklığı, devir tablosu ve doğal beyazlatma yöntemleri.",
+    "contentHtml": "\n      <h2>Kumaş Türüne Göre Doğru Yıkama Sıcaklığı ve Devir Tablosu</h2>\n      <p>Müşterilerimizin en çok sorduğu soru <em>\"Keten, bambu veya grek tül perde yıkandıktan sonra kırışır mı?\"</em> oluyor. Çamaşır makinesinde yüksek sıcaklık ve yüksek sıkma devri uygulandığında en kaliteli kumaş bile ısı şokuna uğrayarak kırık izi yapar. Aşağıdaki tabloya uyduğunuzda, atölyemizde dikilen kurşunlu etekli tülleri <strong>hiç ütülemeden</strong> doğrudan kornişe asabilirsiniz:</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Kumaş Grubu</th>\n            <th>Maksimum Sıcaklık</th>\n            <th>Sıkma Devri</th>\n            <th>Kurutma & Asma Yöntemi</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Keten & Bambu Dokulu Tül</strong></td>\n            <td>30°C (Soğuk / Narin Yıkama)</td>\n            <td>400 Devir (veya Sıkmasız)</td>\n            <td>Program biter bitmez nemli halde doğrudan kornişe asılır</td>\n          </tr>\n          <tr>\n            <td><strong>Grek (File) & Dikey Tül</strong></td>\n            <td>30°C – 40°C (Perde Programı)</td>\n            <td>400 – 600 Devir</td>\n            <td>Nemli asılır; kurşunlu etek kendi ağırlığıyla pileleri açar</td>\n          </tr>\n          <tr>\n            <td><strong>Mat Kadife & Şönil Fon</strong></td>\n            <td>30°C (Ters Çevrilerek / Filede)</td>\n            <td>400 Devir</td>\n            <td>Nemli asılır; kadife hav yönüne göre el ile hafifçe düzeltilir</td>\n          </tr>\n          <tr>\n            <td><strong>Dokuma Blackout Karartma</strong></td>\n            <td>30°C (Yumuşatıcısız)</td>\n            <td>400 Devir</td>\n            <td>Kesinlikle kurutma makinesine atılmaz, asılarak kurutulur</td>\n          </tr>\n          <tr>\n            <td><strong>İtalyan Kruvaze & Fransız Dantel</strong></td>\n            <td>30°C (Mutlaka Perde Filesinde)</td>\n            <td>Sıkmasız / Suda Bırakma</td>\n            <td>Mekanizma ipleri çözülmeden sadece kumaş ayrılıp yıkanır</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Ütü Gerektirmeyen Perde Yıkamanın 5 Altın Kuralı</h2>\n      <ol>\n        <li><strong>Perde Yıkama Filesi Kullanın:</strong> Ruletlerin (korniş düğmelerinin) makine tambur deliklerine takılıp ekstraforu yırtmaması için perdenin üst kısmını üst üste katlayarak geniş gözlü perde yıkama filesine yerleştirin.</li>\n        <li><strong>Tamburu Yarıdan Fazla Doldurmayın:</strong> Uzun bir salon tülünü (örneğin 9–12 metre kumaş hacmi) fon perdelerle aynı anda makineye sıkıştırmayın. Perde suyun içinde rahatça yüzebilmelidir; sıkışan kumaş kırışır.</li>\n        <li><strong>Maksimum 30°C ve 400 Devir:</strong> Sıcak su, sentetik ve keten karışımlı liflerde kalıcı \"termal kırık\" oluşturur. 30 derece ve 400 devir tüm toz ve isi temizlemek için fazlasıyla yeterlidir.</li>\n        <li><strong>Makinede Bekletmeden Nemli Asın:</strong> Yıkama bittikten sonra perdeyi tamburda 1–2 saat bekletirseniz kat izleri sabitlenir. Makine durduğu anda perdeyi çıkarıp nemli halde kornişe takın.</li>\n        <li><strong>Klorlu Çamaşır Suyu Kullanmayın:</strong> Klorlu ağartıcılar beyaz ve ekru tüllerin optik apresini yakarak geri dönüşsüz sararmaya yol açar. Grileşmiş tüller için deterjan gözüne 1 yemek kaşığı <strong>karbonat</strong> veya oksijen bazlı tül beyazlatıcı ekleyin.</li>\n      </ol>\n    ",
+    "faqs": [
+      {
+        "q": "Perdeyi yıkarken ruletleri (düğmeleri) çıkarmak gerekir mi?",
+        "a": "Hayır, atölyemizde dikilen 1. sınıf ruletleri çıkarmanıza gerek yoktur. Sadece ruletli üst başlık kısmını akordeon gibi katlayıp perde filesinin içine koymanız veya ince bir tülbent/yastık kılıfı ağzıyla bağlamanız tamburu ve perdeyi korur."
+      },
+      {
+        "q": "Sigara dumanı veya soba/kalorifer isinden sararmış tül perde nasıl beyazlar?",
+        "a": "Perdeyi makineye atmadan önce ılık su dolu bir küvet veya geniş leğende yarım çay bardağı beyaz sirke ve 2 paket kabartma tozu (veya karbonat) ile 2 saat bekletin. Ardından 30 derecede perde deterjanıyla yıkadığınızda kumaş yıpranmadan ilk günkü rengine döner."
+      }
+    ]
   },
   {
-    slug: "cam-balkon-perdesi-secimi-plise-mi-stor-mu",
-    title: "Cam Balkon Perdesi Seçimi: Plise (Plisell) Perde mi, Stor Perde mi?",
-    metaTitle: "Cam Balkon Perdesi Seçimi: Plise Perde mi Stor Perde mi? | Dilek Perde Home",
-    metaDesc: "Katlanır ve sürgülü cam balkonlarda neden plise perde tercih edilmeli? Cam balkon plise perde ile stor perde arasındaki kullanım ve montaj farkları.",
-    keywords: "cam balkon perdesi, plise perde mi stor perde mi, katlanır cam balkon perdesi, plisell perde ankara, kahramankazan cam balkon perdesi",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/cam-balkon-ve-mutfak-antrasit-stor-perde.jpg",
-    excerpt: "Katlanır cam balkon kanatlarının takılmadan açılabilmesi ve ısı yalıtımı için doğru perde mekanizması seçimi.",
-    contentHtml: `
-      <h2>Katlanır Cam Balkonlarda Neden Plise Perde Rakipsizdir?</h2>
-      <p>Ankara ve Kahramankazan'daki dairelerin büyük çoğunluğunda katlanır cam balkon bulunuyor. Tavana stor veya zebra perde takıldığında, ilk cam kanadını içe doğru açmak istediğinizde cam doğrudan storun kasasına çarpar. Oysa <strong>Plise (Plisell) perde</strong> her bir camın kendi alüminyum çıtasına sıfır monte edildiği için camlarla beraber katlanır, hiçbir yere takılmaz.</p>
-    `
+    "slug": "1x3-sik-pile-ile-1x2-seyrek-pile-farki-nedir",
+    "title": "Perdede 1x3 Sık Pile, 1x2.5 Orta Pile ve Boru Pile Farkı Nedir?",
+    "metaTitle": "Perdede 1x3 Sık Pile Nedir? Pile Sıklığı Nasıl Seçilir? | Dilek Perde Home",
+    "metaDesc": "Tül ve fon perdede 1x3 sık pile, 1x2.5 orta pile, 1x2 seyrek pile, kanun pile ve boru pile arasındaki farklar ve pencereye göre kumaş hesaplama tablosu.",
+    "keywords": "1x3 sık pile nedir, perde pile çeşitleri, kanun pile nedir, boru pile fon perde, 1x2.5 orta pile hesaplama",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/klasik-salon-antrasit-fon-ve-pileli-tul-perde.jpg",
+    "excerpt": "Pencerenizin genişliğine ve seçtiğiniz tülün dokusuna göre 1x3 sık kanun pile, 1x2.5 orta pile ve boru pile arasındaki metraj ve görünüm farkları.",
+    "contentHtml": "\n      <h2>Pile Sıklığı Perdenin Duruşunu ve Mahremiyeti Nasıl Değiştirir?</h2>\n      <p>Perde terziliğinde <strong>pile sıklığı (pile oranı)</strong>, 1 metrelik bitmiş korniş genişliği için kaç metre düz kumaşın katlanarak dikildiğini ifade eder. Aynı kumaşı 1x2 seyrek pile diktiğinizde camda ince ve düz dururken, <strong>1x3 sık kanun pile</strong> diktiğinizde derin gölgeli, tok ve dışarıdan içeriyi kesinlikle göstermeyen bir mimari duruş elde edilir.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Pile Oranı & Adı</th>\n            <th>1 Metre Korniş İçin Kumaş</th>\n            <th>3 Metrelik Salon Camı İçin Kumaş</th>\n            <th>Görünüm ve Tavsiye Edilen Kumaş</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>1x3 Sık Pile (Kanun / Kutu Pile)</strong></td>\n            <td>3,00 Metre</td>\n            <td>9,00 Metre</td>\n            <td>Pileler birbirine sıfır değer, boşluk kalmaz. Salon ve yatak odası düz/keten tülleri için en zengin seçimdir.</td>\n          </tr>\n          <tr>\n            <td><strong>1x2.5 Orta (İdeal) Pile</strong></td>\n            <td>2,50 Metre</td>\n            <td>7,50 Metre</td>\n            <td>Pileler arasında 2–3 cm zarif boşluk kalır. Kalın dokulu keten tüller ve oturma odaları için idealdir.</td>\n          </tr>\n          <tr>\n            <td><strong>1x2 Seyrek (Amerikan) Pile</strong></td>\n            <td>2,00 Metre</td>\n            <td>6,00 Metre</td>\n            <td>Daha düz ve sade durur. Üzerinde büyük desen veya işlemeli kupür bulunan tüllerde desenin kapanmaması için seçilir.</td>\n          </tr>\n          <tr>\n            <td><strong>Boru Pile / S-Wave (Su Dalgası)</strong></td>\n            <td>2,60 – 2,80 Metre</td>\n            <td>8,00 Metre</td>\n            <td>Keskin ütü izi yerine tavandan zemine yuvarlak S dalgalarıyla iner. Kadife ve keten fon kanatlarda çok popülerdir.</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Hangi Odada Hangi Pile Çeşidi Kullanılmalı?</h2>\n      <ul>\n        <li><strong>Salon ve Misafir Odaları:</strong> Geniş pencerelerde tülün cılız durmaması ve gündüz dışarıdan içerinin görünmemesi için mutlaka <strong>1x3 sık kanun pile</strong> öneriyoruz. Yan fon kanatlarda ise modern bir görünüm için <strong>boru pile</strong> veya <strong>Amerikan çatal pile</strong> tercih edilmektedir.</li>\n        <li><strong>Oturma Odası ve Çocuk Odaları:</strong> Hem bütçeyi dengelemek hem de daha spor bir görünüm yakalamak için <strong>1x2.5 orta pile</strong> oldukça yeterlidir.</li>\n        <li><strong>Dar Kartonpiyerli Tavanlar:</strong> Eğer tavanınızdaki LED havuzu veya kartonpiyer kornişe çok yakınsa, dışa doğru kabaran büzgülü dikimler yerine yatık <strong>kutu (kanun) pile</strong> uygulanarak perdenin kartonpiyere sürtünmesi önlenir.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Büzgülü (ekstrafor çekmeli) perde ile makinede sabit dikilmiş kanun pile arasındaki fark nedir?",
+        "a": "İpli büzgülü ekstraforlarda yıkama sonrasında ipler gevşeyebilir ve pilelerin bir kısmı sık, bir kısmı seyrek toplanarak düzensiz görünür. Atölyemizde ise her pile terzi makinesinde sabitlenerek dikilir; yüzlerce kez yıkansa da pile aralıkları milimetrik olarak aynı kalır."
+      },
+      {
+        "q": "Kalın keten tüllerde neden bazen 1x2.5 pile öneriyorsunuz?",
+        "a": "Ham keten şantuklu kalın tüllerde 1x3 çok sık pile yapıldığında kumaş hacmi üst başlıkta aşırı kalınlaşabilir. Bu özel dokularda 1x2.5 veya 1x2.75 oranında dikim yapmak dalgaların çok daha doğal ve zarif dökülmesini sağlar."
+      }
+    ]
   },
   {
-    slug: "mutfak-icin-en-kullanisli-perde-modelleri",
-    title: "Mutfak İçin En Kullanışlı Perde Modelleri: Kruvaze, Bambu Zebra ve 3 Boyutlu Tül",
-    metaTitle: "Mutfak Perde Modelleri 2026 | En Kullanışlı Mutfak Perdeleri | Dilek Perde",
-    metaDesc: "Mutfak camı ve mutfak balkon kapısı için leke tutmayan, kolay yıkanan kruvaze tül, bambu zebra, ahşap jaluzi ve 3 boyutlu mutfak perde modelleri.",
-    keywords: "mutfak perde modelleri, mutfak için en kullanışlı perde, mutfak kruvaze perde, mutfak zebra perde modelleri, 3 boyutlu mutfak perdesi",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/mutfak-kruvaze-tul-ve-zebra-perde-kazan.jpg",
-    excerpt: "Tezgah üstü pencereler ve balkon kapılı mutfaklar için hem ferah hem de pratik temizlenen perde çözümleri.",
-    contentHtml: `
-      <h2>Mutfakta Hem Şıklık Hem Pratiklik</h2>
-      <p>Mutfak perdesi seçerken pencerenin tezgah/evye yakınlığı ve balkon kapısı olup olmadığı belirleyicidir. Balkon kapılı mutfaklarda <strong>mekanizmalı İtalyan kruvaze tül</strong> + arka fonda <strong>bambu zebra perde</strong> kombinasyonu hem kapı geçişini kolaylaştırır hem de mutfağa sıcak bir salon havası katar.</p>
-    `
+    "slug": "cam-balkon-perdesi-secimi-plise-mi-stor-mu",
+    "title": "Cam Balkon Perdesi Seçimi: Plise (Plisell) Perde mi, Stor Perde mi?",
+    "metaTitle": "Cam Balkon Perdesi Seçimi: Plise Perde mi Stor Perde mi? | Dilek Perde Home",
+    "metaDesc": "Katlanır ve sürgülü cam balkonlarda neden plise perde tercih edilmeli? Cam balkon plise perde ile stor perde arasındaki kullanım, montaj ve ısı yalıtımı farkları.",
+    "keywords": "cam balkon perdesi, plise perde mi stor perde mi, katlanır cam balkon perdesi, plisell perde ankara, kahramankazan cam balkon perdesi",
+    "date": "2026-11-06",
+    "readTime": "8 dk okuma",
+    "heroImage": "/images/gallery/cam-balkon-ve-mutfak-antrasit-stor-perde.jpg",
+    "excerpt": "Katlanır cam balkon kanatlarının takılmadan açılabilmesi, alttan-üstten yönlendirme ve dört mevsim ısı yalıtımı için plise perde ile stor perde karşılaştırması.",
+    "contentHtml": "\n      <h2>Katlanır Cam Balkonlarda Neden Plise (Plisell) Perde Rakipsizdir?</h2>\n      <p>Ankara ve Kahramankazan'daki dairelerin büyük çoğunluğunda <strong>katlanır cam balkon</strong> sistemi bulunuyor. Cam balkon yaptırdıktan sonra tavana klasik stor veya zebra perde takıldığında, ilk cam kanadını (ana kanadı) içe doğru açmak istediğinizde camın üst köşesi doğrudan stor perdenin alüminyum kasasına çarpar ve cam balkon açılamaz hale gelir. Oysa <strong>Plise (Plisell) perde</strong> her bir camın kendi alüminyum çerçevesine sıfır monte edildiği için camlarla beraber katlanır ve hiçbir yere takılmaz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Karşılaştırma Kriteri</th>\n            <th>Plise (Plisell) Cam Balkon Perdesi</th>\n            <th>Tavana Monte Stor / Zebra Perde</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Katlanır Camların Açılması</strong></td>\n            <td>Her camla birlikte katlanır; camları açarken perdeyi toplamanıza gerek yoktur</td>\n            <td>Kasa kalınlığı (7–8 cm) içe açılan cam kanadına engel olur; kör kasa profili gerektirir</td>\n          </tr>\n          <tr>\n            <td><strong>Hareket Yönü</strong></td>\n            <td>Hem üstten aşağı hem alttan yukarı (istediğiniz orta seviyede durur)</td>\n            <td>Sadece yukarıdan aşağıya doğru iner</td>\n          </tr>\n          <tr>\n            <td><strong>Rüzgârda Sallanma</strong></td>\n            <td>Dört köşeden gergin çelik/ip kılavuzlu olduğu için cam açıkken rüzgârda asla çarpmaz</td>\n            <td>Balkon camı aralandığında rüzgârla sallanır ve etek çıtası cama vurarak ses yapar</td>\n          </tr>\n          <tr>\n            <td><strong>Bağımsız Işık Kontrolü</strong></td>\n            <td>Güneşin vurduğu 2 kanadı kapatıp diğer 4 kanadı açık bırakabilirsiniz</td>\n            <td>Genellikle 2 veya 3 cam tek kasada birleştiği için toplu açılıp kapanır</td>\n          </tr>\n          <tr>\n            <td><strong>Temizlik Pratikliği</strong></td>\n            <td>Klipslerinden 10 saniyede çıkarılıp duş altında ılık suyla yıkanabilir</td>\n            <td>Kumaş kasadan sökülerek düz zeminde silinmelidir</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Alttan ve Üstten Açılabilme Özelliği Ne İşe Yarar?</h2>\n      <p>Karşı binayla yakın mesafede olan dairelerde balkonda otururken sadece bel hizasına kadar olan alt kısmı kapatıp, üst yarıdan gökyüzünü ve gün ışığını almaya devam edebilirsiniz. Bu özellik standart stor veya tül perdelerde mümkün değildir; sadece çift yönlü <strong>Plisell</strong> mekanizmalarında bulunur.</p>\n\n      <h2>Sürgülü (Eşikli/Eşiksiz) Cam Balkonlarda Hangi Perde Seçilmeli?</h2>\n      <p>Camların içe katlanmadığı, ray üzerinde sağa-sola kayarak açıldığı <strong>sürgülü cam balkonlarda</strong> veya sabit camlı kış bahçelerinde ise tavana monte edilen <strong>antrasit kasa screen stor</strong> veya <strong>bambu zebra perdeler</strong> çok şık ve ekonomik bir alternatif oluşturur. Keşif sırasında balkonunuzun profil yapısına göre her iki seçeneği de yerinde gösteriyoruz.</p>\n    ",
+    "faqs": [
+      {
+        "q": "Plise perde montajı yapılırken cam balkon profillerim deliniyor mu?",
+        "a": "Cam balkonun su yalıtımına veya cam temperine hiçbir zarar verilmez. Montaj, camı tutan ince alüminyum çıta üzerine mikro paslanmaz vidalarla veya talebe göre iz bırakmayan yapıştırma/geçme aparatlarla 20 dakikada tamamlanır."
+      },
+      {
+        "q": "Güneşin çok yakıcı vurduğu batı cephe cam balkonlarda hangi plise kumaşı seçilmeli?",
+        "a": "Batı ve güney cephelerde arka yüzeyi sedefli (reflektif) veya petek dokulu (Honeycomb / Duette) ısı yalıtımlı plise kumaşları öneriyoruz. Bu kumaşlar yazın balkonun sera gibi ısınmasını %60'a kadar azaltır."
+      }
+    ]
   },
   {
-    slug: "yatak-odasi-blackout-karartma-perde-rehberi",
-    title: "Yatak Odası ve Bebek Odası İçin %100 Işık Kesen Blackout (Karartma) Perde Rehberi",
-    metaTitle: "Blackout Karartma Perde Nedir? Yatak Odası Perde Seçimi | Dilek Perde Home",
-    metaDesc: "Gündüz uykusu, bebek odası ve yatak odaları için güneş ışığını ve sokak aydınlatmasını %100 kesen termal blackout fon ve stor perde modelleri.",
-    keywords: "blackout perde, karartma perde, yatak odası perde modelleri, ışık geçirmeyen perde, bebek odası karartma perde",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/incek-ankara-daire-stor-ve-guneslik-perde.jpg",
-    excerpt: "Kaliteli uyku ve yaz-kış ısı yalıtımı sağlayan üç katmanlı dokuma blackout kumaşların farkı.",
-    contentHtml: `
-      <h2>Dokuma Blackout ile Kaplama Blackout Arasındaki Fark</h2>
-      <p>Kaliteli bir yatak odası perdesi sadece ışığı kesmekle kalmaz, aynı zamanda odanın ısısını korur. Mağazamızda sunduğumuz <strong>üç iplik dokuma (kendinden blackout)</strong> fon kumaşlar, arka yüzeyi silikon kaplamalı sert kumaşların aksine yumuşak kadife/keten dökümündedir ve çamaşır makinesinde güvenle yıkanabilir.</p>
-    `
+    "slug": "mutfak-icin-en-kullanisli-perde-modelleri",
+    "title": "Mutfak İçin En Kullanışlı Perde Modelleri: Kruvaze, Bambu Zebra ve 3 Boyutlu Tül",
+    "metaTitle": "Mutfak Perde Modelleri 2026 | En Kullanışlı Mutfak Perdeleri | Dilek Perde",
+    "metaDesc": "Mutfak camı ve mutfak balkon kapısı için leke tutmayan, kolay yıkanan kruvaze tül, bambu zebra, ahşap jaluzi ve 3 boyutlu mutfak perde modelleri.",
+    "keywords": "mutfak perde modelleri, mutfak için en kullanışlı perde, mutfak kruvaze perde, mutfak zebra perde modelleri, 3 boyutlu mutfak perdesi",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/mutfak-kruvaze-tul-ve-zebra-perde-kazan.jpg",
+    "excerpt": "Tezgah üstü pencereler, evye arkası camlar ve balkon kapılı mutfaklar için buhar/yağ tutmayan, kolay yıkanan perde modelleri.",
+    "contentHtml": "\n      <h2>Mutfak Mimarisinde Pencere Konumuna Göre Perde Seçimi</h2>\n      <p>Mutfak, evin en çok buhar, yemek kokusu ve gün ışığı alan alanıdır. Bu nedenle mutfak perdesi seçerken sadece görselliğe değil, pencerenin <strong>ocak/evye yakınlığına</strong> ve <strong>balkon kapısı geçişine</strong> göre model belirlenmelidir. Kahramankazan'daki dairelerde en çok uyguladığımız 4 mutfak perdesi çözümü:</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Mutfak Pencere Tipi</th>\n            <th>En İdeal Perde Modeli</th>\n            <th>Neden Bu Model Tercih Edilmeli?</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Balkon Kapılı + Yan Pencereli Mutfak</strong></td>\n            <td>Kapsül / İtalyan Kruvaze Tül + Arka Kanalda Zebra Perde</td>\n            <td>Kapı kanadındaki tül braçolla yana toplanır, balkon giriş-çıkışında perdeye el değmez ve kirlenmez</td>\n          </tr>\n          <tr>\n            <td><strong>Tezgâh / Evye Üstü Kısa Pencere</strong></td>\n            <td>Bambu Dokulu Zebra veya 50mm Ahşap/Alüminyum Jaluzi</td>\n            <td>Su sıçramasından etkilenmez, tezgâh üzerinde yer kaplamaz, nemli bezle 2 dakikada silinir</td>\n          </tr>\n          <tr>\n            <td><strong>Yemek Masalı Geniş Modern Mutfak</strong></td>\n            <td>3 Boyutlu (3D) Dikey/Dalgalı Tül veya Keten Tül + Tek Kanat Fon</td>\n            <td>Mutfağa oturma odası sıcaklığı katar, çamaşır makinesinde 30°C'de yıkanıp ütüsüz asılır</td>\n          </tr>\n          <tr>\n            <td><strong>Cam Balkona Açılan Panoramik Mutfak</strong></td>\n            <td>Antrasit Kasa Sun Screen Stor + İnce Grek Tül</td>\n            <td>Gündüz güneş parlamasını keserken dış manzarayı kapatmaz, alev geciktirici ve leke tutmaz dokudadır</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Mutfakta Kruvaze Tül ve Zebra Perde Birlikte Nasıl Kullanılır?</h2>\n      <p>Son yıllarda Kahramankazan ve Eryaman'daki yeni konutlarda en çok beğeni toplayan kombinasyonumuz; <strong>arka korniş kanalına sade bambu zebra perde (güneşlik işlevi için)</strong>, <strong>ön korniş kanalına ise gümüş veya taş sarkıtlı kruvaze/kapsül tül perde</strong> uygulamasıdır. Böylece gündüzleri zebra perdeyi tamamen yukarı toplayıp sadece şık tülünüzü kullanabilir, akşam ışıklar yandığında ise zebrayı indirerek tam mahremiyet sağlayabilirsiniz.</p>\n\n      <h2>Mutfak Perdelerinde Leke ve Koku Önleyici Kumaş Teknolojisi</h2>\n      <ul>\n        <li><strong>Grek ve Kapsül Tüller:</strong> Gözenekli file yapısı sayesinde yemek kokusunu lif içine hapsetmez; 30 derecede kısa programda yıkandığında anında temizlenir.</li>\n        <li><strong>Apreli Bambu Zebralar:</strong> Kumaş yüzeyindeki antistatik apre, havadaki yağ buharının kumaşa yapışmasını geciktirir.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Mutfakta mekanizmalı kruvaze perdeyi yıkamak zor mudur?",
+        "a": "Hayır. Yeni nesil kruvaze perdelerimizde ip mekanizmasına gerek kalmadan, kornişe normal tül gibi takılan ve yanlardaki mıknatıslı/sutaşı braçollarla kruvaze formu verilen pratik dikim tekniği uyguluyoruz. Saniyeler içinde çıkarıp makinede yıkayabilirsiniz."
+      },
+      {
+        "q": "Ocak yanındaki pencereye hangi perde takılmalı?",
+        "a": "Ocakla pencere arasındaki mesafe 40 cm'den azsa uçuşan uzun tüller yerine cama sıfır oturan plise perde, alüminyum jaluzi veya alev yürümez screen stor perde tercih edilmelidir."
+      }
+    ]
   },
   {
-    slug: "akilli-dikey-tul-perde-nedir-avantajlari",
-    title: "Akıllı Dikey Tül Perde Nedir? Tül, Güneşlik ve Fon Perde Tek Mekanizmada",
-    metaTitle: "Akıllı Dikey Tül Perde Nedir? Kullanımı ve Fiyatları | Dilek Perde Home",
-    metaDesc: "Hem tül, hem güneşlik, hem fon perde işlevi gören akıllı dikey tül perde nasıl çalışır, nasıl yıkanır? Balkon kapılı salonlar için ideal çözüm.",
-    keywords: "akıllı dikey perde, dikey tül perde, akıllı perde kullananlar, dikey tül perde nasıl yıkanır, balkon kapısı için perde",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/haki-yesil-kadife-fon-perde-ve-dikey-tul.jpg",
-    excerpt: "Perdeyi kenara çekmeden içinden yürüyerek balkona çıkabildiğiniz, tek hareketle gece moduna geçen yeni nesil sistem.",
-    contentHtml: `
-      <h2>Balkon Kapılı Salonlarda Büyük Kolaylık</h2>
-      <p>Akıllı dikey tül perde, birbirinden bağımsız 40 cm'lik kumaş şeritlerden oluşur. Gündüz konumunda zarif bir tül görünümü sunarken, kumanda çubuğunu çevirdiğinizde şeritler kapanarak kalın bir güneşlik ve fon perdeye dönüşür. Şeritlerin alt kısmında zincir olmadığı için perdeyi hiç açmadan içinden yürüyüp balkona geçebilirsiniz.</p>
-    `
+    "slug": "yatak-odasi-blackout-karartma-perde-rehberi",
+    "title": "Yatak Odası ve Bebek Odası İçin %100 Işık Kesen Blackout (Karartma) Perde Rehberi",
+    "metaTitle": "Blackout Karartma Perde Nedir? Yatak Odası Perde Seçimi | Dilek Perde Home",
+    "metaDesc": "Gündüz uykusu, bebek odası ve yatak odaları için güneş ışığını ve sokak aydınlatmasını %100 kesen termal blackout fon ve stor perde modelleri.",
+    "keywords": "blackout perde, karartma perde, yatak odası perde modelleri, ışık geçirmeyen perde, bebek odası karartma perde",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/incek-ankara-daire-stor-ve-guneslik-perde.jpg",
+    "excerpt": "Kaliteli uyku, bebeklerin gündüz uykusu ve yaz-kış ısı yalıtımı sağlayan üç katmanlı dokuma blackout ile kaplama blackout kumaşların farkı.",
+    "contentHtml": "\n      <h2>Yatak Odası ve Bebek Odalarında Neden Blackout Perde Kullanılmalı?</h2>\n      <p>Kaliteli bir uyku için vücudun melatonin hormonu salgılaması doğrudan ortamın karanlık düzeyiyle ilişkilidir. Sokak lambalarının, araç farlarının veya yaz aylarında sabah 05:30'da doğan güneşin yatak odasına girmesi uyku derinliğini bozar. Özellikle <strong>bebeklerin gündüz uykuları</strong>, <strong>gece vardiyasında çalışanlar</strong> (TAI/TUSAŞ, Saray OSB ve sağlık çalışanlarımız) ve <strong>ev sinema odaları</strong> için Blackout (karartma) perde en etkili çözümdür.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Blackout Perde Türü</th>\n            <th>Işık Kesme Oranı</th>\n            <th>Doku & Görünüm</th>\n            <th>Yıkama ve Kullanım Avantajı</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Üç İplik Dokuma Blackout Fon</strong></td>\n            <td>%90 – %96 (Koyu renklerde %98)</td>\n            <td>Yumuşak mat keten veya kadife dökümlü (iki yüzü kumaş, ortası siyah karbon iplik)</td>\n            <td>Çamaşır makinesinde 30°C'de yıkanabilir, koku yapmaz, normal fon perde şıklığındadır</td>\n          </tr>\n          <tr>\n            <td><strong>Akrilik / Silikon Kaplama Blackout</strong></td>\n            <td>%100 Tam Karartma</td>\n            <td>Arka yüzeyi beyaz/gri termal kaplamalı, daha tok duruşlu</td>\n            <td>Güneş ışığını ve sıcaklığı %100 bloke eder; nemli bezle silinmesi önerilir</td>\n          </tr>\n          <tr>\n            <td><strong>Blackout Stor Güneşlik</strong></td>\n            <td>%98 – %100 (Kasa payı ile)</td>\n            <td>Tül perdenin arkasında kornişe veya tavana gizlenen düz mekanizma</td>\n            <td>Gündüz tamamen yukarı toplanıp görünmez olur, gece indirildiğinde odayı tam karartır</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Işık Sızmasını Sıfıra İndiren Montaj Püf Noktaları</h2>\n      <p>En kaliteli blackout kumaşı seçseniz bile ölçü ve montaj doğru planlanmazsa pencere kenarlarından \"ışık halesi\" sızabilir. Atölyemizin uyguladığı 3 teknik önlem:</p>\n      <ul>\n        <li><strong>Yan Taşma Payı:</strong> Blackout fon veya stor perde, pencere camından sağa ve sola en az <strong>20–25'er cm taşacak</strong> şekilde planlanır.</li>\n        <li><strong>Ortada Üst Üste Binme (Kruvasan Kapanış):</strong> İki kanatlı blackout fon perdelerde, kanatlar ortada birleştiğinde aradan ışık çizgisi sızmaması için orta ruletler 10 cm üst üste binecek şekilde konumlandırılır.</li>\n        <li><strong>Termal Isı ve Ses Yalıtımı:</strong> Üç katmanlı yoğun dokuma yapısı sayesinde kışın camdan gelen soğuk hava akımını, yazın ise güneşin kavurucu ısısını keserek oda sıcaklığını 3–4°C dengeler.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Blackout perde olması için mutlaka siyah veya koyu renk mi seçmeliyiz?",
+        "a": "Hayır. Üç iplik dokuma blackout kumaşlarımızın tam ortasında görünmeyen siyah karbon iplik katmanı bulunur. Bu sayede dıştan görünen yüzeyi açık krem, taş rengi, vizon veya pudra seçseniz bile yüksek oranda karartma sağlar."
+      },
+      {
+        "q": "Yatak odasında hem normal güneşlik hem blackout gerekli mi?",
+        "a": "Hayır. Arka kanala normal beyaz güneşlik yerine doğrudan açık renk bir Blackout güneşlik (kumaş veya stor) taktığınızda, öndeki tül perdeniz ve dekoratif fonlarınızla birlikte ekstra bir katmana gerek kalmadan tam karartma elde edersiniz."
+      }
+    ]
   },
   {
-    slug: "kahramankazan-ve-ankara-2026-perde-modelleri-rehberi",
-    title: "Kahramankazan (Kazan) ve Ankara'da Evde Ücretsiz Perde Keşfi Nasıl Yapılır?",
-    metaTitle: "Kahramankazan Perdeci & Ankara Ücretsiz Evde Perde Keşfi | Dilek Perde Home",
-    metaDesc: "Kazanda perde arayanlar için Atatürk Mah. Kazım Karabekir Cad. No:12/A-B mağazamızdan evinize ücretsiz kartela getirme, lazerli ölçü ve montaj süreci.",
-    keywords: "kazanda perde, kahramankazan perdeci, kazan perde mağazaları, ankara evde perde ölçüsü, dilek perde home",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg",
-    excerpt: "Kumaş rengini mağaza spotu altında değil, kendi salonunuzun gün ışığında ve koltuklarınızın yanında seçmenin avantajı.",
-    contentHtml: `
-      <h2>Neden Kumaş Kartelasını Evinizin Işığında Görmelisiniz?</h2>
-      <p>Mağaza aydınlatmasında beğendiğiniz bir vizon veya gri ton, evinizin cephesine (kuzey/güney) ve duvar boyanıza göre farklı görünebilir. Bu yüzden <strong>Dilek Perde Home</strong> olarak Kahramankazan merkez başta olmak üzere Eryaman, Batıkent, İncek ve Çayyolu'ndaki müşterilerimizin evine zengin kartela çantamızla misafir oluyor, lazer metreyle milimetrik ölçü alıp sıfır hata ile dikim yapıyoruz.</p>
-    `
+    "slug": "akilli-dikey-tul-perde-nedir-avantajlari",
+    "title": "Akıllı Dikey Tül Perde Nedir? Tül, Güneşlik ve Fon Perde Tek Mekanizmada",
+    "metaTitle": "Akıllı Dikey Tül Perde Nedir? Kullanımı ve Fiyatları | Dilek Perde Home",
+    "metaDesc": "Hem tül, hem güneşlik, hem fon perde işlevi gören akıllı dikey tül perde nasıl çalışır, nasıl yıkanır? Balkon kapılı salonlar için teknik rehber.",
+    "keywords": "akıllı dikey perde, dikey tül perde, akıllı perde kullananlar, dikey tül perde nasıl yıkanır, balkon kapısı için perde",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/haki-yesil-kadife-fon-perde-ve-dikey-tul.jpg",
+    "excerpt": "Perdeyi kenara çekmeden içinden yürüyerek balkona çıkabildiğiniz, tek hareketle gece moduna geçen yeni nesil akıllı dikey tül sistemi.",
+    "contentHtml": "\n      <h2>Tek Mekanizmada 3 İşlev: Tül + Güneşlik + Dekoratif Fon</h2>\n      <p>Son yılların en yenilikçi perde tasarımı olan <strong>Akıllı Dikey Tül Perde</strong>, klasik ofis dikey perdelerinin ev konforuna uyarlanmış lüks kumaş versiyonudur. Birbirinden bağımsız 40 cm genişliğindeki özel dokuma kumaş şeritlerin U şeklinde katlanarak alüminyum ray üzerindeki vagonlara takılmasıyla çalışır. Böylece ayrı ayrı tül, stor güneşlik ve fon perde alma maliyetini tek bir sistemde birleştirir.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Özellik</th>\n            <th>Akıllı Dikey Tül Perde</th>\n            <th>Klasik Tül + Stor Güneşlik + Fon Kombinasyonu</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Balkon Kapısından Geçiş</strong></td>\n            <td>Altında zincir yoktur; perdeyi hiç açmadan istediğiniz noktadan içinden yürüyerek geçebilirsiniz</td>\n            <td>Balkona çıkmak için önce tülü kenara çekmek, akşam ise stor güneşliği yukarı kaldırmak gerekir</td>\n          </tr>\n          <tr>\n            <td><strong>Gece / Gündüz Modu</strong></td>\n            <td>Kumanda çubuğunu 180° çevirdiğinizde 1 saniyede tülden kalın karartma güneşliğe dönüşür</td>\n            <td>Arka kanaldaki güneşlik veya öndeki fon kanatlar ayrıca çekilerek kapatılır</td>\n          </tr>\n          <tr>\n            <td><strong>Bölgesel Temizlik</strong></td>\n            <td>Sadece kirlenen tek bir şeridi (dilimi) 5 saniyede çıkarıp makinede yıkayabilirsiniz</td>\n            <td>Küçük bir leke için 8–10 metrelik tüm salon tülünü söküp yıkamak gerekir</td>\n          </tr>\n          <tr>\n            <td><strong>Renk Kombinasyonu</strong></td>\n            <td>Kenardaki dilimleri antrasit/vizon (fon görünümü), ortadaki dilimleri krem/ekru seçebilirsiniz</td>\n            <td>Tül ve fon kanatlar ayrı korniş kanallarında yer alır</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Akıllı Dikey Tül Perde Nasıl Yıkanır ve Ütü İster mi?</h2>\n      <p>Kullanıcıların en çok merak ettiği konu bu sistemin temizliğidir. Akıllı perdenin her bir kumaş dilimi üstteki mandallı vagondan tek hareketle ayrılır:</p>\n      <ul>\n        <li>Çıkarılan şeritleri rulo veya katlı halde perde yıkama filesine koyup <strong>30°C'de 400 devirde</strong> yıkayabilirsiniz.</li>\n        <li>Nemli olarak tekrar vagonlarına klipslediğinizde kendi dikey ağırlığıyla kurur ve kesinlikle ütü istemez.</li>\n        <li>Evcil hayvanı (kedi/köpek) veya küçük çocuğu olan ailelerde, tüm perde yerine sadece tek bir şeridin değiştirilebilmesi büyük ekonomik avantaj sağlar.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Akıllı dikey tül perde akşamları içeriyi gösterir mi?",
+        "a": "Gündüz açık konumdayken normal tül perde gibi dışarıdan içeriyi göstermez ve gün ışığını alır. Akşam ışıklar yandığında ise döndürme çubuğunu çevirerek şeritlerin kalın opak kısımlarını üst üste getirdiğinizde dışarıdan içerisi kesinlikle görünmez."
+      },
+      {
+        "q": "Mevcut kornişin üzerine takılabilir mi?",
+        "a": "Akıllı dikey perde kendi özel alüminyum vagonlu rayıyla birlikte gelir. Ustalarımız bu rayı mevcut kornişinizin hemen önüne veya doğrudan tavana 15 dakika içinde monte etmektedir."
+      }
+    ]
   },
   {
-    slug: "salon-fon-perde-renk-secimi-rehberi",
-    title: "Koltuk ve Halı Rengine Göre Salon Fon Perde Seçimi: Vizon, Antrasit, Haki ve Kiremit Uyumu",
-    metaTitle: "Koltuk Rengine Göre Fon Perde Seçimi 2026 | Dilek Perde Home",
-    metaDesc: "Krem, gri, antrasit, yeşil ve kahverengi koltuk takımlarına hangi renk fon perde ve tül uyar? Kahramankazan ve Ankara salon perde kombinasyon rehberi.",
-    keywords: "koltuk rengine göre perde seçimi, gri koltuğa ne renk perde, krem koltuğa fon perde, vizon fon perde, antrasit fon perde",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
-    excerpt: "Salonunuzu daha geniş ve aydınlık gösterecek, koltuk ve halınızla kusursuz bütünleşen fon perde renk eşleştirmeleri.",
-    contentHtml: `
-      <h2>Koltuk Takımınızla Perdeniz Aynı Renk mi Olmalı, Kontrast mı?</h2>
-      <p>İç mimaride en sık yapılan hata, koltuk kumaşıyla birebir aynı tonda fon perde seçip odayı tekdüze hale getirmektir. <strong>Dilek Perde Home</strong> olarak uyguladığımız altın kural; koltuklarınızın <strong>kırlent veya halı içindeki ikincil rengini</strong> fon perdeye taşımaktır:</p>
-      <ul>
-        <li><strong>Krem, Bej ve Kırık Beyaz Koltuklar:</strong> Sıcak vizon, sütlü kahve, adaçayı yeşili veya tarçın tonlarında mat keten/kadife fon perde + ekru keten tül.</li>
-        <li><strong>Gri ve Füme Koltuklar:</strong> Koyu antrasit, petrol mavisi veya zümrüt yeşili kadife fon + gümüş dokulu 1x3 sık pile grek tül.</li>
-        <li><strong>Ceviz Mobilya ve Toprak Tonları:</strong> Haki yeşil veya altın-vizon geçişli boru pile fon perde + 50mm doğal ahşap jaluzi veya kırık beyaz bambu tül.</li>
-      </ul>
-    `
+    "slug": "kahramankazan-ve-ankara-2026-perde-modelleri-rehberi",
+    "title": "Kahramankazan (Kazan) ve Ankara'da Evde Ücretsiz Perde Keşfi Nasıl Yapılır?",
+    "metaTitle": "Kahramankazan Perdeci & Ankara Ücretsiz Evde Perde Keşfi | Dilek Perde Home",
+    "metaDesc": "Kazanda perde arayanlar için Atatürk Mah. Kazım Karabekir Cad. No:12/A-B mağazamızdan evinize ücretsiz kartela getirme, lazerli ölçü ve montaj süreci.",
+    "keywords": "kazanda perde, kahramankazan perdeci, kazan perde mağazaları, ankara evde perde ölçüsü, dilek perde home",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/kahramankazan-dilek-perde-magaza-vitrin.jpg",
+    "excerpt": "Kumaş rengini mağaza spotu altında değil, kendi salonunuzun gün ışığında ve koltuklarınızın yanında seçmenin avantajı ve ücretsiz keşif bölgelerimiz.",
+    "contentHtml": "\n      <h2>Neden Kumaş Kartelasını Kendi Salonunuzun Işığında Görmelisiniz?</h2>\n      <p>Bir perde mağazasının sarı veya beyaz spot ışıkları altında çok beğendiğiniz bir <em>vizon, taş veya antrasit</em> tonu, evinize asıldığında duvar boyanızın yansıması ve pencerenizin baktığı cephe nedeniyle bambaşka bir renge bürünebilir. Bu yüzden <strong>Dilek Perde Home</strong> olarak Kahramankazan Atatürk Mahallesi Kazım Karabekir Caddesi No:12/A-B adresindeki mağazamızda sunduğumuz yüzlerce kartelayı, randevu ile doğrudan evinize getiriyoruz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Hizmet Bölgemiz</th>\n            <th>Kapsanan Mahalle ve Projeler</th>\n            <th>Keşif & Montaj Süresi</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Kahramankazan Merkez & Siteler</strong></td>\n            <td>Atatürk Mah., Satıkadın, Kayı, Yıldırımbeyazıt, Fatih, Kanuni, Yavuz Sultan Selim, Ars Evleri, Yeşilova</td>\n            <td>Aynı gün ücretsiz keşif | 4–6 iş gününde dikim ve montaj</td>\n          </tr>\n          <tr>\n            <td><strong>Saray OSB & Kurumsal Tesisler</strong></td>\n            <td>Saray Mahallesi, Keresteciler Sanayi, TAİ / TUSAŞ Lojmanları, Fabrika Yönetim Binaları</td>\n            <td>24 saat içinde yerinde ölçü | Fatura & kurumsal teklif</td>\n          </tr>\n          <tr>\n            <td><strong>Batı & Kuzey Ankara Aksı</strong></td>\n            <td>Eryaman (1–6. Etap, Göksu, Susuz), Batıkent (Çakırlar, Kardelen), Etimesgut, Bağlıca, Yenimahalle, Keçiören</td>\n            <td>Planlı randevu ile ücretsiz kartela sunumu ve montaj</td>\n          </tr>\n          <tr>\n            <td><strong>Güney Ankara & Villa Projeleri</strong></td>\n            <td>İncek, Çayyolu, Ümitköy, Yaşamkent, Beysukent, Gölbaşı</td>\n            <td>Yüksek tavan, motorlu perde ve komple villa keşfi</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>4 Adımda Sıfır Hata İle Anahtar Teslim Perde Süreci</h2>\n      <ol>\n        <li><strong>Mağaza Ziyareti veya Evde Kartela Randevusu:</strong> İster Kazım Karabekir Caddesi'ndeki showroomumuza gelerek tam boy asılı modelleri inceleyin, isterseniz <a href=\"tel:+905514022707\">0551 402 27 07</a> hattımızdan randevu alın; koltuk, halı ve parke renginize en uygun kartelalarla evinize gelelim.</li>\n        <li><strong>Lazer Metre İle Milimetrik Ölçü:</strong> Her pencerenin sağ, orta ve sol tavan yüksekliğini, korniş kanal sayısını, kalorifer peteği çıkıntısını ve cam balkon profil yapısını lazer metre ile kayıt altına alıyoruz.</li>\n        <li><strong>Kendi Atölyemizde Özel Dikim ve Sanayi Ütüsü:</strong> Seçtiğiniz tül ve fon kumaşlar 1x3 sık kanun pile, boru pile veya kruvaze olarak dikilir, etek kurşunları ve kırılmaz ruletleri takılır.</li>\n        <li><strong>Kendi Ekibimizle Temiz Montaj:</strong> Perdeleriniz kornişe takılır, stoperlerle sabitlenir, stor/plise mekanizmalarınız terazisinde monte edilir ve son buhar kontrolü yapılarak teslim edilir.</li>\n      </ol>\n    ",
+    "faqs": [
+      {
+        "q": "Eve ölçü almaya geldiğinizde fiyat teklifini kabul etmezsek bir ücret ödüyor muyuz?",
+        "a": "Kesinlikle hayır. Kahramankazan ve Ankara içi keşif, lazerli ölçü ve yerinde kartela sunumu hizmetimiz tamamen ücretsizdir ve hiçbir satın alma zorunluluğu taşımaz."
+      },
+      {
+        "q": "Yeni taşındığımız dairede henüz korniş takılı değil, korniş montajı da yapıyor musunuz?",
+        "a": "Evet. Perde siparişinizle birlikte dairenizdeki eksik üçlü/dörtlü PVC kornişlerin veya alüminyum rayların darbeli matkap ve çelik dübelle sağlam montajını da kendi ekibimizle gerçekleştiriyoruz."
+      }
+    ]
   },
   {
-    slug: "ahsap-jaluzi-perde-kullanimi-ve-temizligi",
-    title: "50mm Masif Ahşap Jaluzi Perde Kullanışlı mı? Temizliği ve Montaj Detayları",
-    metaTitle: "Ahşap Jaluzi Perde Kullanışlı mı? Nasıl Temizlenir? | Dilek Perde Home",
-    metaDesc: "Gerçek ıhlamur ağacı 50mm ahşap jaluzi perde salon ve mutfakta kullanışlı mı? Ahşap jaluzi toz alma, silme ve fon perdeyle kombinleme rehberi.",
-    keywords: "ahşap jaluzi perde kullanışlı mı, 50mm ahşap jaluzi, ahşap jaluzi temizliği, salon ahşap jaluzi fon perde, ankara ahşap jaluzi",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/ahsap-jaluzi-ve-antrasit-fon-perde-kazan.jpg",
-    excerpt: "Güneş ışığını istediğiniz açıyla yönetmenizi sağlayan doğal ıhlamur ağacı jaluzilerin bakımı ve kullanım ömrü.",
-    contentHtml: `
-      <h2>Neden 50mm Ihlamur Ağacı (Basswood) Jaluzi?</h2>
-      <p>Standart 25mm ince jaluzilerin aksine <strong>50mm geniş bantlı masif ahşap jaluzi</strong>, pencereye panjur şıklığı katar. Fırınlanmış doğal ıhlamur ağacından üretildiği için Ankara'nın yakıcı yaz güneşinde eğilme, dönme veya sararma yapmaz. Temizliği ise son derece pratiktir: Bantları tam kapalı konuma getirip mikrofiber bezle tek seferde tozunu alabilirsiniz.</p>
-    `
+    "slug": "salon-fon-perde-renk-secimi-rehberi",
+    "title": "Koltuk ve Halı Rengine Göre Salon Fon Perde Seçimi: Vizon, Antrasit, Haki ve Kiremit Uyumu",
+    "metaTitle": "Koltuk Rengine Göre Fon Perde Seçimi 2026 | Dilek Perde Home",
+    "metaDesc": "Krem, gri, antrasit, yeşil ve kahverengi koltuk takımlarına hangi renk fon perde ve tül uyar? Kahramankazan ve Ankara salon perde kombinasyon tablosu.",
+    "keywords": "koltuk rengine göre perde seçimi, gri koltuğa ne renk perde, krem koltuğa fon perde, vizon fon perde, antrasit fon perde",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/modern-salon-vizon-fon-ve-keten-tul-perde.jpg",
+    "excerpt": "Salonunuzu daha geniş ve aydınlık gösterecek, koltuk, berjer ve halınızla kusursuz bütünleşen 60-30-10 iç mimari renk kuralı ve eşleştirme tablosu.",
+    "contentHtml": "\n      <h2>İç Mimaride 60–30–10 Renk Kuralı Perdeye Nasıl Uygulanır?</h2>\n      <p>Salon dekorasyonunda en sık yapılan hata, üçlü koltuk kumaşıyla birebir aynı renkte fon perde seçip odayı tekdüze ve boğucu hale getirmektir. Profesyonel iç mimaride uygulanan <strong>60–30–10 kuralına</strong> göre; odanın %60'ını duvar ve geniş koltuklar, %30'unu fon perdeler ve halı, %10'unu ise berjer ve kırlent gibi vurgu renkleri oluşturmalıdır. <strong>Dilek Perde Home</strong> olarak uyguladığımız altın kural, koltuklarınızın <strong>berjer veya kırlent içindeki ikincil tonunu</strong> fon perdeye taşımaktır.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Üçlü Koltuk Rengi</th>\n            <th>Berjer / Kırlent Rengi</th>\n            <th>En Şık Fon Perde Seçenekleri</th>\n            <th>Tamamlayıcı Tül Rengi</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Krem / Kırık Beyaz / Bej</strong></td>\n            <td>Kiremit, Yeşil veya Kahve</td>\n            <td>Sıcak Vizon, Sütlü Kahve, Adaçayı Yeşili veya Tarçın Keten/Kadife</td>\n            <td>Kırık Beyaz veya Doğal Ekru Keten Tül</td>\n          </tr>\n          <tr>\n            <td><strong>Açık Gri / Küllü Gri</strong></td>\n            <td>Antrasit, Hardal veya Mavi</td>\n            <td>Koyu Antrasit, Petrol Mavisi veya Gümüş-Vizon Geçişli Fon</td>\n            <td>Soğuk Beyaz veya İnce Gümüş Çizgili Grek Tül</td>\n          </tr>\n          <tr>\n            <td><strong>Antrasit / Koyu Füme</strong></td>\n            <td>Krem, Kiremit veya Zümrüt</td>\n            <td>Taş Rengi, Açık Gümüş Gri veya Kiremit-Kehribar Kontrast Fon</td>\n            <td>Ferahlık vermesi için Saf Beyaz 1x3 Sık Pile Tül</td>\n          </tr>\n          <tr>\n            <td><strong>Haki / Zümrüt Yeşili</strong></td>\n            <td>Krem, Ceviz veya Gold</td>\n            <td>Sıcak Ekru, Keten Beji veya Çift Renk (Yeşil + Vizon) Kombin Fon</td>\n            <td>Doğal Şantuklu Ekru Bambu Tül</td>\n          </tr>\n          <tr>\n            <td><strong>Sütlü Kahve / Toprak / Ceviz</strong></td>\n            <td>Bej, Haki veya Hardal</td>\n            <td>Haki Yeşil, Kum Beji veya Altın-Vizon Boru Pile Fon</td>\n            <td>Sıcak Krem İpek-Keten Tül</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Çift Kanat (Kombin) Fon Perde Uygulaması Nedir?</h2>\n      <p>Geniş salon camlarında (3,5 metre ve üzeri) pencerenin sağında ve solunda tek birer kanat yerine, yan yana asılan <strong>iki farklı renkte (örneğin dışta antrasit, içte vizon/krem) çift fon kanat</strong> kullanmak salona otel lobisi şıklığında derinlik katar. Bu uygulamada içteki açık renk kanat tülle yumuşak bir geçiş sağlarken, dıştaki koyu kanat çerçeveyi tamamlar.</p>\n    ",
+    "faqs": [
+      {
+        "q": "Halım desenli ve çok renkliyse fon perde nasıl olmalı?",
+        "a": "Halınız veya koltuk kırlentleriniz desenliyse fon perdenizde kesinlikle kendinden desenli veya jakarlı kumaş yerine düz, mat dokulu (keten veya mat kadife) tek renk bir kumaş seçmelisiniz ki göz yorgunluğu oluşmasın."
+      },
+      {
+        "q": "Parke rengi perde seçimini etkiler mi?",
+        "a": "Evet, tam boy fon perdeler zemine sıfır indiği için parkeyle doğrudan temas eder. Gri/meşe parkelerde soğuk taş ve antrasit tonları; sıcak ceviz parkelerde ise vizon, kum beji ve toprak tonları çok daha uyumlu durur."
+      }
+    ]
   },
   {
-    slug: "brillant-perde-modelleri-ve-kumas-ozellikleri",
-    title: "Brillant Tül ve Fon Perde Kumaşı Nasıl Anlaşılır? Grek, Keten ve Bambu Tül Rehberi",
-    metaTitle: "Brillant Perde Modelleri 2026 | Orijinal Tül & Fon Kumaşları | Dilek Perde",
-    metaDesc: "Brillant yetkili satış noktası Dilek Perde Home'da orijinal grek tül, keten tül, bambu tül ve kadife fon perde modelleri ve kumaş özellikleri.",
-    keywords: "brillant perde modelleri, brillant tül perde, orijinal brillant perde nasıl anlaşılır, grek tül perde, bambu tül perde",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/dilek-perde-brillant-yetkili-satis-magaza.jpg",
-    excerpt: "Yıllarca yıkansa da formunu ve rengini kaybetmeyen 1. sınıf dokuma tül kumaşların ayırt edici özellikleri.",
-    contentHtml: `
-      <h2>1. Sınıf Dokuma Tül Kumaşın Farkı Nedir?</h2>
-      <p>Kaliteli bir tül perdeyi elinize aldığınızda iplik sıklığını ve etek kurşununun tok ağırlığını hemen hissedersiniz. <strong>Dilek Perde Home</strong> mağazamızda sunduğumuz orijinal Brillant ve seçkin koleksiyon kumaşları, güneşin UV ışınlarına karşı özel aprelidir; yıllarca güneş gören güney cephe camlarda bile erime veya sararma yapmaz.</p>
-    `
+    "slug": "ahsap-jaluzi-perde-kullanimi-ve-temizligi",
+    "title": "50mm Masif Ahşap Jaluzi Perde Kullanışlı mı? Temizliği ve Montaj Detayları",
+    "metaTitle": "Ahşap Jaluzi Perde Kullanışlı mı? Nasıl Temizlenir? | Dilek Perde Home",
+    "metaDesc": "Gerçek ıhlamur ağacı 50mm ahşap jaluzi perde salon, mutfak ve ofiste kullanışlı mı? Ahşap jaluzi toz alma, silme ve fon perdeyle kombinleme rehberi.",
+    "keywords": "ahşap jaluzi perde kullanışlı mı, 50mm ahşap jaluzi, ahşap jaluzi temizliği, salon ahşap jaluzi fon perde, ankara ahşap jaluzi",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/ahsap-jaluzi-ve-antrasit-fon-perde-kazan.jpg",
+    "excerpt": "Güneş ışığını istediğiniz açıyla yönetmenizi sağlayan 50mm doğal ıhlamur ağacı (Basswood) jaluzilerin kurdele seçenekleri, bakımı ve kullanım ömrü.",
+    "contentHtml": "\n      <h2>Neden 50mm Ihlamur Ağacı (Basswood) Masif Ahşap Jaluzi?</h2>\n      <p>Eski tip 25mm ince alüminyum jaluzilerin aksine, <strong>50mm geniş bantlı masif ahşap jaluzi</strong> pencereye mimari bir panjur sıcaklığı ve derinliği katar. Mağazamızda sunduğumuz orijinal koleksiyonlar, fırınlanmış Kuzey Amerika ıhlamur ağacından (Basswood) üretildiği için hafif, dayanıklı ve UV vernik korumalıdır; Ankara'nın yakıcı yaz güneşinde eğilme, dönme veya reçine kusması yapmaz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Jaluzi Türü</th>\n            <th>Malzeme Yapısı</th>\n            <th>En Uygun Olduğu Alanlar</th>\n            <th>Suya ve Buhara Dayanım</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Doğal Masif Ahşap (Basswood)</strong></td>\n            <td>%100 Fırınlanmış Ihlamur Ağacı (50mm)</td>\n            <td>Salon, Yemek Odası, Çalışma Odası, Yönetici Ofisi</td>\n            <td>Nemli bezle silinir; doğrudan su tutulmaz</td>\n          </tr>\n          <tr>\n            <td><strong>Polywood (PVC / Islak Hacim Ahşap)</strong></td>\n            <td>Suya Dayanıklı Kompozit Ahşap Dokulu Bant</td>\n            <td>Mutfak Evye Önü, Banyo, Kış Bahçesi</td>\n            <td>%100 suya ve buhara dayanıklıdır, yıkanabilir</td>\n          </tr>\n          <tr>\n            <td><strong>Kurdeleli (Merdiven Şeritli) Ahşap</strong></td>\n            <td>50mm Ahşap + 25mm Dokuma Kumaş Şerit</td>\n            <td>Klasik-Modern Salonlar, Fon Perde Kombinleri</td>\n            <td>İp deliklerini gizleyerek tam karartma ve dekoratif kontrast sağlar</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Ahşap Jaluzi Salonlarda Fon Perde İle Nasıl Kombinlenir?</h2>\n      <p>Ahşap jaluziyi tek başına kullandığınızda modern ve minimalist bir görünüm elde edersiniz. Ancak salonda daha sıcak ve dolgun bir atmosfer istiyorsanız, pencerenin içine veya üstüne <strong>50mm ceviz/meşe ahşap jaluzi</strong> monte edip, sağ ve sol kenarlarına tavandan yere inen <strong>keten veya mat kadife dekoratif fon kanatlar</strong> eklemek 2026'nın en prestijli iç mimari uygulamalarından biridir. Bu uygulamada ayrıca tül veya güneşlik kullanmanıza gerek kalmaz.</p>\n\n      <h2>Ahşap Jaluzi Perdeyi Sökmeden 3 Dakikada Temizleme Yöntemi</h2>\n      <ol>\n        <li>Yönlendirme çubuğunu çevirerek tüm ahşap bantları <strong>aşağı bakar şekilde tam kapalı</strong> konuma getirin (düz bir ahşap yüzey oluşacaktır).</li>\n        <li>Antistatik mikrofiber toz alma aparatı veya hafif nemli (iyice sıkılmış) yumuşak bir bezle yukarıdan aşağıya doğru silin.</li>\n        <li>Ardından çubuğu ters yöne çevirerek bantların arka yüzeyini kapatın ve aynı işlemi tekrarlayın. Perdeyi kornişten sökmenize veya çamaşır makinesine atmanıza hiç gerek kalmadan temizlik tamamlanır.</li>\n      </ol>\n    ",
+    "faqs": [
+      {
+        "q": "Ahşap jaluzi perde yukarı doğru tamamen toplanır mı? Camı açmaya engel olur mu?",
+        "a": "Evet, ip mekanizmasıyla yukarı doğru çekildiğinde tüm bantlar üst kasada toplanır. Ancak masif ahşap bantların üst üste toplanma kalınlığı (yığılma payı) pencere yüksekliğine göre yaklaşık 18–22 cm'dir. Pencere kanadınızın üstten rahat açılması için kasayı pencere boşluğunun 20 cm üzerine (tavana) monte ediyoruz."
+      },
+      {
+        "q": "Motorlu (uzaktan kumandalı) ahşap jaluzi yapılabilir mi?",
+        "a": "Evet. Özellikle geniş salon camlarında veya yüksek pencerelerde Somfy ve Becker tüp motor entegrasyonu ile ahşap jaluzilerinizi uzaktan kumandayla hem aşağı-yukarı toplayabilir hem de bant açılarını ayarlayabilirsiniz."
+      }
+    ]
   },
   {
-    slug: "yeni-evlenenler-icin-ceyiz-ve-komple-ev-perde-listesi",
-    title: "Yeni Evlenenler İçin Oda Oda Perde İhtiyaç Listesi (2+1 ve 3+1 Daire Rehberi)",
-    metaTitle: "Yeni Evlenenler İçin Komple Ev Perde Listesi 2026 | Dilek Perde Home",
-    metaDesc: "Düğün ve çeyiz alışverişinde salon, mutfak, yatak odası ve oturma odası için hangi perdeler alınmalı? Komple daire perde paketi tavsiyeleri.",
-    keywords: "çeyiz perde listesi, yeni evlenenler için perde, komple ev perde fiyatları, düğün perde paketi, 3+1 daire perde maliyeti",
-    date: "2026-11-06",
-    readTime: "5 dk okuma",
-    heroImage: "/images/gallery/eryaman-yemek-odasi-kruvaze-tul-perde.jpg",
-    excerpt: "Salon, mutfak, yatak odası ve cam balkonda bütçeyi yormadan en şık uyumu yakalamanın yol haritası.",
-    contentHtml: `
-      <h2>3+1 Daire İçin İdeal Perde Kombinasyonu</h2>
-      <p>Yeni kurulan bir evde her odaya ağır fon ve kruvaze yapmak yerine, odanın kullanım amacına göre akıllı bir dağılım yapmak hem bütçenizi korur hem de evi ferah gösterir. Salon için 1x3 sık pile keten tül ve kadife fon, mutfak için bambu zebra veya 3 boyutlu tül, yatak odası için karartma blackout güneşlik + tül kombinasyonu en ideal çeyiz paketidir.</p>
-    `
+    "slug": "brillant-perde-modelleri-ve-kumas-ozellikleri",
+    "title": "Brillant Tül ve Fon Perde Kumaşı Nasıl Anlaşılır? Grek, Keten ve Bambu Tül Rehberi",
+    "metaTitle": "Brillant Perde Modelleri 2026 | Orijinal Tül & Fon Kumaşları | Dilek Perde",
+    "metaDesc": "Brillant yetkili satış noktası Dilek Perde Home'da orijinal grek tül, keten tül, bambu tül ve kadife fon perde modelleri ve kumaş kalite özellikleri.",
+    "keywords": "brillant perde modelleri, brillant tül perde, orijinal brillant perde nasıl anlaşılır, grek tül perde, bambu tül perde",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/dilek-perde-brillant-yetkili-satis-magaza.jpg",
+    "excerpt": "Yıllarca yıkansa da formunu, beyazlığını ve dökümünü kaybetmeyen 1. sınıf orijinal dokuma tül kumaşların ayırt edici teknik özellikleri.",
+    "contentHtml": "\n      <h2>1. Sınıf Orijinal Dokuma Tül Kumaş ile Ucuz Kumaş Arasındaki Farklar</h2>\n      <p>Dışarıdan bakıldığında birbirine çok benzeyen iki beyaz tül perde arasında yarı yarıya fiyat farkı olmasının sebebi <strong>iplik büküm teknolojisi, UV apresi ve etek kurşun gramajıdır</strong>. Kahramankazan'daki mağazamızda sunduğumuz orijinal Brillant ve seçkin koleksiyon kumaşları, güney cephe camlarda yıllarca güneş görse dahi sararma, sertleşme veya lif erimesi yapmaz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Kalite Kriteri</th>\n            <th>1. Sınıf Orijinal Koleksiyon Kumaşı</th>\n            <th>Standart / Düşük Gramajlı Piyasa Kumaşı</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>İplik ve Dokuma Sıklığı</strong></td>\n            <td>Yüksek bükümlü mikro-filament iplik; tırnakla çekildiğinde iz kalmaz</td>\n            <td>Seyrek dokuma; yıkama sırasında veya rulet takılırken kolayca tel kaçırır</td>\n          </tr>\n          <tr>\n            <td><strong>Etek Ağırlığı (Kurşun)</strong></td>\n            <td>Kumaşın kendi etek dokuması içinde 80–120 gr/m kesintisiz kurşun kordon</td>\n            <td>İnce hafif kordon; perde camda uçuşur ve pileler aşağıda dağılır</td>\n          </tr>\n          <tr>\n            <td><strong>Yıkama Sonrası Form</strong></td>\n            <td>30°C'de yıkanıp nemli asıldığında ütü istemez, çekme veya uzama yapmaz</td>\n            <td>İlk yıkamada 3–5 cm çekebilir veya kırışıklığı ütüyle bile zor açılır</td>\n          </tr>\n          <tr>\n            <td><strong>UV Güneş Dayanımı</strong></td>\n            <td>Güneşin ultraviyole ışınlarına karşı koruyucu apre; rengi solmaz</td>\n            <td>2–3 yaz sezonunda güneş vuran orta kısımlardan sararır ve gevrekleşir</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>En Çok Tercih Edilen 4 Temel Tül Dokusu</h2>\n      <ul>\n        <li><strong>Grek (File) Tül:</strong> Geometrik mikro petek örgüsü sayesinde kedi tırnağına, çocuk çekiştirmesine ve sık yıkamaya en dayanıklı tül grubudur.</li>\n        <li><strong>Bambu Tül:</strong> İpeksi yumuşak tuşesi ve mat-doğal ışıltısıyla salon ve yatak odalarında dingin bir atmosfer yaratır.</li>\n        <li><strong>Şantuklu Keten Tül:</strong> İçinde doğal keten lif geçişleri bulunan, modern ve İskandinav tarzı mobilyalarla kusursuz bütünleşen seridir.</li>\n        <li><strong>Kapsül & Dikey Çizgili Tül:</strong> Yukarıdan aşağıya inen kabartma dokusuyla alçak tavanlı salonları çok daha yüksek ve ferah gösterir.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Kumaşın orijinal ve 1. kalite olduğunu mağazada nasıl test edebiliriz?",
+        "a": "Showroomumuzda kumaşı avucunuzun içinde sıkıp 5 saniye tuttuktan sonra bıraktığınızda kırışmadan anında eski halini aldığını ve etek kurşununun tok ağırlığını bizzat hissedebilirsiniz."
+      },
+      {
+        "q": "Evde kedi besleyenler için hangi tül kumaşı önerirsiniz?",
+        "a": "İnce organze veya ipek şantuk tüller yerine, kalın bükümlü 'Grek (File) Tül' veya 'Keten Gofre' serilerini öneriyoruz. Bu dokumalarda tırnak takılsa bile iplik yürümesi olmaz."
+      }
+    ]
   },
   {
-    slug: "yuksek-tavan-ve-fransiz-cam-perde-modelleri",
-    title: "Fransız Cam, Köşe Pencere ve Yüksek Tavan Villa Salonları İçin Perde Modelleri",
-    metaTitle: "Fransız Cam ve Villa Perde Modelleri | Yüksek Tavan Perde | Dilek Perde Home",
-    metaDesc: "Yere kadar uzanan Fransız pencereler, L köşe camlar ve dubleks villa salonları için İtalyan kruvaze, motorlu perde ve boru pile fon modelleri.",
-    keywords: "fransız cam perde modelleri, villa perde modelleri, yüksek tavan perde, köşe cam perde modelleri, italyan kruvaze perde",
-    date: "2026-11-06",
-    readTime: "4 dk okuma",
-    heroImage: "/images/gallery/ars-evleri-panoramik-salon-kruvaze-tul-perde.jpg",
-    excerpt: "Yere kadar inen geniş cam cephelerde ısı kaybını önleyen ve tavanı daha yüksek gösteren dikim teknikleri.",
-    contentHtml: `
-      <h2>Fransız Pencerelerde Boy Ölçüsü ve Kanat Planlaması</h2>
-      <p>Tabandan tavana uzanan Fransız camlarda kısa perde kullanmak pencereyi böler ve tavanı basık gösterir. Bu pencerelerde zeminden sadece 2 cm yukarıda biten tam boy tül ve yanlarda pencere camını kapatmadan duvar payına oturan fon kanatlar kullanılmalıdır.</p>
-    `
+    "slug": "yeni-evlenenler-icin-ceyiz-ve-komple-ev-perde-listesi",
+    "title": "Yeni Evlenenler İçin Oda Oda Perde İhtiyaç Listesi (2+1 ve 3+1 Daire Rehberi)",
+    "metaTitle": "Yeni Evlenenler İçin Komple Ev Perde Listesi 2026 | Dilek Perde Home",
+    "metaDesc": "Düğün ve çeyiz alışverişinde salon, mutfak, yatak odası ve oturma odası için hangi perdeler alınmalı? Komple daire perde paketi ve bütçe planlama rehberi.",
+    "keywords": "çeyiz perde listesi, yeni evlenenler için perde, komple ev perde fiyatları, düğün perde paketi, 3+1 daire perde maliyeti",
+    "date": "2026-11-06",
+    "readTime": "8 dk okuma",
+    "heroImage": "/images/gallery/eryaman-yemek-odasi-kruvaze-tul-perde.jpg",
+    "excerpt": "Salon, mutfak, yatak odası, oturma odası ve cam balkonda bütçeyi yormadan en şık uyumu yakalamanın oda oda çeyiz kontrol listesi.",
+    "contentHtml": "\n      <h2>Düğün Hazırlığında Komple Ev Perdesi Nasıl Planlanmalı?</h2>\n      <p>Yeni evlenen çiftlerimizin yaptığı en yaygın hata, her odaya aynı anda ağır kadife fonlar ve kruvaze mekanizmalar seçerek bütçeyi zorlamak veya mobilyalar eve gelmeden perde rengine karar vermektir. <strong>Dilek Perde Home</strong> olarak yeni kurulan yuvalarda hem bütçeyi koruyan hem de evi dergiden çıkmış gibi gösteren oda bazlı çeyiz planlaması sunuyoruz:</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Oda / Alan</th>\n            <th>Önerilen Ana Perde</th>\n            <th>Güneşlik / Karartma Çözümü</th>\n            <th>Fon Perde & Aksesuar</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Salon (Misafir Odası)</strong></td>\n            <td>1x3 Sık Pile Keten, Bambu veya İtalyan Kruvaze Tül</td>\n            <td>Kornişe uyumlu Mat Ekru Stor Güneşlik</td>\n            <td>Koltuk tonunda 2 kanat Boru Pile Kadife/Keten Fon + Mıknatıslı Braçol</td>\n          </tr>\n          <tr>\n            <td><strong>Oturma / TV Odası</strong></td>\n            <td>1x2.5 Orta Pile Ütü İstemez Grek veya Çizgili Tül</td>\n            <td>Kumaş Güneşlik veya Zebra Perde</td>\n            <td>Pencere yanlarında sade tek/çift kanat keten fon</td>\n          </tr>\n          <tr>\n            <td><strong>Yatak Odası</strong></td>\n            <td>1x3 Sık Pile Yumuşak Dokulu Ekru Tül</td>\n            <td>%100 Işık Kesen Blackout (Karartma) Stor veya Güneşlik</td>\n            <td>Yatak başlığı ile uyumlu 2 kanat dekoratif fon</td>\n          </tr>\n          <tr>\n            <td><strong>Mutfak</strong></td>\n            <td>3 Boyutlu Tül, Kapsül Tül veya Bambu Zebra</td>\n            <td>Zebra tercih edilirse kendinden güneşliklidir</td>\n            <td>Balkon kapısı varsa tek kanat braçollu toplama</td>\n          </tr>\n          <tr>\n            <td><strong>Cam Balkon (Varsa)</strong></td>\n            <td>Her kanada bağımsız Orijinal Plisell (Plise) Perde</td>\n            <td>Alttan-üstten çalışan ısı yalıtımlı kumaş</td>\n            <td>Ekstra fon gerektirmez</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Perde Siparişi Düğünden Kaç Gün Önce Verilmeli?</h2>\n      <ol>\n        <li><strong>İdeal Zamanlama (Düğünden 3–4 Hafta Önce):</strong> Koltuk ve halı renkleriniz kesinleştiğinde (veya mobilyalar eve teslim edildiğinde) keşif randevusu oluşturmanız en doğrusudur.</li>\n        <li><strong>Ev Temizliği Sonrası Montaj:</strong> İnşaat veya taşınma temizliği yapılırken yeni perdelerin tozlanmaması için, ölçüleri önceden alıp perdeleri atölyemizde hazır bekletiyor; evin ince temizliği bittikten hemen sonra gelip ütülü olarak kornişlerinize asıyoruz.</li>\n      </ol>\n    ",
+    "faqs": [
+      {
+        "q": "Komple ev (3+1 daire) çeyiz perde paketlerinde özel indirim uyguluyor musunuz?",
+        "a": "Evet. Tüm evin tül, güneşlik, fon ve stor perdelerini birlikte planladığımız yeni evlenen çiftlerimize özel çeyiz paketi iskontosu uyguluyor; korniş stoperlerinden braçol aksesuarlarına kadar tüm detayları hediye ediyoruz."
+      },
+      {
+        "q": "Mobilyalarımız henüz eve teslim edilmedi ama kumaş kartelası elimizde, ölçü aldırabilir miyiz?",
+        "a": "Kesinlikle. Daireniz boşken lazerli ölçülerimizi alıp, elinizdeki koltuk kumaş numunesine göre mağazamızda renk eşleştirmesini yapabiliriz. Böylece mobilyalarınız geldiği gün perdeleriniz de hazır olur."
+      }
+    ]
+  },
+  {
+    "slug": "yuksek-tavan-ve-fransiz-cam-perde-modelleri",
+    "title": "Fransız Cam, Köşe Pencere ve Yüksek Tavan Villa Salonları İçin Perde Modelleri",
+    "metaTitle": "Fransız Cam ve Villa Perde Modelleri | Yüksek Tavan Perde | Dilek Perde Home",
+    "metaDesc": "Yere kadar uzanan Fransız pencereler, L köşe camlar ve dubleks villa salonları için İtalyan kruvaze, motorlu perde ve boru pile fon modelleri.",
+    "keywords": "fransız cam perde modelleri, villa perde modelleri, yüksek tavan perde, köşe cam perde modelleri, italyan kruvaze perde",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/ars-evleri-panoramik-salon-kruvaze-tul-perde.jpg",
+    "excerpt": "Yere kadar inen geniş Fransız cam cephelerde, L köşe pencerelerde ve galeri boşluklu villalarda ısı kaybını önleyen ve tavanı yüksek gösteren dikim teknikleri.",
+    "contentHtml": "\n      <h2>Fransız Pencerelerde ve Geniş Cam Cephelerde Doğru Kanat Planlaması</h2>\n      <p>Tabandan tavana uzanan <strong>Fransız pencereler</strong> ve panoramik sürgülü teras kapıları, eve bol gün ışığı alırken perde tasarımında özel bir mühendislik gerektirir. Bu pencerelerde kısa perde kullanmak mimari bütünlüğü tamamen bozar; zeminden sadece <strong>2 cm yukarıda biten tam boy tül</strong> ve pencere camını kapatmadan yan duvar payına oturan dikey fon kanatlar kullanılmalıdır.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Mimari Pencere Tipi</th>\n            <th>Önerilen Tül & Mekanizma</th>\n            <th>Fon Kanat & Güneşlik Çözümü</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Sürgülü / Açılır Fransız Cam</strong></td>\n            <td>Ortadan ikiye ayrılan (çift parça) 1x3 sık pile keten tül veya İtalyan Kruvaze</td>\n            <td>Pencere sağ ve sol duvar payına oturan boru pile fon + arkada korniş stor</td>\n          </tr>\n          <tr>\n            <td><strong>L Köşe Birleşimli Panoramik Cam</strong></td>\n            <td>Köşe dönüş aparatlı kesintisiz korniş üzerinde iki cepheye simetrik açılan tül</td>\n            <td>Köşe kolonunda tek ortak dolgun fon kanat + iki uçta tamamlayıcı kanatlar</td>\n          </tr>\n          <tr>\n            <td><strong>3.5m – 6m Yüksek Tavan Villa / Dubleks</strong></td>\n            <td>Boy eklemesiz (dikiş izsiz) özel dokuma yüksek en tül + Motorlu Alüminyum Ray</td>\n            <td>Astarlı yüksek gramajlı İtalyan kadife fon + Uzaktan kumandalı Somfy motor</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Fransız Camlarda Ortadan Açılır (Çift Parça) Tül Avantajı</h2>\n      <p>Fransız balkon kapısını veya havalandırma kanadını açmak için 4 metrelik tek parça tülü sürekli bir uçtan diğer uca çekiştirmek hem ekstraforu yorar hem de kullanımı zorlaştırır. Atölyemizde Fransız pencerelerin tam açılır kanat hizasına denk gelecek şekilde <strong>gizli binili çift parça tül dikimi</strong> yapıyoruz. Perde kapalıyken pileler birbirinin içine geçtiği için dışarıdan tek parça görünür, ancak balkona çıkarken tam ortadan zahmetsizce iki yana ayrılır.</p>\n    ",
+    "faqs": [
+      {
+        "q": "Tavan yüksekliği 300 cm'den fazla olan villalarda tül perdede ek dikişi olur mu?",
+        "a": "Standart tül topları 300 cm yüksekliğindedir ancak villa projelerimiz için 320 cm, 340 cm ve dikey dokuma özel seri kumaşlarımız mevcuttur; böylece yüksek tavanlarda enine ek dikişi olmadan tek parça kusursuz görünüm sağlıyoruz."
+      },
+      {
+        "q": "L şeklindeki köşe pencerelerde iki perde arasında boşluk kalır mı?",
+        "a": "Hayır. Köşe birleşim noktasında 90 derece döner korniş dirseği kullanıyor ve o köşeye yerleştirdiğimiz dekoratif fon kanat ile iki cephenin birleşimini estetik şekilde bütünleştiriyoruz."
+      }
+    ]
   }
 ];
 
