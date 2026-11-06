@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 86" fill="none">
+  <defs>
+    <linearGradient id="claretGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A1C2D"/>
+      <stop offset="55%" stop-color="#6B1220"/>
+      <stop offset="100%" stop-color="#4A0B15"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6C98F"/>
+      <stop offset="50%" stop-color="#C59B52"/>
+      <stop offset="100%" stop-color="#9A7230"/>
+    </linearGradient>
+  </defs>
+  <!-- Oval Storefront Crest Emblem -->
+  <ellipse cx="46" cy="43" rx="40" ry="36" fill="url(#claretGrad)" stroke="url(#goldGrad)" stroke-width="2.2"/>
+  <ellipse cx="46" cy="43" rx="35.5" ry="31.5" fill="none" stroke="#E6C98F" stroke-width="0.75" stroke-dasharray="3 2.5" opacity="0.75"/>
+  <!-- Architectural Curtain Drapery Icon inside Crest -->
+  <path d="M25 22 H67" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="22" r="2.2" fill="#E6C98F"/>
+  <circle cx="68" cy="22" r="2.2" fill="#E6C98F"/>
+  <!-- Left Kruvaze Drape -->
+  <path d="M27 22 C27 36, 37 45, 43 49 C35 53, 29 58, 28 64 H37 C38 57, 43 52, 46 49 C41 42, 37 32, 37 22 Z" fill="url(#goldGrad)" opacity="0.92"/>
+  <!-- Right Kruvaze Drape -->
+  <path d="M65 22 C65 36, 55 45, 49 49 C57 53, 63 58, 64 64 H55 C54 57, 49 52, 46 49 C51 42, 55 32, 55 22 Z" fill="#FAF5EC" opacity="0.92"/>
+  <!-- Center Monogram D -->
+  <text x="46" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" font-weight="bold" fill="#FAF5EC">D</text>
+  <!-- Wordmark matching storefront calligraphy & luxury atelier typography -->
+  <text x="98" y="46" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" font-style="italic" fill="#6B1220" letter-spacing="0.4">Dilek Perde</text>
+  <line x1="100" y1="56" x2="366" y2="56" stroke="url(#goldGrad)" stroke-width="1"/>
+  <text x="100" y="71" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="700" fill="#8C6528" letter-spacing="3.2">HOME • EV TEKSTİLİ &amp; PERDE TASARIM</text>
+</svg>

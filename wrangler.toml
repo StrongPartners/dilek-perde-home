@@ -1,0 +1,13 @@
+name = "dilek-perde-home"
+main = "src/worker.js"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+routes = [
+  { pattern = "dilekperdehome.com/*", zone_name = "dilekperdehome.com" },
+  { pattern = "www.dilekperdehome.com/*", zone_name = "dilekperdehome.com" }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"

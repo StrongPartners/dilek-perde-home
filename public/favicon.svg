@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" fill="none">
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A1C2D"/>
+      <stop offset="100%" stop-color="#4A0B15"/>
+    </linearGradient>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6C98F"/>
+      <stop offset="100%" stop-color="#9A7230"/>
+    </linearGradient>
+  </defs>
+  <circle cx="46" cy="46" r="43" fill="url(#cg)" stroke="url(#gg)" stroke-width="3"/>
+  <circle cx="46" cy="46" r="38" fill="none" stroke="#E6C98F" stroke-width="1" stroke-dasharray="3 2.5" opacity="0.8"/>
+  <path d="M24 23 H68" stroke="url(#gg)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M26 23 C26 39, 37 49, 43 53 C34 58, 28 63, 27 70 H36 C37 62, 43 56, 46 53 C41 45, 36 34, 36 23 Z" fill="url(#gg)"/>
+  <path d="M66 23 C66 39, 55 49, 49 53 C58 58, 64 63, 65 70 H56 C55 62, 49 56, 46 53 C51 45, 56 34, 56 23 Z" fill="#FAF5EC"/>
+  <text x="46" y="45" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-style="italic" font-weight="bold" fill="#FAF5EC">D</text>
+</svg>
