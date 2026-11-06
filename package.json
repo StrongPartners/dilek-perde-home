@@ -5,6 +5,7 @@
   "private": true,
   "description": "Dilek Perde Home — Kahramankazan, Ankara ve Türkiye Geneli Özel Dikim Tül, Fon, Plise, Ahşap Jaluzi, Zebra, Stor Perde ve Ev Tekstili Tasarım Mağazası",
   "scripts": {
+    "dev": "node scripts/dev-server.mjs",
     "deploy": "npx wrangler deploy"
   }
 }
