@@ -543,6 +543,28 @@ export const SEO_KEYWORDS = [
 
 export const GUIDES = [
   {
+    "slug": "rustik-perde-modelleri-ahsap-ve-metal-borulu-perdeler",
+    "title": "Rustik Perde Modelleri: Korniş Olmayan Pencereler ve Kış Bahçeleri İçin Şık Çözümler",
+    "metaTitle": "Rustik Perde Modelleri | Ahşap & Metal Rustik Borulu Perde | Dilek Perde",
+    "metaDesc": "Tavan kornişi olmayan pencereler, çatı katları ve modern salonlar için halkalı, kapsüllü ve ahşap/pirinç rustik borulu tül ve fon perde modelleri.",
+    "keywords": "rustik perde modelleri, rustik borulu perde, halkalı perde modelleri, kapsüllü fon perde, kış bahçesi perdesi",
+    "date": "2026-11-06",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/luks-salon-gold-tarcin-fon-perde-montaji.jpg",
+    "excerpt": "Tavanında kartonpiyer veya korniş bulunmayan pencerelerde, çatı dublekslerinde ve taş/ahşap evlerde duvara monte edilen dekoratif rustik boru sistemleri.",
+    "contentHtml": "\n      <h2>Hangi Pencerelerde Tavan Kornişi Yerine Rustik Perde Tercih Edilir?</h2>\n      <p>Çatı dublekslerindeki eğimli tavanlarda, kemerli pencerelerde, kış bahçelerinde veya tavan yüksekliği 3 metreyi aşan taş/ahşap villalarda tavana plastik korniş takmak teknik olarak zor veya estetik açıdan uyumsuzdur. Bu mekânlarda pencere üst duvarına (alana) monte edilen <strong>masif ahşap, mat siyah demir, antik pirinç veya krom rustik borular</strong> hem taşıyıcı mekanizma hem de dekoratif bir tasarım öğesi olarak kullanılır.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Rustik Perde Sistemi</th>\n            <th>Çalışma Mekanizması</th>\n            <th>Önerilen Kumaş & Stil</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Kapsüllü (Kuşgözü) Rustik</strong></td>\n            <td>Kumaşın üst başlığına çakılan 40mm paslanmaz metal halkalar doğrudan borunun içinden geçer</td>\n            <td>Modern ve spor salonlar; doğal keten fonlar ve kalın dokulu tüllerde geniş S dalgası oluşturur</td>\n          </tr>\n          <tr>\n            <td><strong>Ahşap / Metal Halkalı Rustik</strong></td>\n            <td>Boruya dizilen seyyar halkaların altındaki klipslere ekstraforlu perde takılır</td>\n            <td>Country, klasik ve rustik mobilyalı evler; ceviz, meşe ve eskitme pirinç başlıklarla kullanılır</td>\n          </tr>\n          <tr>\n            <td><strong>Raylı (Alüminyum Kanallı) Çift Rustik</strong></td>\n            <td>Dıştan yuvarlak boru görünümündedir ancak alt kısmında gizli rulet kanalı bulunur</td>\n            <td>Hem tül hem fon perdenin aynı anda takılması gereken salon ve yatak odaları için en pratik sistemdir</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Rustik Perde Montajında Duvar Payı ve Ayak Seçimi</h2>\n      <ul>\n        <li><strong>Çift Borulu Braketi (Ayak):</strong> Hem tül hem de fon perde kullanılacaksa, duvara tek bir sağlam metal ayak monte edilir; bu ayağın arka yuvasına ince tül borusu, ön yuvasına ise kalın (28mm–35mm) fon borusu yerleştirilir.</li>\n        <li><strong>Yıkanabilir Paslanmaz Kapsül:</strong> Atölyemizde kumaşa preslenen kuşgözü kapsüller plastik değil, nikel/pirinç kaplama paslanmaz metaldir; çamaşır makinesinde yıkandığında kumaşa pas lekesi bırakmaz ve yerinden çıkmaz.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "2.5 metreden daha geniş pencerelerde rustik boru ortadan esneme yapar mı?",
+        "a": "220 cm üzeri genişliklerde borunun tam orta noktasına üçüncü bir taşıyıcı orta ayak (braket) monte ediyoruz. Böylece ağır kadife fon perdeler takılsa bile boruda milim esneme olmaz."
+      },
+      {
+        "q": "Kapsüllü rustik perdeler çamaşır makinesinde nasıl yıkanır?",
+        "a": "Üstteki metal halkaları üst üste toplayıp bir bez torba veya perde yıkama filesi içine bağlayarak 30 derecede güvenle yıkayabilirsiniz."
+      }
+    ]
+  },
+  {
     slug: "cocuk-ve-genc-odasi-perde-modelleri-2026",
     title: "Çocuk ve Genç Odası Perde Modelleri: Anti-Alerjik Tül, Zebra ve Karartma Stor Seçimi",
     metaTitle: "Çocuk ve Genç Odası Perde Modelleri 2026 | Dilek Perde Home",
