@@ -543,6 +543,23 @@ export const SEO_KEYWORDS = [
 
 export const GUIDES = [
   {
+    slug: "cocuk-ve-genc-odasi-perde-modelleri-2026",
+    title: "Çocuk ve Genç Odası Perde Modelleri: Anti-Alerjik Tül, Zebra ve Karartma Stor Seçimi",
+    metaTitle: "Çocuk ve Genç Odası Perde Modelleri 2026 | Dilek Perde Home",
+    metaDesc: "Bebek, çocuk ve genç odaları için toz tutmayan anti-alerjik tül perde, renkli keten fon ve uyku düzeni sağlayan blackout stor perde modelleri.",
+    keywords: "çocuk odası perde modelleri, genç odası perde modelleri, bebek odası perde seçimi, çocuk odası stor perde",
+    date: "2026-11-06",
+    readTime: "4 dk okuma",
+    heroImage: "/images/gallery/incek-ankara-daire-stor-ve-guneslik-perde.jpg",
+    excerpt: "Çocukların sağlıklı uykusu ve güvenli kullanımı için zincir emniyetli stor ve doğal dokulu keten tüller.",
+    contentHtml: `
+      <h2>Çocuk Odalarında Güvenlik ve Kolay Temizlik</h2>
+      <p>Bebek ve çocuk odalarında yere kadar uzanan ağır perdeler yerine petek üstü boyda hazırlanan doğal bambu/keten tüller veya çocuk güvenlik klipsli <strong>karartma (blackout) stor perdeler</strong> hem toz tutmaz hem de gündüz uykuları için ideal karanlığı sağlar.</p>
+      <h3>Genç Odalarında Minimalist Kombinasyonlar</h3>
+      <p>Çalışma masasının pencere önünde yer aldığı genç odalarında 50mm ahşap jaluzi veya antrasit/krem screen stor perdeler, bilgisayar ekranındaki güneş parlamasını keserken odanın modern çizgisini tamamlar.</p>
+    `
+  },
+  {
     slug: "kornise-perde-nasil-takilir-rulet-ve-stoper-rehberi",
     title: "Kornişe Perde Nasıl Takılır? Rulet Sıklığı, Korniş Stoperi ve Pratik Asma Teknikleri",
     metaTitle: "Kornişe Perde Nasıl Takılır? Kolay Perde Asma Rehberi | Dilek Perde Home",
