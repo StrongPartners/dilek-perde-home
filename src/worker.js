@@ -2005,23 +2005,23 @@ function renderCalculatorPage() {
 }
 
 function renderSitemap() {
-  const urls = [
-    ["/", "1.0", "daily"],
-    ["/rehber", "0.9", "daily"],
-    ["/uygulamalarimiz", "0.9", "weekly"],
-    ["/perde-olcu-ve-fiyat-hesaplama", "0.9", "weekly"],
-    ["/hakkimizda", "0.8", "monthly"],
-    ["/iletisim", "0.9", "monthly"],
-    ...COLLECTIONS.map((c) => [`/koleksiyon/${c.slug}`, "0.9", "weekly"]),
-    ...REGIONS.map((r) => [`/bolge/${r.slug}`, "0.9", "weekly"]),
-    ...GUIDES.map((g) => [`/rehber/${g.slug}`, "0.8", "weekly"])
-  ];
   const today = new Date().toISOString().slice(0, 10);
+  const urls = [
+    ["/", "1.0", "daily", today],
+    ["/rehber", "0.9", "daily", today],
+    ["/uygulamalarimiz", "0.9", "weekly", today],
+    ["/perde-olcu-ve-fiyat-hesaplama", "0.9", "weekly", today],
+    ["/hakkimizda", "0.8", "monthly", today],
+    ["/iletisim", "0.9", "monthly", today],
+    ...COLLECTIONS.map((c) => [`/koleksiyon/${c.slug}`, "0.9", "weekly", today]),
+    ...REGIONS.map((r) => [`/bolge/${r.slug}`, "0.9", "weekly", today]),
+    ...GUIDES.map((g) => [`/rehber/${g.slug}`, "0.8", "weekly", g.date || today])
+  ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(([p, prio, freq]) => `  <url>
+${urls.map(([p, prio, freq, lmod]) => `  <url>
     <loc>${SITE.domain}${p}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lmod}</lastmod>
     <changefreq>${freq}</changefreq>
     <priority>${prio}</priority>
   </url>`).join("\n")}
@@ -2029,7 +2029,7 @@ ${urls.map(([p, prio, freq]) => `  <url>
   return new Response(xml, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600"
+      "Cache-Control": "public, max-age=1800"
     }
   });
 }
@@ -2063,6 +2063,12 @@ export default {
 
     if (path === "/sitemap.xml") {
       return renderSitemap();
+    }
+
+    if (path === "/dilekperdeindexnow2026.txt") {
+      return new Response("dilekperdeindexnow2026", {
+        headers: { "Content-Type": "text/plain; charset=utf-8" }
+      });
     }
 
     if (path === "/robots.txt") {
