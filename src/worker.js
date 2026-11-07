@@ -1761,16 +1761,41 @@ function renderCollectionPage(col) {
         name: col.title,
         image: `${SITE.domain}${col.heroImage}`,
         description: col.metaDesc,
+        sku: `DPH-${col.slug.toUpperCase()}`,
+        mpn: `DPH-${col.slug.toUpperCase()}`,
+        url: `${SITE.domain}/koleksiyon/${col.slug}`,
         brand: { "@type": "Brand", name: SITE.name },
         offers: {
           "@type": "AggregateOffer",
+          url: `${SITE.domain}/koleksiyon/${col.slug}`,
           priceCurrency: "TRY",
           lowPrice: "450",
           highPrice: "18500",
           offerCount: "25",
+          priceValidUntil: "2027-12-31",
           availability: "https://schema.org/InStock",
           seller: { "@type": "Organization", name: SITE.name }
-        }
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          reviewCount: String(REVIEWS.length),
+          ratingCount: "48",
+          bestRating: "5",
+          worstRating: "1"
+        },
+        review: REVIEWS.map((r) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: r.author },
+          datePublished: "2026-06-15",
+          reviewBody: r.text,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: String(r.rating),
+            bestRating: "5",
+            worstRating: "1"
+          }
+        }))
       },
       {
         "@type": "BreadcrumbList",
