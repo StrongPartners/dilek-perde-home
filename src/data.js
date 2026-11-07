@@ -543,6 +543,28 @@ export const SEO_KEYWORDS = [
 
 export const GUIDES = [
   {
+    "slug": "ofis-ve-isyeri-perde-modelleri-jaluzi-ve-screen-stor",
+    "title": "Ofis, Muayenehane ve İşyeri Perde Modelleri: Screen Stor, Dikey ve Alüminyum/Ahşap Jaluzi",
+    "metaTitle": "Ofis Perde Modelleri | Screen Stor & Ahşap Jaluzi | Dilek Perde Home",
+    "metaDesc": "Kahramankazan Saray OSB fabrika yönetim binaları ve Ankara ofisleri için güneş kırıcı screen stor, 50mm ahşap jaluzi ve dikey perde sistemleri.",
+    "keywords": "ofis perde modelleri, screen stor perde, fabrika ofis perdesi, kahramankazan saray osb perdeci, alüminyum jaluzi perde",
+    "date": "2026-11-07",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/ahsap-jaluzi-ve-antrasit-fon-perde-kazan.jpg",
+    "excerpt": "Kahramankazan Saray OSB fabrika idari binaları, klinikler ve Ankara ofislerinde bilgisayar ekranı parlamasını kesen kurumsal perde çözümleri.",
+    "contentHtml": "\n      <h2>Kurumsal Ofis ve Fabrika Yönetim Binalarında Doğru Perde Seçimi</h2>\n      <p>Çalışma alanlarında perde seçimi ev tekstilinden farklı olarak <strong>ekran yansıması (glare) kontrolü, alev geciktiricilik (FR sertifikası), akustik konfor ve kurumsal prestij</strong> kriterlerine dayanır. <strong>Dilek Perde Home</strong> olarak Kahramankazan Saray OSB, Keresteciler Sanayi Sitesi ve Ankara genelindeki şirket merkezlerine faturalı, anahtar teslim kurumsal perde projeleri uyguluyoruz.</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Kurumsal Mekân Tipi</th>\n            <th>En Uygun Perde Sistemi</th>\n            <th>Teknik Avantajı</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td><strong>Yönetici & Makam Odaları</strong></td>\n            <td>50mm Masif Ihlamur Ahşap Jaluzi (Ceviz / Antrasit / Siyah)</td>\n            <td>Deri ve ahşap ofis mobilyalarıyla üst düzey prestij sağlar, ışık açısını milimetrik yönetir</td>\n          </tr>\n          <tr>\n            <td><strong>Açık Ofis & Mühendislik Katları</strong></td>\n            <td>%3 – %5 Açıklıklı Sun Screen (Güneş Kırıcı) Stor Perde</td>\n            <td>Gündüz dışarıdaki manzarayı kapatmadan bilgisayar ekranlarındaki güneş parlamasını ve ısıyı %85 keser</td>\n          </tr>\n          <tr>\n            <td><strong>Toplantı & Sunum Salonları</strong></td>\n            <td>Motorlu veya Zincirli %100 Blackout Stor Perde</td>\n            <td>Projeksiyon ve LED ekran sunumları sırasında odayı saniyeler içinde tam karartır</td>\n          </tr>\n          <tr>\n            <td><strong>Klinik, Muayenehane & Laboratuvar</strong></td>\n            <td>25mm Mikro Alüminyum Jaluzi veya PVC Dikey Perde</td>\n            <td>Dezenfektanla silinebilir, bakteri ve toz barındırmaz, hijyen yönetmeliğine tam uyumludur</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Sun Screen (Güneş Kırıcı) Kumaş Teknolojisi Nedir?</h2>\n      <p>Cam cepheli modern ofis binalarında klasik stor perdeyi indirdiğinizde oda kararır ve gündüz vakti tepe aydınlatmalarını yakmak zorunda kalırsınız. Oysa fiberglas ve PVC kaplı teknik ipliklerle dokunan <strong>Sun Screen stor perdeler</strong> mikro gözenekli yapısı sayesinde zararlı UV ışınlarını ve sera ısısını bloke ederken, içeriden dışarının net şekilde görünmesine izin verir; aynı zamanda gündüz dışarıdan içerinin görünmesini engeller.</p>\n    ",
+    "faqs": [
+      {
+        "q": "Fabrika ve kurumsal ofis projeleri için yerinde keşif ve kurumsal fatura kesiyor musunuz?",
+        "a": "Evet. Saray OSB, Kahramankazan ve Ankara genelindeki tüm fabrika, okul, klinik ve ofis projelerinde aynı gün ücretsiz metraj keşfi yapıyor, kurumsal teklif dosyası ve e-Fatura ile teslimat sağlıyoruz."
+      },
+      {
+        "q": "Şirket logolu (dijital baskılı) stor perde üretiminiz var mı?",
+        "a": "Evet, dış cepheye bakan ofis camlarınız veya mağaza vitrinleriniz için yüksek çözünürlüklü kurumsal logo baskılı stor ve screen perde üretimi yapmaktayız."
+      }
+    ]
+  },
+  {
     "slug": "rustik-perde-modelleri-ahsap-ve-metal-borulu-perdeler",
     "title": "Rustik Perde Modelleri: Korniş Olmayan Pencereler ve Kış Bahçeleri İçin Şık Çözümler",
     "metaTitle": "Rustik Perde Modelleri | Ahşap & Metal Rustik Borulu Perde | Dilek Perde",
