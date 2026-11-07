@@ -543,6 +543,28 @@ export const SEO_KEYWORDS = [
 
 export const GUIDES = [
   {
+    "slug": "kucuk-ve-alcak-tavanli-salonlari-genis-gosteren-perde-hileleri",
+    "title": "Küçük veya Alçak Tavanlı Salonları Daha Geniş ve Yüksek Gösteren 6 Perde Hilesi",
+    "metaTitle": "Küçük Salonları Geniş Gösteren Perde Seçimi | Dilek Perde Home",
+    "metaDesc": "Dar pencereli ve alçak tavanlı odaları daha ferah, aydınlık ve yüksek tavanlı göstermek için doğru perde rengi, boyu ve fon kanat yerleşimi.",
+    "keywords": "küçük salon için perde modelleri, tavanı yüksek gösteren perde, dar pencere perde modelleri, ferah salon perdeleri",
+    "date": "2026-11-07",
+    "readTime": "7 dk okuma",
+    "heroImage": "/images/gallery/kahramankazan-villa-italyan-kruvaze-tul-perde.jpg",
+    "excerpt": "Fon kanatları pencere camının dışındaki duvar payına taşıyarak cam alanını %30 daha geniş ve tavanı daha yüksek gösterme teknikleri.",
+    "contentHtml": "\n      <h2>Dar Pencereli ve Alçak Tavanlı Odalarda Mimari İllüzyon Teknikleri</h2>\n      <p>Metrekaresi küçük olan salonlarda veya tavan yüksekliği 255 cm'nin altında kalan dairelerde yanlış perde seçimi odayı olduğundan daha basık gösterebilir. <strong>Dilek Perde Home</strong> tasarım ekibimizin küçük salonları ferahlatmak için uyguladığı 6 iç mimari kural:</p>\n\n      <table>\n        <thead>\n          <tr>\n            <th>Yapılan Yaygın Hata</th>\n            <th>Doğru Mimari Uygulama</th>\n            <th>Odaya Kazandırdığı Etki</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <td>Fon kanatları pencere camının üstüne gelecek şekilde asmak</td>\n            <td>Kornişi pencereden sağa-sola 45 cm uzatıp fonları sağır duvarın üstüne asmak</td>\n            <td>Pencere camı tamamen açık kalır; cam olduğundan 80–90 cm daha geniş algılanır ve gün ışığı %35 artar</td>\n          </tr>\n          <tr>\n            <td>Petek üstünde biten kısa salon tülü kullanmak</td>\n            <td>Tavandan zemine kadar kesintisiz inen (-2 cm) tam boy dikey dokulu tül kullanmak</td>\n            <td>Dikey çizgiler gözü yukarıdan aşağıya yönlendirerek tavanı 20–30 cm daha yüksek gösterir</td>\n          </tr>\n          <tr>\n            <td>Duvar rengiyle zıt, çok koyu ve desenli ağır fonlar seçmek</td>\n            <td>Duvar boyasından sadece 1–2 ton koyu (krem, taş, açık vizon) monokrom fon seçmek</td>\n            <td>Duvar ile perde arasındaki keskin sınır kalkar, salonun derinlik algısı büyür</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <h2>Küçük Salonlarda Dikey Dokulu Keten ve Boru Pile Avantajı</h2>\n      <ul>\n        <li><strong>Dikey Çizgili ve Kapsül Tüller:</strong> Enine desenli (yatay şeritli) tüller odayı basıklaştırırken, kendinden dikey yağmur çizgili keten tüller tavana yükseklik katar.</li>\n        <li><strong>60–70 cm Dar Formlu Boru Pile Fonlar:</strong> Küçük odalarda 100 cm genişliğinde devasa fon kanatlar yerine, 4–5 boru pileden oluşan 65 cm'lik zarif dikey kanatlar çok daha dengeli durur.</li>\n      </ul>\n    ",
+    "faqs": [
+      {
+        "q": "Küçük salonda kruvaze perde kullanılır mı?",
+        "a": "Eğer pencereniz 2 metreden darsa iki yana toplanan ağır kruvaze katmanlar camı kapatabilir. Bunun yerine 1x3 sık pile düz keten tül ve yanlarda ince boru pile fon kanatlar küçük salonu çok daha ferah gösterir."
+      },
+      {
+        "q": "Pencerenin bir tarafında kolon (duvar sıfır) varsa fon perde nasıl takılır?",
+        "a": "Asimetrik pencerelerde kolon olan tarafa fon takmayıp, sadece geniş duvar payı olan tarafa tek kanat fon ve mıknatıslı braçol uygulamak hem modern durur hem de camı daraltmaz."
+      }
+    ]
+  },
+  {
     "slug": "ofis-ve-isyeri-perde-modelleri-jaluzi-ve-screen-stor",
     "title": "Ofis, Muayenehane ve İşyeri Perde Modelleri: Screen Stor, Dikey ve Alüminyum/Ahşap Jaluzi",
     "metaTitle": "Ofis Perde Modelleri | Screen Stor & Ahşap Jaluzi | Dilek Perde Home",
